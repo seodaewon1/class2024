@@ -3,6 +3,8 @@
 
 [자바스크립트](https://seodaewon1.github.io/class2024/javascript/index.html)   
 
+[데이터 저장하기](https://seodaewon1.github.io/class2024/javascript/javascript01.html)   
+
 # vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   
