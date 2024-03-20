@@ -160,7 +160,7 @@ body {
         font-family: var(--fontN);
 
         .layer__contents {
-            background-color: #223167a8;
+            background-color: #010920a8;
             backdrop-filter: blur(30px);
             width: 100%;
             height: 100%;
