@@ -1,5 +1,5 @@
 # 오늘의 수업   
-[MySQL](https://seodaewon1.github.io/class2024/mysql/mysql01.html)   
+[MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)   
    
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
