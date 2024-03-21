@@ -185,7 +185,7 @@ li {
 #header h1 a {
     font-family: var(--fontG);
     font-size: 4vw;
-    color: #008cff;
+    color: #3ab8eb;
 }
 
 @media (max-width: 800px) {
@@ -206,14 +206,14 @@ li {
 
 #header nav ul li a {
     font-family: var(--fontN);
-    border: 1px solid #008cff;
+    border: 1px solid #3ab8eb;
     padding: 10px 20px;
     display: inline-block;
-    color: #778af5;
+    color: #3ab8eb;
 }
 
 #header nav ul li.active a {
-    background-color: #008cff;
+    background-color: #60aceb;
     color: #fff;
 }
 
