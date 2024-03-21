@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL01</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">MySQL</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="mysql01.html">MySQL</a></li>
+                <li><a href="mysql02.html">SQL 개념</a></li>
+                <li class="active"><a href="mysql03.html">데이터 베이스</a></li>
+                <li><a href="mysql04.html">테이블</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>데이터 베이스 보기</h3>
+                <div class="info">
+                    show databasese;
+                </div>
+                <pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
+            </div>
+
+            <div id="sample02" class="sample">
+                <h3>데이터 베이스 만들기</h3>
+                <div class="info">
+                    create databases 이름;
+                </div>
+                <pre><code class="language-js">mysql> create database test;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+            </div>
+
+            <div id="sample03" class="sample">
+                <h3>데이터 베이스 삭제</h3>
+                <div class="info">
+                    drop databases 이름;
+                </div>
+                <pre><code class="language-js">mysql> drop database test;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
+            </div>
+
+            <div id="sample04" class="sample">
+                <h3>데이터 베이스 사용하기</h3>
+                <div class="info">
+                    use 이름
+                </div>
+                <pre><code class="language-js"> mysql> use test;
+Database changed</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

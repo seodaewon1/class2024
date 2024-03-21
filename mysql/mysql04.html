@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL01</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">MySQL</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="mysql01.html">MySQL</a></li>
+                <li><a href="mysql02.html">SQL 개념</a></li>
+                <li><a href="mysql03.html">데이터 베이스</a></li>
+                <li class="active"><a href="mysql04.html">테이블</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>테이블 만들기</h3>
+                <div class="info">
+                    create table 이름;
+                </div>
+                <pre><code class="language-js">mysql> create table members(
+    memberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(10) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(10) NOT NULL,
+    youAge int(5) NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY(memberID)
+) charset=utf8;
+Query OK, 0 rows affected (0.02 sec)
+</code></pre>
+            </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>
