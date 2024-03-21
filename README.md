@@ -1,5 +1,5 @@
 # 오늘의 수업   
-[인덱스 메인 페이지](https://seodaewon1.github.io/class2024/index.html)   
+[MySQL](https://seodaewon1.github.io/class2024/mysql/mysql01.html)
    
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
@@ -7,6 +7,8 @@
 [자바스크립트](https://seodaewon1.github.io/class2024/javascript/index.html)   
 
 [데이터 저장하기](https://seodaewon1.github.io/class2024/javascript/javascript01.html)   
+
+[인덱스 메인 페이지](https://seodaewon1.github.io/class2024/index.html)   
 
 # vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
