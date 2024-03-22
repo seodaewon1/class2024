@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "GmarketSans";
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 8px solid #c651e9;
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        main::before {
+            content: "";
+            border: 8px solid #cc76e6;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        main h1 {
+            font-size: 5vw;
+            margin-bottom: 3vw;
+            margin-top: 1vw;
+        }
+
+        main h1 a {
+            color: #c651e9;
+        }
+
+        main nav {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        main nav ul {
+            display: flex;
+        }
+
+        main nav ul li a {
+            display: inline-block;
+            font-size: 16px;
+            font-family: "nanumSquareNeo";
+            border: 1px dashed #cc76e6;
+            padding: 10px 20px;
+            margin: 2px;
+            color: #c651e9;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        main nav ul li a:hover {
+            border: 1px solid #cc76e6;
+            background-color: #cc76e6;
+            color: #fff;
+        }
+
+        #particles {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            filter: url("#goo");
+        }
+
+        .background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #edf3f8;
+        }
+
+        .circle {
+            fill: #e09af5;
+        }
+
+        svg {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            transform: translateZ(0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="effect">
+        <div id="particles"></div>
+        <div class="background"></div>
+        <svg>
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" />
+                    <feColorMatrix in="blur" result="colormatrix" type="matrix"
+                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" />
+                    <feBlend in="SourceGraphic" in2="colormatrix" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <main>
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">01</a></li>
+                <li><a href="quiz02.html">02</a></li>
+                <li><a href="quiz03.html">03</a></li>
+                <li><a href="quiz04.html">04</a></li>
+                <li><a href="quiz05.html">05</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        const circle = '<svg viewBox="0 0 67.4 67.4"><circle class="circle" cx="33.7" cy="33.7" r="33.7"/></svg>'
+
+        class Particle {
+
+            constructor(svg, coordinates, friction) {
+                this.svg = svg
+                this.steps = ($(window).height()) / 2
+                this.item = null
+                this.friction = friction
+                this.coordinates = coordinates
+                this.position = this.coordinates.y
+                this.dimensions = this.render()
+                this.move()
+                this.rotation = Math.random() > 0.5 ? "-" : "+"
+                this.scale = 0.4 + (Math.random() * 2)
+                this.siner = $(window).width() / 2.5 * Math.random()
+            }
+            destroy() {
+                this.item.remove()
+            }
+
+            move() {
+                this.position = this.position - this.friction
+                let top = this.position;
+                let left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner;
+                this.item.css({
+                    transform: "translateX(" + left + "px) translateY(" + top + "px) scale(" + this.scale + ") rotate(" + (this.rotation) + (this.position + this.dimensions.height) + "deg)"
+                })
+
+                if (this.position < -(this.dimensions.height)) {
+                    this.destroy()
+                    return false
+                } else {
+                    return true
+                }
+            }
+
+            render() {
+                this.item = $(this.svg, {
+                    css: {
+                        transform: "translateX(" + this.coordinates.x + "px) translateY(" + this.coordinates.y + "px)"
+                    }
+                })
+                $("#particles").append(this.item)
+                return {
+                    width: this.item.width(),
+                    height: this.item.height()
+                }
+            }
+        }
+
+
+        let isPaused = false;
+        window.onblur = function () {
+            isPaused = true;
+        }.bind(this)
+        window.onfocus = function () {
+            isPaused = false;
+        }.bind(this)
+
+        //-------------------------------
+        let particles = []
+
+        setInterval(function () {
+            if (!isPaused) {
+                particles.push(
+                    new Particle(circle, {
+                        "x": (Math.random() * $(window).width()),
+                        "y": $(window).height() + 100
+                    }, (1 + Math.random()))
+                )
+            }
+        }, 180)
+
+        function update() {
+            particles = particles.filter(function (p) {
+                return p.move()
+            })
+            requestAnimationFrame(update.bind(this))
+        }
+        update()
+    </script>
+</body>
+
+</html>

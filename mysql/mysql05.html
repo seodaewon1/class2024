@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL01</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">MySQL</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="mysql01.html">MySQL</a></li>
+                <li><a href="mysql02.html">SQL 개념</a></li>
+                <li><a href="mysql03.html">데이터 베이스</a></li>
+                <li><a href="mysql04.html">테이블</a></li>
+                <li class="active"><a href="mysql05.html">SELECT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>SELECT</h3>
+                <h4>전체 데이터 가져오기</h4>
+                <div class="info">
+                    SELECT * FROM members;
+                </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members3;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        1 | 황상연  | 1234    |     33 |   990304 | 1023958375 |
+|        2 | 남윤서  | 1234    |     19 |    60121 | 1023958375 |
+|        3 | 김진우  | 1234    |     21 |    40416 | 1231231233 |
+|        4 | 최선화  | 1234    |     26 |   990123 | 1104781152 |
+|        5 | 서대원  | 1234    |     26 |    11019 | 1111100000 |
+|        6 | 김현민  | 1234    |     32 |   930604 | 1023958375 |
+|        7 | 황인지  | 1234    |     20 |   990315 | 1474187756 |
+|        8 | 박정민  | 1234    |     29 |   961017 | 1023958375 |
+|        9 | 강서연  | 1234    |     27 |   980420 |  123456744 |
+|       10 | 이재혁  | 1215    |     24 |    10712 | 1023958375 |
+|       11 | 박소현  | 1234    |     29 |   960917 | 1231223123 |
+|       12 | 김혜지  | 1234    |     28 |   951002 |  123456789 |
+|       13 | 강경민  | 1234    |     28 |   970611 | 1023952467 |
+|       14 | 안지은  | 1234    |     33 |   840816 | 1023958375 |
+|       15 | 박진아  | 1232    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+15 rows in set (0.00 sec)</code></pre>
+
+                <h4>이름 데이터만 가져오기</h4>
+                <div class="info">
+                    SELECT youName FROM members;
+                </div>
+                <pre><code class="language-js">SELECT youName FROM members3;
++---------+
+| youName |
++---------+
+| 황상연  |
+| 남윤서  |
+| 김진우  |
+| 최선화  |
+| 서대원  |
+| 김현민  |
+| 황인지  |
+| 박정민  |
+| 강서연  |
+| 이재혁  |
+| 박소현  |
+| 김혜지  |
+| 강경민  |
+| 안지은  |
+| 박진아  |
++---------+
+15 rows in set (0.00 sec)</code></pre>
+
+                <h4>이름 + 나이 데이터만 가져오기</h4>
+                <div class="info">SELECT youName, youAge FROM members3;
+                </div>
+                <pre><code class="language-js">SELECT youName, youAge FROM members3;
++---------+--------+
+| youName | youAge |
++---------+--------+
+| 황상연  |     33 |
+| 남윤서  |     19 |
+| 김진우  |     21 |
+| 최선화  |     26 |
+| 서대원  |     26 |
+| 김현민  |     32 |
+| 황인지  |     20 |
+| 박정민  |     29 |
+| 강서연  |     27 |
+| 이재혁  |     24 |
+| 박소현  |     29 |
+| 김혜지  |     28 |
+| 강경민  |     28 |
+| 안지은  |     33 |
+| 박진아  |     33 |
++---------+--------+
+15 rows in set (0.00 sec)</code></pre>
+
+                <h4>memberID가 1인 데이터</h4>
+                <div class="info">
+                    SELECT * FROM members3 WHERE memberID = 1;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members3 WHERE memberID = 1;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        1 | 황상연  | 1234    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+1 row in set (0.00 sec)</code></pre>
+
+                <h4>memberID가 10보다 큰 데이터</h4>
+                <div class="info">SELECT * FROM members3 WHERE memberID > 10;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members3 WHERE memberID > 10;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|       11 | 박소현  | 1234    |     29 |   960917 | 1231223123 |
+|       12 | 김혜지  | 1234    |     28 |   951002 |  123456789 |
+|       13 | 강경민  | 1234    |     28 |   970611 | 1023952467 |
+|       14 | 안지은  | 1234    |     33 |   840816 | 1023958375 |
+|       15 | 박진아  | 1232    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+5 rows in set (0.00 sec)</code></pre>
+
+                <h4>memberID가 5보다 크고 10보다 작은 데이터</h4>
+                <div class="info">SELECT * FROM members3 WHERE memberID &GT; 5 AND memberID &lt; 10;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members3 WHERE memberID &GT; 5 AND memberID &lt; 10;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        6 | 김현민  | 1234    |     32 |   930604 | 1023958375 |
+|        7 | 황인지  | 1234    |     20 |   990315 | 1474187756 |
+|        8 | 박정민  | 1234    |     29 |   961017 | 1023958375 |
+|        9 | 강서연  | 1234    |     27 |   980420 |  123456744 |
++----------+---------+---------+--------+----------+------------+
+4 rows in set (0.00 sec)</code></pre>
+
+                <h4>memberID가 1, 5, 10 데이터(IN)</h4>
+                <div class="info">SELECT * FROM members3 WHERE memberID IN(1, 5, 10);
+                </div>
+                <pre><code class="language-js">SELECT * FROM members3 WHERE memberID IN(1, 5, 10);
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        1 | 황상연  | 1234    |     33 |   990304 | 1023958375 |
+|        5 | 서대원  | 1234    |     26 |    11019 | 1111100000 |
+|       10 | 이재혁  | 1215    |     24 |    10712 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+3 rows in set (0.00 sec)</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

@@ -21,6 +21,7 @@
                 <li><a href="mysql02.html">SQL 개념</a></li>
                 <li><a href="mysql03.html">데이터 베이스</a></li>
                 <li class="active"><a href="mysql04.html">테이블</a></li>
+                <li><a href="mysql05.html">SELECT</a></li>
             </ul>
         </nav>
     </header>
@@ -33,17 +34,53 @@
                 <div class="info">
                     create table 이름;
                 </div>
-                <pre><code class="language-js">mysql> create table members(
-    memberID int(10) unsigned auto_increment,
-    youEmail varchar(40) NOT NULL,
+                <pre><code class="language-js">create table members3(
+    memberID int(10) unsigned auto_increment, 
     youName varchar(10) NOT NULL,
-    youPass varchar(20) NOT NULL,
-    youBirth int(10) NOT NULL,
+    youPass varchar(10) NOT NULL,
     youAge int(5) NOT NULL,
+    youBirth int(5) NOT NULL,
     regTime int(30) NOT NULL,
-    PRIMARY KEY(memberID)
-) charset=utf8;
-Query OK, 0 rows affected (0.02 sec)</code></pre>
+    PRIMARY KEY( memberID)
+) charset=utf8;</code></pre>
+            </div>
+            <div id="sample02" class="sample">
+                <h3>테이블 구조 보기</h3>
+                <div class="info">
+                    desc 이름;
+                </div>
+                <pre><code class="language-js">mysql> desc members3;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| memberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youName  | varchar(10)      | NO   |     | NULL    |                |
+| youPass  | varchar(10)      | NO   |     | NULL    |                |
+| youAge   | int(5)           | NO   |     | NULL    |                |
+| youBirth | int(5)           | NO   |     | NULL    |                |
+| regTime  | int(30)          | NO   |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+</code></pre>
+            </div>
+            <div id="sample03" class="sample">
+                <h3>테이블 데이터 입력</h3>
+                <div class="info">
+                    INSERT INTO 테이블 이름(필드명) VALUES(값);
+                </div>
+                <pre><code class="language-js">INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("서대원", "1234", "24", "011019", "1111100000");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("황인지", "1234", "20", "990315", "1474187756");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김현민", "1234", "32", "930604", "1023958375");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("박정민", "1234", "29", "961017", "1023958375");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("이재혁", "1215", "24", "010712", "4023341221");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("강경민", "1234", "28", "970611", "1023952467");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("박진아", "1232", "33", "990304", "4515546985");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("안지은", "1234", "33", "840816", "1023958375");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김혜지", "1234", "28", "951002", "0123456789");
+INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김이현", "1234", "25", "001010", "1236543213");
+                    
+6 rows in set (0.00 sec)
+</code></pre>
             </div>
     </main>
     <!-- //main -->
