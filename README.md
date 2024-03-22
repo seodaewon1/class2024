@@ -1,5 +1,7 @@
 # 오늘의 수업   
-[Quiz](https://seodaewon1.github.io/class2024/quiz/index.html)
+[Quiz](https://seodaewon1.github.io/class2024/quiz/index.html)   
+
+[MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)  
    
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
@@ -10,7 +12,7 @@
    
 [인덱스 메인 페이지](https://seodaewon1.github.io/class2024/index.html)   
 
-[MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)   
+ 
 # vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   
