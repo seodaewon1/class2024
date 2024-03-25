@@ -4,8 +4,6 @@
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
 
-[자바스크립트]
-
 [데이터 저장하기](https://seodaewon1.github.io/class2024/javascript/javascript01.html)   
    
 [인덱스 메인 페이지](https://seodaewon1.github.io/class2024/index.html)   
