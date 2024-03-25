@@ -34,7 +34,7 @@
                 <div class="info">
                     create table 이름;
                 </div>
-                <pre><code class="language-js">create table members3(
+                <pre><code class="language-js">create table members(
     memberID int(10) unsigned auto_increment, 
     youName varchar(10) NOT NULL,
     youPass varchar(10) NOT NULL,
@@ -49,7 +49,7 @@
                 <div class="info">
                     desc 이름;
                 </div>
-                <pre><code class="language-js">mysql> desc members3;
+                <pre><code class="language-js">mysql> desc members;
 +----------+------------------+------+-----+---------+----------------+
 | Field    | Type             | Null | Key | Default | Extra          |
 +----------+------------------+------+-----+---------+----------------+
@@ -68,19 +68,38 @@
                 <div class="info">
                     INSERT INTO 테이블 이름(필드명) VALUES(값);
                 </div>
-                <pre><code class="language-js">INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("서대원", "1234", "24", "011019", "1111100000");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("황인지", "1234", "20", "990315", "1474187756");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김현민", "1234", "32", "930604", "1023958375");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("박정민", "1234", "29", "961017", "1023958375");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("이재혁", "1215", "24", "010712", "4023341221");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("강경민", "1234", "28", "970611", "1023952467");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("박진아", "1232", "33", "990304", "4515546985");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("안지은", "1234", "33", "840816", "1023958375");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김혜지", "1234", "28", "951002", "0123456789");
-INSERT INTO members3(youName, youPass, youAge, youBirth, regTime) VALUES("김이현", "1234", "25", "001010", "1236543213");
-                    
-6 rows in set (0.00 sec)
+                <pre><code class="language-js">INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황상연", "1234", "33", "990304", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("남윤서", "1234", "19", "060121", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김진우", "1234", "21", "040416", "1231231233");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("최선화", "1234", "26", "990123", "1104781152");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("서대원", "1234", "26", "011019", "1111100000");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김현민", "1234", "32", "930604", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황인지", "1234", "20", "990315", "1474187756");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박정민", "1234", "29", "961017", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("강서연", "1234", "27", "980420", "0123456744");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("이재혁", "1215", "24", "010712", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박소현", "1234", "29", "960917", "1231223123");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김혜지", "1234", "28", "951002", "0123456789");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("강경민", "1234", "28", "970611", "1023952467");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("안지은", "1234", "33", "840816", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박진아", "1232", "33", "990304", "1023958375");
 </code></pre>
+            </div>
+            <div id="sample04" class="sample">
+                <h3>테이블 삭제</h3>
+                <div class="info">
+                    drop table 이름
+                </div>
+                <pre><code class="language-js">drop table members;
+Query OK, 0 rows affected (0.01 sec)</code></pre>
+            </div>
+            <div id="sample05" class="sample">
+                <h3>테이블 초기화</h3>
+                <div class="info">
+                    truncate table 이름
+                </div>
+                <pre><code class="language-js">truncate table members;
+Query OK, 0 rows affected (0.01 sec)</code></pre>
             </div>
     </main>
     <!-- //main -->
