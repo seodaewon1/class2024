@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 01</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 문제정보
+        const infoDate = "2021년 1회";
+        const infoType = "정보처리기능사";
+        const infoNum = "01";
+        const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+        const infoAnswer = "MIPS";
+        const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000개의 연산을 수행하는 것을 의미합니다.";
+
+        //문제 출력
+        document.querySelector(".quiz__header .date").innerText = infoDate;
+        document.querySelector(".quiz__header .type").innerText = infoType;
+        document.querySelector(".quiz__main .question em").innerText = infoNum;
+        document.querySelector(".quiz__main .question span").innerText = infoQuestion;
+        document.querySelector(".quiz__main .answer").innerText = infoAnswer;
+        document.querySelector(".quiz__main .desc").innerText = infoDesc;
+
+        //정답 확인하기
+        document.querySelector(".quiz__footer .confirm").addEventListener("click", function () {
+            const userAnswer = document.querySelector(".quiz__main input").value; //사용자가 쓴 정답
+
+            // 사용자 정답과 실제 정답을 확인
+            if (infoAnswer == userAnswer) {
+                alert("정답입니다.");
+            } else {
+                alert("오답입니다.");
+            }
+            // 정답과 설명을 보여주기
+            document.querySelector(".quiz__main .answer").classList.remove("none")
+            document.querySelector(".quiz__main .desc").classList.remove("none")
+        });
+    </script>
+</body>
+
+</html>
