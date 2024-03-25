@@ -13,9 +13,9 @@
 ## 퀴즈게임
 [퀴즈게임](https://seodaewon1.github.io/class2024/quiz/index.html)   
 [퀴즈01](https://seodaewon1.github.io/class2024/quiz/quiz01.html)   
--변수
--선택자(querySelector)
--메서드(innerText(), classList, addEventListener, if문)
+-변수   
+-선택자(querySelector)   
+-메서드(innerText(), classList, addEventListener, if문)   
 
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
