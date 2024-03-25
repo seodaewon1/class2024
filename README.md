@@ -1,6 +1,5 @@
 # 오늘의 수업   
 
-   
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
    
