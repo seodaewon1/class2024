@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL01</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">MySQL</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="mysql01.html">MySQL</a></li>
+                <li><a href="mysql02.html">SQL 개념</a></li>
+                <li><a href="mysql03.html">데이터 베이스</a></li>
+                <li><a href="mysql04.html">테이블</a></li>
+                <li><a href="mysql05.html">SELECT</a></li>
+                <li class="active"><a href="mysql06.html">ALTER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>ALTER</h3>
+                <h4>필드 추가하기</h4>
+                <div class="info">
+                    ALTER TABLE [테이블 이름] ADD [추가할 필드명] AFTER [필드위치]
+                </div>
+
+                <h4>휴대폰 필드 유형 추가하기</h4>
+                <pre><code class="language-js">ALTER TABLE members ADD youPhone varchar(20) NOT NULL;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0</code></pre>
+
+                <h4>멤버 테이플에 주소를 생일 뒤에 추가</h4>
+                <pre><code class="language-js">ALTER TABLE members ADD youAddres varchar(100) NOT NULL AFTER youBirth;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0</code></pre>
+
+                <h4>필드 수정하기</h4>
+                <div class="info">
+                    ALTER TABLE [테이블 이름] MODIFY [수정할 필드명]
+                </div>
+
+                <h4>휴대폰 필드 유형 수정하기</h4>
+                <pre><code class="language-js">ALTER TABLE members MODIFY youPhone int(20) NOT NULL;
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0</code></pre>
+
+                <h4>필드 삭제하기</h4>
+                <div class="info">
+                    ALTER TABLE [테이블 이름] drop [수정할 필드명]
+                </div>
+
+                <h4>주소 필드 삭제하기</h4>
+                <pre><code class="language-js">mysql> ALTER TABLE members DROP youAddres;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc members;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| memberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youName  | varchar(10)      | NO   |     | NULL    |                |
+| youPass  | varchar(10)      | NO   |     | NULL    |                |
+| youAge   | int(5)           | NO   |     | NULL    |                |
+| youBirth | int(5)           | NO   |     | NULL    |                |
+| regTime  | int(30)          | NO   |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

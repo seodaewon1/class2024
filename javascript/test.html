@@ -11,54 +11,127 @@
     <script>
         // 01. 함수: 선언적 함수
         {
-            function func() {
-                console.log("01. 함수를 실행하였습니다.");
+            function test() {
+                console.log("01. 함수 실행");
             }
-            func();
+            test();
         }
         // 02. 함수: 익명 함수
         {
-            const func = function () {
-                console.log("02. 함수를 실행하였습니다.");
+            const test = function () {
+                console.log("02. 함수 실행");
             }
-            func();
+            test();
         }
         // 03. 함수: 매개변수
         {
-            function func(str) {
+            function test(str) {
                 console.log(str);
             }
-            func("03. 함수를 실행하였습니다.");
+            test("03. 함수 실행")
         }
         // 04. 함수: 리턴함수
         {
-            function func() {
-                return "04. 함수를 실행하였습니다."
+            function test() {
+                return "04. 함수 실행";
             }
-            console.log(func());
+            console.log(test());
         }
-        {
-            //익명
-            const func1 = function () {
-                return "04. 함수를 실행하였습니다."
-            }
-            console.log(func1());
-        }
-
         // 05. 함수: 매개변수 + 리턴함수
         {
-            function func(str) {
+            function test(str) {
                 return str;
             }
-            console.log(func("05. 함수를 실행하였습니다."))
+            console.log(test("05. 함수 실행"))
         }
+        // 06. 화살표 함수 : 선언적 함수
         {
-            //익명
-            const func1 = function (str) {
+            test = () => {
+                console.log("06. 함수 실행");
+            }
+            test();
+        }
+        // 07. 화살표 함수 : 익명 함수
+        {
+            test = (str) => {
+                console.log(str);
+            }
+            test("07. 함수 실행")
+        }
+        // 08. 화살표 함수 : 매개변수
+        {
+            test = (str) => {
+                console.log(str);
+            }
+            test("08. 함수 실행")
+        }
+        // 09. 화살표 함수 : 리턴함수
+        {
+            test = () => {
+                return "09. 함수 실행";
+            }
+            console.log(test());
+        }
+        // 10. 화살표 함수 : 매개변수 + 리턴함수
+        {
+            test = (str) => {
                 return str;
             }
-            console.log(func1("05. 함수를 실행하였습니다."))
+            console.log(test("10. 함수 실행"))
         }
+        // 11. for문
+        {
+            const test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("11. 함수 실행");
+            for (i = 0; i < test.length; i++) {
+                console.log(test[i]);
+            }
+        }
+        // 12. forEach()
+        {
+            const test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("12. 함수 실행");
+            test.forEach(function (element) {
+                console.log(element)
+            });
+        }
+
+        // 13. for of()
+        {
+            const test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("13. 함수 실행");
+            for (let element of test) {
+                console.log(element);
+            }
+        }
+
+
+        // 14. for in()
+        {
+            const test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("14. 함수 실행");
+            for (let element in test) {
+                console.log(element);
+            }
+        }
+
+
+        // 15. map()
+        {
+            const test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("15. 함수 실행");
+            test.map(function (element) {
+                console.log(element)
+            });
+        }
+
+
+
     </script>
 </body>
 

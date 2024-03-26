@@ -1,4 +1,6 @@
 # 오늘의 수업   
+[퀴즈02](https://seodaewon1.github.io/class2024/quiz/quiz02.html)   
+[자바스크립트02](https://seodaewon1.github.io/class2024/javascript/javascript02.html)   
 
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
