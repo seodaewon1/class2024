@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사</title>
+    <link href="https://webfontworld.github.io/earlyfont/EF_Macho.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
+    <style>
+        /* 여백 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            display: flex;
+        }
+
+        #side {
+            width: 300px;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        #side h2 {
+            font-family: 'EF_Macho';
+            font-size: 18px;
+            margin: 20px 5px;
+            color: #895f96;
+        }
+
+        #side nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #side nav ul li {
+            list-style: none;
+        }
+
+        #side nav ul li a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #666;
+            text-align: center;
+            text-decoration: none;
+            color: #666;
+            font-family: "GmarketSans";
+            margin: 3px;
+            font-size: 14px;
+        }
+
+        #side nav ul li a:hover {
+            background-color: #433249;
+            color: #fff;
+        }
+
+        #side nav ul li.active a {
+            background-color: #e1b7f0;
+        }
+
+        #content {
+            width: calc(100% - 300px);
+            height: 100vh;
+            background-color: #f3cc91;
+        }
+
+        #content iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="side">
+            <h2>webdesign</h2>
+            <nav>
+                <ul>
+                    <li class="active"><a href="layoutA-1.html">A-1</a></li>
+                    <li><a href="layoutA-2.html">A-2</a></li>
+                    <li><a href="layoutA-3.html">A-3</a></li>
+                    <li><a href="layoutA-4.html">A-4</a></li>
+
+                    <li><a href="layoutB-1.html">B-1</a></li>
+                    <li><a href="layoutB-2.html">B-2</a></li>
+                    <li><a href="layoutB-3.html">B-3</a></li>
+                    <li><a href="layoutB-4.html">B-4</a></li>
+
+                    <li><a href="layoutC-1.html">C-1</a></li>
+                    <li><a href="layoutC-2.html">C-2</a></li>
+                    <li><a href="layoutC-3.html">C-3</a></li>
+                    <li><a href="layoutC-4.html">C-4</a></li>
+
+                    <li><a href="layoutD-1.html">D-1</a></li>
+                    <li><a href="layoutD-2.html">D-2</a></li>
+                    <li><a href="layoutD-3.html">D-3</a></li>
+                    <li><a href="layoutD-4.html">D-4</a></li>
+
+                    <li><a href="layoutE-1.html">E-1</a></li>
+                    <li><a href="layoutE-2.html">E-2</a></li>
+                    <li><a href="layoutE-3.html">E-3</a></li>
+                    <li><a href="layoutE-4.html">E-4</a></li>
+
+                    <li><a href="layoutF-1.html">F-1</a></li>
+                    <li><a href="layoutF-2.html">F-2</a></li>
+                    <li><a href="layoutF-3.html">F-3</a></li>
+                    <li><a href="layoutF-4.html">F-4</a></li>
+                </ul>
+                <ul>
+                    <li><a href="menuM-1.html">M-1</a></li>
+                    <li><a href="menuM-2.html">M-2</a></li>
+                    <li><a href="menuM-3.html">M-3</a></li>
+                    <li><a href="menuM-4.html">M-4</a></li>
+                    <li><a href="menuM-5.html">M-5</a></li>
+                    <li><a href="menuM-6.html">M-6</a></li>
+                </ul>
+                <ul>
+                    <li><a href="sliderS-1.html">S-1</a></li>
+                    <li><a href="sliderS-2.html">S-2</a></li>
+                    <li><a href="sliderS-3.html">S-3</a></li>
+                    <li><a href="sliderS-4.html">S-4</a></li>
+                    <li><a href="sliderS-5.html">S-5</a></li>
+                    <li><a href="sliderS-6.html">S-6</a></li>
+                </ul>
+                <ul>
+                    <li><a href="tab.html">T-1</a></li>
+                    <li><a href="popup.html">P-1</a></li>
+                </ul>
+                <ul>
+                    <li><a href="site1.html">site1</a></li>
+                    <li><a href="site2.html">site2</a></li>
+                    <li><a href="site3.html">site3</a></li>
+                    <li><a href="site4.html">site4</a></li>
+                    <li><a href="site5.html">site5</a></li>
+                    <li><a href="site6.html">site6</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <iframe src="index.html" frameborder="0"></iframe>
+        </main>
+    </div>
+</body>
+
+</html>
