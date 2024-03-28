@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 03</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li class="active"><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                </div>
+                <div class="quiz__main">
+                    <div class="question"></div>
+                    <div class="choices">
+                        <label for="choices1">
+                            <input type="radio" id="choices1" name="1" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choices2">
+                            <input type="radio" id="choices2" name="1" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choices3">
+                            <input type="radio" id="choices3" name="1" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choices4">
+                            <input type="radio" id="choices4" name="1" value="4">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizHeader = quizWrap.querySelector(".quiz__header");
+        const quizQuestion = quizWrap.querySelector(".quiz__main .question");
+        const quizchoices = quizWrap.querySelector(".quiz__main .choices");
+        const quizAnswer = quizWrap.querySelector(".quiz__main .answer");
+        const quizDesc = quizWrap.querySelector(".quiz__main .desc");
+        const quizConfirm = quizWrap.querySelector(".quiz__footer .confirm");
+
+        // 문제 정보
+        const quizInfo = {
+            date: "2011년 1회",
+            type: "정보처리기능사",
+            num: "01",
+            question: "기억 장치 고유의 번지로서 0, 1, 2, 3, ...과 같이 16진수로 약속하여 순서대로 정해 놓은 번지는?",
+            answer: "3",
+            choices: ["직접번지", "번지점프", "절대번지", "주소번지"],
+            desc: "절대번지는 처음부터 순서대로 0, 1, 2, 3 과같이 주소를 부여 하는 방식입니다.."
+        }
+
+        // 문제 출력
+        quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
+        quizQuestion.innerHTML = quizInfo.num + " " + quizInfo.question;
+    </script>
+</body>
+
+</html>

@@ -197,6 +197,63 @@ body::after {
     line-height: 1.4;
 }
 
+.quiz__main .choices {
+    margin-bottom: 20px;
+}
+
+.quiz__main .choices label {
+    display: block;
+    width: 100%;
+}
+
+.quiz__main .choices label input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.quiz__main .choices label input:checked+span::before {
+    box-shadow: inset 0 0 0 9px #ec9090;
+}
+
+.quiz__main .choices label input:checked+span {
+    border: #c5a0a0;
+    color: #db6b6b;
+    box-shadow: 1px 1px 5px #ebd9d9;
+    background-color: #fdd1d1;
+}
+
+.quiz__main .choices label span {
+    border: 1px solid #d6d6d6;
+    padding: 17px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quiz__main .choices label span:hover {
+    border-color: #ec9090;
+    color: #e79090;
+    box-shadow: 1px 1px 5px rgba(221, 45, 45, 0.451)
+}
+
+.quiz__main .choices label span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 4px #e79090;
+    margin-right: 13px;
+}
+
 .quiz__main .input input {
     width: 100%;
     padding: 20px;
