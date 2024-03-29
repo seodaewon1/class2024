@@ -1,10 +1,5 @@
 # 오늘의 수업   
-[퀴즈03](https://seodaewon1.github.io/class2024/quiz/quiz03.html)   
-
-[레이아웃](https://seodaewon1.github.io/class2024/webd/cate.html)   
-
-[자바스크립트02](https://seodaewon1.github.io/class2024/javascript/javascript02.html)   
-
+[MySQL](https://seodaewon1.github.io/class2024/mysql/mysql05.html)  
 # GIT HUB   
 [메인 페이지](https://seodaewon1.github.io/class2024/)   
    
@@ -25,6 +20,8 @@
 - 선택자(querySelecotorAll())   
 - 반복문(for(), forEach())   
 - 메서드(innerHTML(), classList.add addEventListener, if문)   
+- 
+- [퀴즈03](https://seodaewon1.github.io/class2024/quiz/quiz03.html)   
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   
