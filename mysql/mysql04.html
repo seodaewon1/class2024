@@ -108,9 +108,7 @@ Query OK, 0 rows affected (0.01 sec)</code></pre>
                 <div class="info">
                     SELECT [필드명] FROM [테이블.앨리어스] JOIN [테이블.앨리어스] ON [기준이 되는 조건문];
                 </div>
-                <pre><code class="language-js">
-                    SELECT m.youName, m.youAge, r.youText, r.regTime FROM members m join review r on(m.memberID = r.reviewID);
-                </code></pre>
+                <pre><code class="language-js">SELECT m.youName, m.youAge, r.youText, r.regTime FROM members m join review r on(m.memberID = r.reviewID);</code></pre>
                 <pre><code class="language-js">SELECT m.youName, m.youAge, r.youText, r.regTime FROM members m JOIN reviews r ON (m.memberID = r.memberID);
 +---------+--------+-------------------+------------+
 | youName | youAge | youText           | regTime    |

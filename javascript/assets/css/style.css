@@ -188,6 +188,10 @@ li {
 #header nav ul li {
     margin: 2px;
 }
+#header nav ul li.active a{
+    background-color: #2f2d68;
+    color: #fff;
+}
 
 #header nav ul li a {
     font-family: var(--fontN);
@@ -195,6 +199,7 @@ li {
     padding: 10px 20px;
     display: inline-block;
     color: #161366;
+    transition: all 0.3s;
 }
 
 /* 메인 - 메뉴 */

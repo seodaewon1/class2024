@@ -175,7 +175,7 @@ li {
 #header {
     text-align: center;
     padding: 40px;
-    border-bottom: 1px dashed #008cff;
+    border-bottom: 1px dashed #125d7a;
     margin-bottom: 40px;
 }
 
@@ -268,7 +268,7 @@ li {
 }
 
 .main__sample .sample li {
-    color: var(--fontN);
+    font-family: var(--fontN);
     color: var(--black300);
     line-height: 1.8;
     list-style: square;
@@ -281,7 +281,7 @@ li {
 
 .main__sample .sample .info {
     padding: 20px;
-    background-color: #ece1e1;
+    background-color: #fff0f0;
     border-left: 3px solid #40c4ec;
     font-family: var(--fontN);
 }
