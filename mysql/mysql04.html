@@ -103,6 +103,74 @@ Query OK, 0 rows affected (0.01 sec)</code></pre>
                 <pre><code class="language-js">truncate table members;
 Query OK, 0 rows affected (0.01 sec)</code></pre>
             </div>
+            <div id="sample06" class="sample">
+                <h3>테이블 합치기</h3>
+                <div class="info">
+                    SELECT [필드명] FROM [테이블.앨리어스] JOIN [테이블.앨리어스] ON [기준이 되는 조건문];
+                </div>
+                <pre><code class="language-js">
+                    SELECT m.youName, m.youAge, r.youText, r.regTime FROM members m join review r on(m.memberID = r.reviewID);
+                </code></pre>
+                <pre><code class="language-js">SELECT m.youName, m.youAge, r.youText, r.regTime FROM members m JOIN reviews r ON (m.memberID = r.memberID);
++---------+--------+-------------------+------------+
+| youName | youAge | youText           | regTime    |
++---------+--------+-------------------+------------+
+| 김진우  |     21 | 정말 감사합니다   | 1023958375 |
+| 황상연  |     33 | 진짜 감사합니다   | 1023958375 |
+| 김현민  |     32 | 리얼 감사합니다   | 1023958375 |
+| 강경민  |     28 | 안 감사합니다     | 1023958375 |
+| 남윤서  |     19 | 구독 감사합니다   | 1023958375 |
+| 최선화  |     26 | 그냥 감사합니다   | 1023958375 |
+| 서대원  |     26 | 혼또니 감사합니다 | 1023958375 |
+| 박정민  |     29 | 조금 감사합니다   | 1023958375 |
+| 김혜지  |     28 | 많이 감사합니다   | 1023958375 |
+| 이재혁  |     24 | 매니 감사합니다   | 1023958375 |
++---------+--------+-------------------+------------+
+10 rows in set (0.00 sec)</code></pre>
+                <pre><code class="language-js">create table members(
+memberID int(10) unsigned auto_increment, 
+youName varchar(10) NOT NULL,
+youPass varchar(10) NOT NULL,
+youAge int(5) NOT NULL,
+youBirth int(5) NOT NULL,
+regTime int(30) NOT NULL,
+PRIMARY KEY( memberID)
+) charset=utf8;
+
+create table reviews(
+reviewID int(10) unsigned auto_increment,
+memberID int(10) unsigned,
+youText tinytext NOT NULL,
+regTime int(30) NOT NULL,
+PRIMARY KEY( reviewID)
+) charset=utf8;
+
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황상연", "1234", "33", "990304", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("남윤서", "1234", "19", "060121", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김진우", "1234", "21", "040416", "1231231233");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("최선화", "1234", "26", "990123", "1104781152");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("서대원", "1234", "26", "011019", "1111100000");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김현민", "1234", "32", "930604", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황인지", "1234", "20", "990315", "1474187756");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박정민", "1234", "29", "961017", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("강서연", "1234", "27", "980420", "0123456744");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("이재혁", "1215", "24", "010712", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박소현", "1234", "29", "960917", "1231223123");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김혜지", "1234", "28", "951002", "0123456789");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("강경민", "1234", "28", "970611", "1023952467");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("안지은", "1234", "33", "840816", "1023958375");
+INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박진아", "1232", "33", "990304", "1023958375");
+            
+INSERT INTO reviews(memberID, youText, regTime) VALUES("3", "정말 감사합니다", "1023958375");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("1", "진짜 감사합니다", "1023958375");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("6", "리얼 감사합니다", "1231231233");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("13", "안 감사합니다", "1104781152");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "구독 감사합니다", "1111100000");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "감사합니다", "1474187756");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("5", "혼또니 감사합니다", "1231223123");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("8", "조금 감사합니다", "1023958375");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("12", "많이 감사합니다", "1023958375");
+INSERT INTO reviews(memberID, youText, regTime) VALUES("10", "매니 감사합니다", "1023958375");</code></pre>
     </main>
     <!-- //main -->
 

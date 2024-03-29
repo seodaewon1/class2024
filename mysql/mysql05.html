@@ -378,6 +378,120 @@
 |       12 | 김혜지  | 1234    |     28 |   951002 |  123456789 |
 +----------+---------+---------+--------+----------+------------+
 4 rows in set (0.00 sec)</code></pre>
+
+                <h4>데이터를 5개만 불러오기</h4>
+                <div class="info">
+                    SELECT * FROM members LIMIT 5;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members LIMIT 5;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        1 | 황상연  | 1234    |     33 |   990304 | 1023958375 |
+|        2 | 남윤서  | 1234    |     19 |    60121 | 1023958375 |
+|        3 | 김진우  | 1234    |     21 |    40416 | 1231231233 |
+|        4 | 최선화  | 1234    |     26 |   990123 | 1104781152 |
+|        5 | 서대원  | 1234    |     26 |    11019 | 1111100000 |
++----------+---------+---------+--------+----------+------------+
+5 rows in set (0.00 sec)</code></pre>
+
+                <h4>데이터를 5개만 불러오기(6번~10번)</h4>
+                <div class="info">
+                    SELECT * FROM members LIMIT 5, 5;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members LIMIT 5, 5;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        6 | 김현민  | 1234    |     32 |   930604 | 1023958375 |
+|        7 | 황인지  | 1234    |     20 |   990315 | 1474187756 |
+|        8 | 박정민  | 1234    |     29 |   961017 | 1023958375 |
+|        9 | 강서연  | 1234    |     27 |   980420 |  123456744 |
+|       10 | 이재혁  | 1215    |     24 |    10712 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+5 rows in set (0.00 sec)</code></pre>
+
+                <h4>데이터를 5개만 불러오기(11번~15번)</h4>
+                <div class="info">
+                    SELECT * FROM members LIMIT 10, 5;
+                </div>
+                <pre><code class="language-js">SELECT * FROM members LIMIT 10, 5;
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|       11 | 박소현  | 1234    |     29 |   960917 | 1231223123 |
+|       12 | 김혜지  | 1234    |     28 |   951002 |  123456789 |
+|       13 | 강경민  | 1234    |     28 |   970611 | 1023952467 |
+|       14 | 안지은  | 1234    |     33 |   840816 | 1023958375 |
+|       15 | 박진아  | 1232    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+5 rows in set (0.00 sec)</code></pre>
+
+                <h4>이름 필드 데이터 총 갯수 불러오기</h4>
+                <div class="info">
+                    SELECT count(*) FROM members;
+                </div>
+                <pre><code class="language-js">SELECT  count(*) FROM members;
++----------+
+| count(*) |
++----------+
+|       15 |
++----------+
+1 row in set (0.00 sec)</code></pre>
+                <h4>youName 필드 데이터 총 갯수 불러오기</h4>
+                <div class="info">
+                    SELECT count(youName) FROM members;
+                </div>
+                <pre><code class="language-js">SELECT count(youName) FROM members;
++----------------+
+| count(youName) |
++----------------+
+|             15 |
++----------------+
+1 row in set (0.00 sec)</code></pre>
+                <h4>나이 불러오기(중복된 나이 제거)</h4>
+                <div class="info">
+                    SELECT DISTINCT youAge FROM members;
+                </div>
+                <pre><code class="language-js">SELECT DISTINCT youAge FROM members;
++--------+
+| youAge |
++--------+
+|     33 |
+|     19 |
+|     21 |
+|     26 |
+|     32 |
+|     20 |
+|     29 |
+|     27 |
+|     24 |
+|     28 |
++--------+
+10 rows in set (0.00 sec)</code></pre>
+                <h4>나이가 25살 이상, 성이 황씨인 사람</h4>
+                <div class="info">
+                    SELECT * FROM members WHERE youAge >= 25 AND youName like "황%";
+                </div>
+                <pre><code class="language-js">SELECT * FROM members WHERE youAge > 25 AND youName like "황%";
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|        1 | 황상연  | 1234    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+1 row in set (0.00 sec)</code></pre>
+                <h4>나이가 30살 이상, memberID가 2 또는 15인 멤버</h4>
+                <div class="info">
+                    SELECT * FROM members WHERE youAge >= 30 AND (memberID = 2 OR memberID = 15);
+                    SELECT * FROM members WHERE youAge >= 30 AND memberID IN(2,15);
+                </div>
+                <pre><code class="language-js">SELECT * FROM members WHERE youAge >= 30 AND (memberID = 2 OR memberID = 15);
++----------+---------+---------+--------+----------+------------+
+| memberID | youName | youPass | youAge | youBirth | regTime    |
++----------+---------+---------+--------+----------+------------+
+|       15 | 박진아  | 1232    |     33 |   990304 | 1023958375 |
++----------+---------+---------+--------+----------+------------+
+1 row in set (0.00 sec)</code></pre>
             </div>
         </div>
     </main>
