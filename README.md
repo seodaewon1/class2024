@@ -23,7 +23,7 @@
 - 선택자(querySelecotorAll())   
 - 반복문(for(), forEach())   
 - 메서드(innerHTML(), classList.add addEventListener, if문)   
-- 
+
 [퀴즈03](https://seodaewon1.github.io/class2024/quiz/quiz03.html)   
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
