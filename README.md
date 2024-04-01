@@ -4,9 +4,7 @@
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
-[메인 페이지](https://seodaewon1.github.io/class2024/)   
-   
-[인덱스 메인 페이지](https://seodaewon1.github.io/class2024/index.html)   
+[메인 페이지](https://seodaewon1.github.io/class2024/)     
 
 [MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)  
 
