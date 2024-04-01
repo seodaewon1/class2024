@@ -1,5 +1,5 @@
 # 오늘의 수업   
-[MySQL](https://seodaewon1.github.io/class2024/mysql/mysql05.html)  
+[퀴즈04](https://seodaewon1.github.io/class2024/quiz/quiz04.html)    
 
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
@@ -38,4 +38,5 @@ ES7 : 자바스크립트 및 리액트 문법 정리
 
 ### 생삭 관련된 사이트
 [브랜드 색상 제너레이션](https://huemint.com/brand-intersection/)   
+
 [소스 변경](https://www.sassmeister.com/)   
