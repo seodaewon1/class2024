@@ -39,8 +39,8 @@
                 <li><a href="#">08. 배열 : 데이터 불러오기 : for in</a></li>
                 <li><a href="#">09. 배열 : 데이터 불러오기 : map()</a></li>
                 <li><a href="#">10. 배열 : 데이터 불러오기 : filter()</a></li>
-                <li><a href="#">11. 배열 : 데이터 불러오기 : 배열펼침연산자</a></li>
-                <li><a href="#">12. 배열 : 데이터 불러오기 : 배열구조분해할당</a></li>
+                <li><a href="#">11. 배열 : 데이터 불러오기 : 배열구조분해할당</a></li>
+                <li><a href="#">12. 배열 : 데이터 불러오기 : 배열펼침연산자</a></li>
 
                 <li><a href="#">13. 객체 : 데이터 불러오기 : 기본</a></li>
                 <li><a href="#">14. 객체 : 데이터 불러오기 : Object.keys</a></li>
@@ -49,8 +49,8 @@
                 <li><a href="#">17. 객체 : 데이터 불러오기 : Object.assign</a></li>
                 <li><a href="#">18. 객체 : 데이터 불러오기 : hasOwnProperty</a></li>
                 <li><a href="#">19. 객체 : 데이터 불러오기 : for in</a></li>
-                <li><a href="#">20. 객체 : 데이터 불러오기 : 객체 펼침연산자</a></li>
-                <li><a href="#">21. 객체 : 데이터 불러오기 : 객체 구조분해할당</a></li>
+                <li><a href="#">20. 객체 : 데이터 불러오기 : 객체 구조분해할당</a></li>
+                <li><a href="#">21. 객체 : 데이터 불러오기 : 객체 펼침연산자</a></li>
 
                 <li><a href="#">22. 서버 : 데이터 불러오기 : XMLHttpRequest</a></li>
                 <li><a href="#">23. 서버 : 데이터 불러오기 : fetch API</a></li>
@@ -80,7 +80,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe01 -->
+            <!-- //sample01 -->
             <div id="sample02" class="sample">
                 <h3>02. 상수 : 데이터 불러오기</h3>
                 <p>
@@ -103,7 +103,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe02 -->
+            <!-- //sample02 -->
             <div id="sample03" class="sample">
                 <h3>03. 배열 : 데이터 불러오기</h3>
                 <p>
@@ -126,7 +126,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe03 -->
+            <!-- //sample03 -->
             <div id="sample04" class="sample">
                 <h3>04. 배열 : 데이터 불러오기 : 갯수</h3>
                 <p>
@@ -148,7 +148,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe04 -->
+            <!-- //sample04 -->
             <div id="sample05" class="sample">
                 <h3>05. 배열 : 데이터 불러오기 : for()문</h3>
                 <p>
@@ -179,7 +179,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe05 -->
+            <!-- //sample05 -->
             <div id="sample06" class="sample">
                 <h3>06. 배열 : 데이터 불러오기 : forEach</h3>
                 <p>
@@ -252,7 +252,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe06 -->
+            <!-- //sample06 -->
             <div id="sample07" class="sample">
                 <h3>07. 배열 : 데이터 불러오기 : for of</h3>
                 <p>
@@ -282,7 +282,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe07 -->
+            <!-- //sample07 -->
             <div id="sample08" class="sample">
                 <h3> 08. 배열 : 데이터 불러오기 : for in</h3>
                 <p>
@@ -313,7 +313,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe08 -->
+            <!-- //sample08 -->
             <div id="sample09" class="sample">
                 <h3> 09. 배열 : 데이터 불러오기 : map()</h3>
                 <p>
@@ -372,7 +372,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe09 -->
+            <!-- //sample09 -->
             <div id="sample10" class="sample">
                 <h3> 10. 배열 : 데이터 불러오기 : filter()</h3>
                 <p>
@@ -424,7 +424,162 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe10 -->
+            <!-- //samlpe10 -->
+            <div id="sample11" class="sample">
+                <h3> 11. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</h3>
+                <p>
+                    배열 구조 분해 할당은 배열의 각 요소를 변수에 할당하는 간편한 방법을 제공합니다.
+                    Rest 연산자 사용: 배열의 일부 요소만 변수에 할당하고, 나머지 요소들을 다른 배열에 할당할 수 있습니다.
+                    함수 매개변수에서의 사용: 함수를 호출할 때 배열 구조 분해 할당을 사용하여 매개변수를 전달할 수 있습니다.
+                </p>
+                <pre><code>{
+    const arr = [100, 200, "javascipt"];
+    const [a, b, c] = arr;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+{
+    // 선언에서 분리한 할당
+    const [a, b, c] = [100, 200, "javascipt"];
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+{
+    // 기본 값 설정
+    const [a, b, c = "javascript"] = [100, 200];
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+{
+    // 배열 일부 요소 무시
+    const [a, , b] = [100, 200, "javascript"];
+
+    console.log(a);
+    console.log(b);
+}
+{
+    // 나머지 값 할당
+    const [a, b, ...reset] = [100, 200, "javascript", "jquery"];
+
+    console.log(a);
+    console.log(b);
+    console.log(...reset);
+}
+{
+    // 변수 값 교환
+    let a = 100, b = 200;
+    [a, b] = [b, a];
+
+    console.log(a);
+    console.log(b);
+}
+{
+    // 다차원 배열 펼침 연산자
+
+    const [a, [b, c]] = [1, [2, "javascript"]];
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript jquery<br>
+                            200<br>
+                            100<br>
+                            1<br>
+                            2<br>
+                            javascript<br>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample11 -->
+            <div id="sample12" class="sample">
+                <h3> 12. 배열 : 데이터 불러오기 : 배열 펼침 연산자(Spread Operator)</h3>
+                <p>
+                    배열 펼침 연산자는 ...로 표현됩니다. 이 연산자를 사용하면 배열, 문자열, 객체 등 반복 가능한 객체(Iterable Object)를 개별 요소로 분리할 수 있습니다.<br>
+                    배열 병합: 두 개 이상의 배열을 쉽게 하나로 병합할 수 있습니다.<br>
+                    함수 인자에서의 사용: 함수가 여러 개의 인자를 받을 때, 배열 펼침 연산자를 사용하여 배열의 요소를 개별 인자로 전달할 수 있습니다.<br>
+                    문자열에서의 사용: 문자열에 배열 펼침 연산자를 사용하면, 문자열의 각 문자를 배열의 요소로 분리할 수 있습니다.<br>
+                </p>
+                <pre><code>{
+    {
+        // 배열 복사
+        const arr = [100, 200, "javascript"];
+        const copy = [...arr];
+
+        console.log(arr);
+        console.log(...arr);
+        console.log(copy);
+    }
+    {
+        // 배열 합치기
+        const arr1 = [100, 200];
+        const arr2 = [300, 400];
+        const merged1 = [...arr1, ...arr2];
+        const merged2 = [...arr1, "javascript", ...arr2, "jquery"];
+
+        console.log(arr1.concat(arr2));
+        console.log(merged1);
+        console.log(merged2);
+    }
+    {
+        // 함수 인자로  사용하기
+        function numbers(a, b, c) {
+            return a + b + c;
+        }
+        const nums = [100, 200, 300];
+        console.log(numbers(...nums));
+    }
+    {
+        // 문자열 배열로 변환하기
+        const text1 = "javascript";
+        const text2 = [...text1];
+
+        console.log(text1);
+        console.log(text2);
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            [100, 200, javascript]<br>
+                            100 200 'javascript'<br>
+                            [100, 200, javascript]<br>
+                            [100, 200, javascript]<br>
+                            [100, 200, javascript]<br>
+                            [100, 200, javascript, 300, 400, jquery]<br>
+                            600<br>
+                            ['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //samlpe12 -->
             <div id="sample13" class="sample">
                 <h3> 13. 객체 : 데이터 불러오기 : 기본</h3>
                 <p>
@@ -458,7 +613,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe13 -->
+            <!-- //samlpe13 -->
             <div id="sample14" class="sample">
                 <h3> 14. 객체 : 데이터 불러오기 : Object.keys</h3>
                 <p>
@@ -485,7 +640,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe14 -->
+            <!-- //samlpe14 -->
             <div id="sample15" class="sample">
                 <h3> 15. 객체 : 데이터 불러오기 : Object.values</h3>
                 <p>
@@ -512,7 +667,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe15 -->
+            <!-- //sample15 -->
             <div id="sample16" class="sample">
                 <h3> 16. 객체 : 데이터 불러오기 : Object.entries</h3>
                 <p>
@@ -538,7 +693,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe16 -->
+            <!-- //samlpe16 -->
             <div id="sample17" class="sample">
                 <h3> 17. 객체 : 데이터 불러오기 : Object.assign</h3>
                 <p>
@@ -569,7 +724,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe17 -->
+            <!-- //samlpe17 -->
             <div id="sample18" class="sample">
                 <h3> 18. 객체 : 데이터 불러오기 : hasOwnProperty</h3>
                 <p>
@@ -599,7 +754,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe18 -->
+            <!-- //samlpe18 -->
             <div id="sample19" class="sample">
                 <h3> 19. 객체 : 데이터 불러오기 : for in</h3>
                 <p>
@@ -628,7 +783,170 @@
                     </details>
                 </div>
             </div>
-            <!-- //sampe19 -->
+            <!-- //samlpe19 -->
+            <div id="sample20" class="sample">
+                <h3> 20. 객체 : 데이터 불러오기 : 객체 구조분해할당</h3>
+                <p>
+                    객체 구조분해할당은 JavaScript에서 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 표현식입니다.
+                    할당하고자 하는 변수의 개수가 객체의 속성보다 많거나 할당할 값이 없을 때 기본값을 설정할 수 있습니다.
+                    중첩된 객체 분해: 객체 내부의 또 다른 객체도 구조분해할당을 통해 변수에 할당할 수 있습니다.
+                    함수 매개변수에서의 사용: 함수의 매개변수로 객체를 전달할 때, 구조분해할당을 사용하여 코드를 더 간결하게 만들 수 있습니다.
+                </p>
+                <pre><code>{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    };
+    const { a, b, c } = obj;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+{
+    // 기본 값 할당
+    const obj = {
+        a: 100,
+        b: 200,
+    }
+    const { a, b, c = "javascript" } = obj;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    const { a: x, b: y, c: z } = obj;
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}
+{
+    const obj = {
+        a: 100,
+        b: { c: 200, d: "javascript" },
+    }
+    const { a, b: { c, d } } = obj;
+
+    console.log(a);
+    console.log(c);
+    console.log(d);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample20 -->
+            <div id="sample21" class="sample">
+                <h3> 21. 객체 : 데이터 불러오기 : 객체 펼침연산자</h3>
+                <p>
+                    객체 펼침연산자는 ES6에서 도입된 JavaScript의 유용한 기능 중 하나로,
+                    마침표 세 개(...)를 사용하여 객체나 배열의 요소를 개별적으로 분리하거나, 여러 객체를 하나로 합치는 등의 작업을 간단하게 할 수 있게 해줍니다.
+                </p>
+                <pre><code>{
+    const obj1 = { a: 100, b: 200 }
+    const obj2 = { c: 300, d: 400 }
+    const merge1 = { ...obj1, ...obj2 }
+    const merge2 = { ...obj1, x: "javascript", ...obj2, y: "jquery" }
+
+    console.log(obj1);
+    console.log(merge1);
+    console.log(merge2);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            {a: 100, b: 200}<br>
+                            {a: 100, b: 200, c: 300, d: 400}<br>
+                            {a: 100, b: 200, x: javascript, c: 300, d: 400, y: jquery}<br>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample21 -->
+            <div id="sample22" class="sample">
+                <h3> 22. 서버 : 데이터 불러오기 : XMLHttpRequest</h3>
+                <p>
+                    XMLHttpRequest(XHR)는 웹 페이지가 사용자의 개입 없이 서버와 데이터를 교환할 수 있게 해주는 JavaScript 객체입니다.
+                    이를 통해 웹 페이지는 페이지의 새로고침 없이도 서버로부터 데이터를 받아와서 동적으로 내용을 변경할 수 있습니다.
+                </p>
+                <pre><code>{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var responseData = xhr.responseText;
+            var jsonData = JSON.parse(responseData);
+
+            console.log(jsonData);
+        } else if (xhr.readyState === 4) {
+            console.error("데이터 불러오기 오류: " + xhr.status);
+        }
+    };
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            (60) {[{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…},
+                            {…}}<br>
+
+                    </details>
+                </div>
+            </div>
+            <!-- //sample22 -->
+            <div id="sample23" class="sample">
+                <h3> 23. 서버 : 데이터 불러오기 : fetch API</h3>
+                <p>
+                    Fetch API는 자바스크립트를 사용하여 네트워크 요청을 보내고 받는 간단하면서도 강력한 방법을 제공합니다.
+                    기본 사용법: Fetch 함수는 최소한 하나의 인자(자원의 경로)를 받으며, 선택적으로 설정 객체를 두 번째 인자로 받을 수 있습니다.
+                </p>
+                <pre><code>{
+    fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error("데이터 불러오기 오류:", error));
+    })
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            (60) {[{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…},
+                            {…}}<br>
+
+                    </details>
+                </div>
+            </div>
+            <!-- //sample23 -->
         </div>
         <!-- //main__sample -->
     </main>
@@ -668,18 +986,15 @@
         }
         // 05. 배열 : 데이터 불러오기 : for()문
         {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const num = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
             for (i = 0; i < num.length; i++) {
-                console.log(num[i]);
-            }
-            for (i = 0; i < num.length; i += 2) {
-                console.log(num[i]);
+                console.log(num[i] + "번");
             }
         }
         // 06. 배열 : 데이터 불러오기 : forEach
         {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const num = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
             {
                 num.forEach(function (e, i, a) {
@@ -749,8 +1064,103 @@
             console.log(arr3);
 
         }
-        // 11. 배열 : 데이터 불러오기 : 배열펼침연산자
-        // 12. 배열 : 데이터 불러오기 : 배열구조분해할당
+        // 11. 배열 : 데이터 불러오기 : 배열 구조 분해 할당
+        {
+            {
+                const arr = [100, 200, "javascipt"];
+                const [a, b, c] = arr;
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            } {
+                // 선언에서 분리한 할당
+                const [a, b, c] = [100, 200, "javascipt"];
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+            {
+                // 기본 값 설정
+                const [a, b, c = "javascript"] = [100, 200];
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+            {
+                // 배열 일부 요소 무시
+                const [a, , b] = [100, 200, "javascript"];
+
+                console.log(a);
+                console.log(b);
+            }
+            {
+                // 나머지 값 할당
+                const [a, b, ...reset] = [100, 200, "javascript", "jquery"];
+
+                console.log(a);
+                console.log(b);
+                console.log(...reset);
+            }
+            {
+                // 변수 값 교환
+                let a = 100, b = 200;
+                [a, b] = [b, a];
+
+                console.log(a);
+                console.log(b);
+            }
+            {
+                // 다차원 배열 펼침 연산자
+
+                const [a, [b, c]] = [1, [2, "javascript"]];
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+        }
+        // 12. 배열 : 데이터 불러오기 : 배열 펼침 연산자(Spread Operator)
+        {
+            {
+                // 배열 복사
+                const arr = [100, 200, "javascript"];
+                const copy = [...arr];
+
+                console.log(arr);
+                console.log(...arr);
+                console.log(copy);
+            }
+            {
+                // 배열 합치기
+                const arr1 = [100, 200];
+                const arr2 = [300, 400];
+                const merged1 = [...arr1, ...arr2];
+                const merged2 = [...arr1, "javascript", ...arr2, "jquery"];
+
+                console.log(arr1.concat(arr2));
+                console.log(merged1);
+                console.log(merged2);
+            }
+            {
+                // 함수 인자로  사용하기
+                function numbers(a, b, c) {
+                    return a + b + c;
+                }
+                const nums = [100, 200, 300];
+                console.log(numbers(...nums));
+            }
+            {
+                // 문자열 배열로 변환하기
+                const text1 = "javascript";
+                const text2 = [...text1];
+
+                console.log(text1);
+                console.log(text2);
+            }
+        }
         // 13. 객체 : 데이터 불러오기 : 기본
         {
             const obj = {
@@ -832,10 +1242,98 @@
                 console.log(el + ":" + obj[el]);
             }
         }
-        // 20. 객체 : 데이터 불러오기 : 객체 펼침연산자
-        // 21. 객체 : 데이터 불러오기 : 객체 구조분해할당
+        // 20. 객체 : 데이터 불러오기 : 객체 구조분해할당
+        {
+            {
+                const obj = {
+                    a: 100,
+                    b: 200,
+                    c: "javascript"
+                };
+                const { a, b, c } = obj;
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+            {
+                // 기본 값 할당
+                const obj = {
+                    a: 100,
+                    b: 200,
+                }
+                const { a, b, c = "javascript" } = obj;
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+            {
+                const obj = {
+                    a: 100,
+                    b: 200,
+                    c: "javascript"
+                }
+                const { a: x, b: y, c: z } = obj;
+
+                console.log(x);
+                console.log(y);
+                console.log(z);
+            }
+            {
+                const obj = {
+                    a: 100,
+                    b: { c: 200, d: "javascript" },
+                }
+                const { a, b: { c, d } } = obj;
+
+                console.log(a);
+                console.log(c);
+                console.log(d);
+            }
+        }
+        // 21. 객체 : 데이터 불러오기 : 객체 펼침연산자
+        {
+            const obj1 = { a: 100, b: 200 }
+            const obj2 = { c: 300, d: 400 }
+            const merge1 = { ...obj1, ...obj2 }
+            const merge2 = { ...obj1, x: "javascript", ...obj2, y: "jquery" }
+
+            console.log(obj1);
+            console.log(merge1);
+            console.log(merge2);
+        }
         // 22. 서버 : 데이터 불러오기 : XMLHttpRequest
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var responseData = xhr.responseText;
+                    var jsonData = JSON.parse(responseData);
+
+                    console.log(jsonData);
+                } else if (xhr.readyState === 4) {
+                    console.error("데이터 불러오기 오류: " + xhr.status);
+                }
+            };
+
+            xhr.send();
+        }
         // 23. 서버 : 데이터 불러오기 : fetch API
+        {
+            fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.log(error("데이터 불러오기 오류:", error));
+                })
+        }
     </script>
 </body>
 

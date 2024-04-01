@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 03</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li class="active"><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보
+        const quizInfo = [
+            {
+                date: "2011년 1회",
+                type: "정보처리기능사",
+                question: "기억 장치 고유의 번지로서 0, 1, 2, 3, ...과 같이 16진수로 약속하여 순서대로 정해 놓은 번지는?",
+                answer: "3",
+                choices: {
+                    1: "직접번지",
+                    2: "번지점프",
+                    3: "절대번지",
+                    4: "주소번지",
+                },
+                desc: "절대번지는 처음부터 순서대로 0, 1, 2, 3 과같이 주소를 부여 하는 방식입니다."
+            },
+            {
+                date: "2011년 1회",
+                type: "정보처리기능사",
+                question: "주기억 장치의 접근 시간과 CPU의 처리 속도 차이를 줄이기 위해 사용되는 것은?",
+                answer: "4",
+                choices: {
+                    1: "Magnetic Tapes",
+                    2: "Magnetic Disks",
+                    3: "Virtual Memory",
+                    4: "Cache Memory",
+                },
+                desc: "캐쉬 메모리 : 캐시는 중앙처리장치와 주기억 장치 사이에 존재하며 속도 차이를 보완한다."
+            },
+            {
+                date: "2011년 1회",
+                type: "정보처리기능사",
+                question: "디스크팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면의 수는?",
+                answer: "3",
+                choices: {
+                    1: "6",
+                    2: "8",
+                    3: "10",
+                    4: "12",
+                },
+                desc: "사용 가능 면수는(총 디스크 6장 * 2면) - 2면 입니다. 이때 2면은 맨위와 맨 아랫면 2면을 제외하게 됩니다."
+            },
+            {
+                date: "2011년 1회",
+                type: "정보처리기능사",
+                question: "제품명과 단가로 이루어진 제품 테이블에서 단가에 대한 내림차순으로 검색하고자 한다.<br> ( ) 안에 알맞은 SQL 명령으로 옳게 나열된 것은?",
+                answer: "1",
+                choices: {
+                    1: "1 ORDER BY 2 DESC",
+                    2: "1 ORDER TO 2 DESC",
+                    3: "1 ORDER 2 DOWN",
+                    4: "1 ORDER 2 DESC",
+                },
+                desc: "ORDER BY : 정렬<br>ASC : 오름차순<br>DESC : 내림차순"
+            },
+            {
+                date: "2011년 1회",
+                type: "정보처리기능사",
+                question: "프레젠테이션에서 화면 전체를 전환하는 단위를 의미하는 것은?",
+                answer: "2",
+                choices: {
+                    1: "개체",
+                    2: "슬라이드",
+                    3: "개요",
+                    4: "스크린 팁",
+                },
+                desc: "슬라이드 : 프리젠테이션의 화면 전체<br>개체 : 화면을 구성하는 개개의 요소"
+            }
+        ]
+
+        // 문제 출력
+        const updateQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
+                <div class="quiz">
+                    <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1 + "."} ${quiz.question}</div>
+                        <div class="choices">
+                            <label for="choices1-${index}">
+                                <input type="radio" id="choices1-${index}" name="choice-${index}" value="1">
+                                <span>${quiz.choices[1]}</span>
+                            </label>
+                            <label for="choices2-${index}">
+                                <input type="radio" id="choices2-${index}" name="choice-${index}" value="2">
+                                <span>${quiz.choices[2]}</span>
+                            </label>
+                            <label for="choices3-${index}">
+                                <input type="radio" id="choices3-${index}" name="choice-${index}" value="3">
+                                <span>${quiz.choices[3]}</span>
+                            </label>
+                            <label for="choices4-${index}">
+                                <input type="radio" id="choices4-${index}" name="choice-${index}" value="4">
+                                <span>${quiz.choices[4]}</span>
+                            </label>
+                        </div>
+                        <div class="answer none">${quiz.answer}</div>
+                        <div class="desc none">${quiz.desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                </div>
+`);
+                quizWrap.innerHTML = quizArray.join("");
+            });
+
+            console.log(quizArray);
+        }
+        updateQuiz();
+    </script>
+</body>
+
+</html>

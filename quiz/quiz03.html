@@ -35,24 +35,24 @@
                     <div class="question"></div>
                     <div class="choices">
                         <label for="choices1">
-                            <input type="radio" id="choices1" name="1" value="1">
+                            <input type="radio" id="choices1" name="choice" value="1">
                             <span></span>
                         </label>
                         <label for="choices2">
-                            <input type="radio" id="choices2" name="1" value="2">
+                            <input type="radio" id="choices2" name="choice" value="2">
                             <span></span>
                         </label>
                         <label for="choices3">
-                            <input type="radio" id="choices3" name="1" value="3">
+                            <input type="radio" id="choices3" name="choice" value="3">
                             <span></span>
                         </label>
                         <label for="choices4">
-                            <input type="radio" id="choices4" name="1" value="4">
+                            <input type="radio" id="choices4" name="choice" value="4">
                             <span></span>
                         </label>
                     </div>
-                    <div class="answer"></div>
-                    <div class="desc"></div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -72,10 +72,11 @@
         const quizWrap = document.querySelector(".quiz__wrap");
         const quizHeader = quizWrap.querySelector(".quiz__header");
         const quizQuestion = quizWrap.querySelector(".quiz__main .question");
-        const quizchoices = quizWrap.querySelector(".quiz__main .choices");
         const quizAnswer = quizWrap.querySelector(".quiz__main .answer");
         const quizDesc = quizWrap.querySelector(".quiz__main .desc");
         const quizConfirm = quizWrap.querySelector(".quiz__footer .confirm");
+        const quizChoices = quizWrap.querySelectorAll(".quiz__main .choices span");
+        const quizSelects = quizWrap.querySelectorAll(".quiz__main .choices input");
 
         // 문제 정보
         const quizInfo = {
@@ -85,12 +86,45 @@
             question: "기억 장치 고유의 번지로서 0, 1, 2, 3, ...과 같이 16진수로 약속하여 순서대로 정해 놓은 번지는?",
             answer: "3",
             choices: ["직접번지", "번지점프", "절대번지", "주소번지"],
-            desc: "절대번지는 처음부터 순서대로 0, 1, 2, 3 과같이 주소를 부여 하는 방식입니다.."
+            desc: "절대번지는 처음부터 순서대로 0, 1, 2, 3 과같이 주소를 부여 하는 방식입니다."
         }
 
         // 문제 출력
         quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
-        quizQuestion.innerHTML = quizInfo.num + " " + quizInfo.question;
+        quizQuestion.innerHTML = quizInfo.num + "." + quizInfo.question;
+        quizAnswer.innerHTML = quizInfo.answer;
+        quizDesc.innerHTML = quizInfo.desc;
+
+        for (i = 0; i < quizChoices.length; i++) {
+            quizChoices[i].innerHTML = quizInfo.choices[i];
+        }
+
+        // 보기선택
+        quizConfirm.addEventListener("click", () => {
+            let selectedChoice = null;
+
+            for (let i = 0; i < quizSelects.length; i++) {
+                if (quizSelects[i].checked) {
+                    selectedChoice = quizSelects[i].value;
+                    break;
+                }
+            }
+
+            // 정답 확인
+            if (selectedChoice !== null) {
+                if (selectedChoice == quizInfo.answer) {
+                    alert("정답입니다.");
+                    quizDesc.classList.remove("none");
+                } else {
+                    alert("오답입니다.");
+                    quizAnswer.classList.remove("none");
+                    quizDesc.classList.remove("none");
+                }
+            }
+            else {
+                alert("보기를 선택해주세요!! 🤩");
+            }
+        });
     </script>
 </body>
 
