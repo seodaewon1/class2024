@@ -315,3 +315,47 @@ body::after {
     color: #c5a0a0;
     cursor: pointer;
 }
+
+/* good, dad */
+.quiz__wrap .quiz.good{
+    position: relative;
+}
+.quiz__wrap .quiz.good::before{
+    content: '';
+    width: 130px;
+    height: 130px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+
+}
+.quiz__wrap .quiz.bad{
+    position: relative;
+}
+.quiz__wrap .quiz.bad::before{
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform:rotate(45deg);
+    z-index: 100;
+}
+.quiz__wrap .quiz.bad::after{
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform:rotate(-45deg);
+    z-index: 100;
+}

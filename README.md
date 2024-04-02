@@ -23,6 +23,17 @@
 - 메서드(innerHTML(), classList.add addEventListener, if문)   
 
 [퀴즈03](https://seodaewon1.github.io/class2024/quiz/quiz03.html)   
+- 변수, 배열, 객체   
+- 선택자(querySelector), (querySelecotorAll())   
+- 반복문(for())   
+- 메서드(innerHTML(), classList.add, addEventListener, if문)   
+-  
+[퀴즈04](https://seodaewon1.github.io/class2024/quiz/quiz04.html)   
+- 변수, 배열, 객체, 템플릿 리터럴
+- 선택자(querySelector), (querySelecotorAll())   
+- 반복문(forEach())   
+- 메서드(join(), push(), innerHTML())   
+
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   
