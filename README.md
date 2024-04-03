@@ -1,6 +1,7 @@
 # 오늘의 수업   
-[퀴즈04](https://seodaewon1.github.io/class2024/quiz/quiz04.html)    
+[퀴즈05](https://seodaewon1.github.io/class2024/quiz/quiz05.html)    
 
+[TEST](https://seodaewon1.github.io/class2024/javascript/test.html)   
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
@@ -33,6 +34,8 @@
 - 선택자(querySelector), (querySelecotorAll())   
 - 반복문(forEach())   
 - 메서드(join(), push(), innerHTML())   
+  
+[퀴즈05](https://seodaewon1.github.io/class2024/quiz/quiz05.html)   
 
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   

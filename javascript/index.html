@@ -41,53 +41,51 @@
             border: 8px solid #22c8d4;
             border-radius: 20px;
             position: relative;
+        }
 
-            &::before {
-                content: '';
-                border: 8px solid #6cdae2;
-                width: calc(100% - 16px);
-                height: calc(100% - 16px);
-                position: absolute;
-                left: 0;
-                top: 0;
-                border-radius: 12px;
-                z-index: -1;
-            }
+        main::before {
+            content: "";
+            border: 8px solid #6cdae2;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 12px;
+            z-index: -1;
+        }
 
-            h1 {
-                font-size: 5vw;
-                margin-bottom: 3vw;
-                margin-top: 1vw;
+        main h1 {
+            font-size: 5vw;
+            margin-bottom: 3vw;
+            margin-top: 1vw;
+        }
 
-                a {
-                    color: #1398a1;
-                }
-            }
+        main h1 a {
+            color: #1398a1;
+        }
 
-            nav {
-                ul {
-                    display: flex;
+        main nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-                    li {
-                        a {
-                            display: inline-block;
-                            font-size: 16px;
-                            font-family: "nanumSquareNeo";
-                            border: 1px dashed #6cdae2;
-                            padding: 10px 20px;
-                            margin: 2px;
-                            color: #0c5e64;
-                            background-color: #fff;
+        main nav ul li a {
+            display: inline-block;
+            font-size: 16px;
+            font-family: "nanumSquareNeo";
+            border: 1px dashed #6cdae2;
+            padding: 10px 20px;
+            margin: 2px;
+            color: #0c5e64;
+            background-color: #fff;
+        }
 
-                            &:hover {
-                                border: 1px solid #2ad1dd;
-                                background-color: #2ad1dd;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-            }
+        main nav ul li a:hover {
+            border: 1px solid #2ad1dd;
+            background-color: #2ad1dd;
+            color: #fff;
         }
 
         body .wrap {

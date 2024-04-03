@@ -4,24 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>자바스크립트 :: TEST</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
 </head>
 
 <body>
+    <header id="header">
+        <h1>
+            <a href="index.html">javascript</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="object01.html">문자열 객체</a></li>
+                <li><a href="object02.html">배열 객체</a></li>
+                <li><a href="object03.html">수학 객체</a></li>
+                <li><a href="object04.html">숫자 객체</a></li>
+                <li><a href="object05.html">브라우저 객체</a></li>
+                <li><a href="object06.html">요소 객체</a></li>
+                <li><a href="object07.html">이벤트 객체</a></li>
+                <li class="active"><a href="test.html">연습</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__menu container">
+            <ul>
+                <li><a href="#">01. 1부터 100까지 출력하기(for문, while, do while)</a></li>
+                <li><a href="#">02. 0부터 100까지 짝수만 출력하기(for문, if문)</a></li>
+                <li><a href="#">03. 1부터 100까지 짝수는 파란색, 홀수는 빨간색 출력하기</a></li>
+                <li><a href="#">04. 중첩 for문을 이용하여 구구단 출력하기</a></li>
+                <li><a href="#">05. 중첩 for문을 이용하여 8단 출력하기</a></li>
+            </ul>
+        </div>
+        <!-- //main__meun -->
+
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>01. 1부터 100까지 출력하기(for문, while, do while)</h3>
+                <p>for문을 이용해서 1-100까지 출력하는 예제입니다.</p>
+                <pre data-line="4, 11, 19, 23" class="line-numbers"><code class="language-js">{
+    //for
+    {
+        for (i = 1; i &LT= 100; i++) {
+            console.log(i);
+        }
+    }
+    //while
+    {
+        let i = 1
+        while (i &LT= 100) {
+            console.log(i);
+            i++;
+        }
+    }
+    //do while
+    {
+        let i = 1
+        do {
+            console.log(i)
+            i++;
+        }
+        while (i &LT= 100)
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1,2,3,4 ...100<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe01 -->
+            <div id="sample02" class="sample">
+                <h3>02. 0부터 100까지 짝수만 출력하기(for문, if문)</h3>
+                <p>for문을 이용해서 0부터 100까지 짝수만 출력하는 예제입니다.</p>
+                <pre data-line="4, 11, 19, 23" class="line-numbers"><code class="language-js">{
+    for (let i = 0; i &LT= 100; i++) {
+        if (i % 2 == 0) {
+            console.log(i);
+        }
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0, 2, 4, 6 ...100<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe02 -->
+            <div id="sample03" class="sample">
+                <h3>03. 1부터 100까지 짝수는 파란색, 홀수는 빨간색 출력하기</h3>
+                <p>for문을 이용해서 1부터 100까지 짝수는 파란색, 홀수는 빨간색을 출력하는 예제입니다.</p>
+                <pre data-line="4, 11, 19, 23" class="line-numbers"><code class="language-js">{
+    for (let i = 1; i &LT;= 100; i++) {
+        if (i % 2 == 0) {
+            document.write("<span style='color:blue'>" + i + "</span>");
+        } else {
+            document.write("<span style='color:red'>" + i + "</span>");
+        }
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0, 2, 4, 6 ...100(blue)<br>
+                            1, 3, 5, 7 ...99(red)<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe03 -->
+            <div id="sample04" class="sample">
+                <h3>04. 중첩 for문을 이용하여 구구단 출력하기</h3>
+                <p>중첩 for문을 이용하여 구구단을 출력하는 예제입니다.</p>
+                <pre data-line="4, 11, 19, 23" class="line-numbers"><code class="language-js">{
+    for (let i = 2; i &LT= 9; i++) {
+        for (let j = 1; j &LT= 9; j++) {
+            console.log(i + "*" + j + "=" + i * j);
+        }
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            2*1=2, 2*2=4, ...2*9=18<br>
+                            3*1=3, 3*2=6, ...3*9=27<br>
+                            ...9*9=81<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe04 -->
+            <div id="sample05" class="sample">
+                <h3>05. 중첩 for문을 이용하여 8단 출력하기</h3>
+                <p>중첩 for문을 이용하여 8단을 출력하는 예제입니다.</p>
+                <pre data-line="4, 11, 19, 23" class="line-numbers"><code class="language-js">{
+    for (let i = 8; i &LT;= 8; i++) {
+        for (let j = 1; j &LT;= 9; j++) {
+            console.log(i + "*" + j + "=" + i * j);
+        }
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            8*1=8, 8*2=16, ...8*9=72<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe05 -->
+        </div>
+        <!-- //main__sample -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/prism.js"></script>
     <script>
+        //01. 1부터 100까지 출력하기(for문, while, do while)
         {
-            const obj = {
-                a: 100,
-                b: { x: 200, y: 300 },
-                d: "javascript"
+            //for
+            {
+                for (i = 1; i <= 100; i++) {
+                    console.log(i);
+                }
             }
-
-            const { a, b: { x, y }, d } = obj;
-
-            console.log(a);
-            console.log(x);
-            console.log(y);
-            console.log(d);
+            //while
+            {
+                let i = 1
+                while (i <= 100) {
+                    console.log(i);
+                    i++;
+                }
+            }
+            //do while
+            {
+                let i = 1
+                do {
+                    console.log(i)
+                    i++;
+                }
+                while (i <= 100)
+            }
+        }
+        //02. 0부터 100까지 짝수만 출력하기(for문, if문)
+        {
+            for (let i = 0; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    console.log(i);
+                }
+            }
+        }
+        //03. 1부터 100까지 짝수는 파란색, 홀수는 빨간색 출력하기
+        {
+            {
+                for (let i = 1; i <= 100; i++) {
+                    if (i % 2 == 0) {
+                        document.write("<span style='color:blue'>" + i + "</span>");
+                    } else {
+                        document.write("<span style='color:red'>" + i + "</span>");
+                    }
+                }
+            }
+        }
+        //04. 중첩 for문을 이용하여 구구단 출력하기
+        {
+            for (let i = 2; i <= 9; i++) {
+                for (let j = 1; j <= 9; j++) {
+                    console.log(i + "*" + j + "=" + i * j);
+                }
+            }
+        }
+        //05. 중첩 for문을 이용하여 8단 출력하기
+        {
+            for (let i = 8; i <= 8; i++) {
+                for (let j = 1; j <= 9; j++) {
+                    console.log(i + "*" + j + "=" + i * j);
+                }
+            }
         }
     </script>
 </body>

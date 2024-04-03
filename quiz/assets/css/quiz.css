@@ -315,6 +315,24 @@ body::after {
     color: #c5a0a0;
     cursor: pointer;
 }
+.quiz__footer .next {
+    background-color: #ec7676;
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.quiz__footer .next:hover {
+    background-color: transparent;
+    border: 1px dashed #ec7676;
+    color: #c47f7f;
+    cursor: pointer;
+}
 
 /* good, dad */
 .quiz__wrap .quiz.good{
