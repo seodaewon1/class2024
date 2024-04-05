@@ -10,10 +10,10 @@
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 20px;
+  padding: 10px;
   font-family: "nanumSquareNeo";
   line-height: 1.6;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 5px;
 }
 
