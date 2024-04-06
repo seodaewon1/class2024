@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 06</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li class="active"><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        // 문제 정보
+        const quizInfo = [
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제에 출력되는 값으로 옳은 것은?",
+                choices: ["100", "200", "300", "400"],
+                answer: "1",
+                desc: "let x = 100이므로 정답은 100",
+                code: `<pre><code class="hljs">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    console.log(x);
+ }</code></pre>`
+            },
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제 정답은?",
+                choices: ["100",
+                    "200",
+                    "javascript",
+                    "100, 200, javasciprt"],
+                answer: "3",
+                desc: "객체 리터럴 방식으로 선언되었을 경우 `.`을 통하여 불러올 수 있다.",
+                code: `<pre><code class="hljs">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javasript"
+    }
+
+    console.log(obj.c);
+ }</code></pre>`
+            },
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제에 출력되는 값으로 옳은 것은?",
+                choices: ["ture", "ture", "ture", "false"],
+                answer: "4",
+                desc: "hasOwnProperty는 객체가 자신의 속성으로 지정된 속성을 갖고 있는지 여부를 판단하는 매개변수입니다. 속성 가지고 있으면 ture 없으면 false로 반환합니다.",
+                code: `<pre><code class="hljs">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    console.log(obj.hasOwnProperty("d"));
+}</code></pre>`
+            },
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제에 출력되는 값으로 옳은 것은?",
+                choices: ['["a","b,","c"]', "[100,200,javascript]", "javascript", "[a:100, b:200, c:javascript]"],
+                answer: "3",
+                desc: "주어진 객체의 열거 가능한 문자열 키 속성 키를 나타내는 문자열 배열입니다.",
+                code: `<pre><code class="hljs">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"/
+    }
+    console.log(Object.keys(obj));
+}</code></pre>`
+            },
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제에 출력되는 값으로 옳은 것은?",
+                choices: [
+                    "100",
+                    "200",
+                    "300",
+                    "450"
+                ],
+                answer: "1",
+                desc: "조건이 참일 경우에만 그에 해당하는 코드 블록을 실행합니다. 만약 이전의 조건이 이미 참이라면, 다음 조건들은 평가되지 않고 건너뜁니다. 마지막 else는 위의 모든 조건이 거짓일 때 실행될 코드를 지정합니다.",
+                code: `<pre><code class="hljs">{
+    const num = 100;
+
+    if (num == 90) {
+        console.log("실행되었습니다.(90)");
+    } else if (num == 100) {
+        console.log("실행되었습니다.(100)");
+    } else if (num == 110) {
+        console.log("실행되었습니다.(110)");
+    } else if (num == 120) {
+        console.log("실행되었습니다.(120)");
+    } else if (num == 130) {
+        console.log("실행되었습니다.(130)");
+    } else {
+        console.log("실행되었습니다.")
+    }
+}</code></pre>`
+            },
+        ]
+
+        // 변수
+        let currentIndex = 0;  // 현재 문제에 대한 값
+
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+            <div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="code"><pre><code class="hljs">${quizInfo[index].code}</code></pre></div>
+                        <div class="choices">
+                            <label for="choices1">
+                                <input type="radio" id="choices1" name="choice" value="1">
+                                <span>${quizInfo[index].choices[0]}</span>
+                            </label>
+                            <label for="choices2">
+                                <input type="radio" id="choices2" name="choice" value="2">
+                                <span>${quizInfo[index].choices[1]}</span>
+                            </label>
+                            <label for="choices3">
+                                <input type="radio" id="choices3" name="choice" value="3">
+                                <span>${quizInfo[index].choices[2]}</span>
+                            </label>
+                            <label for="choices4">
+                                <input type="radio" id="choices4" name="choice" value="4">
+                                <span>${quizInfo[index].choices[3]}</span>
+                            </label>
+                        </div>
+                        <div class="answer none">${quizInfo[index].answer}</div>
+                        <div class="desc none">${quizInfo[index].desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                </div>
+            </div>
+            `
+            quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자
+            const quizConrim = quizWrap.querySelector(".confirm")
+            const quizNext = quizWrap.querySelector(".next")
+            const quizCode = quizWrap.querySelector(".code")
+
+            // 정답 버튼을 클릭
+            quizConrim.addEventListener("click", () => {
+                const quizChecked = quizWrap.querySelector("input[name ='choice']:checked");
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;
+                    const quizAnswer = quizInfo[currentIndex].answer;
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
+
+                    // 다음 문제로 넘어감
+                    if (currentIndex < quizInfo.length - 1) {
+                        currentIndex++;
+                        updateQuiz(currentIndex);
+                    } else {
+                        // 마지막 문제일 경우 정답과 해설을 표시
+                        const resultWrap = document.createElement("div");
+                        resultWrap.classList.add("quiz__result");
+                        const heading = document.createElement("h2");
+                        heading.textContent = "퀴즈가 종료되었습니다.";
+                        resultWrap.appendChild(heading);
+                        const answerHeading = document.createElement("h3");
+                        answerHeading.textContent = "정답 및 해설";
+                        resultWrap.appendChild(answerHeading);
+
+                        // 각 문제의 정답과 해설을 표시
+                        quizInfo.forEach((quiz, index) => {
+                            const quizResult = document.createElement("div");
+                            quizResult.classList.add("quiz__box");
+                            const question = document.createElement("p");
+                            question.textContent = `${index + 1}. ${quiz.question}`;
+                            quizResult.appendChild(question);
+                            const answer = document.createElement("p");
+                            answer.textContent = `정답: ${quiz.answer}`;
+                            quizResult.appendChild(answer);
+                            const desc = document.createElement("p");
+                            desc.textContent = `해설: ${quiz.desc}`;
+                            quizResult.appendChild(desc);
+                            resultWrap.appendChild(quizResult);
+                        });
+
+                        quizWrap.innerHTML = "";
+                        quizWrap.appendChild(resultWrap);
+                    }
+                } else {
+                    alert("답을 선택해주세요!");
+                }
+            });
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+    </script>
+</body>
+
+</html>
