@@ -1,7 +1,5 @@
 # 오늘의 수업   
-[퀴즈05](https://seodaewon1.github.io/class2024/quiz/quiz05.html)    
-
-[TEST](https://seodaewon1.github.io/class2024/javascript/test.html)   
+[EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
