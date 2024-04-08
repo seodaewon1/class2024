@@ -1,46 +1,36 @@
 [
     {
-        "subject": "정보처리 기능사",
-        "question": "컴퓨터 또는 컴퓨터와 인터넷 사이에서 파일을 주고받을 수 있도록 하는 원격 파일 전송 프로토콜인 FTP(File Transfer Protocol)의 기본 포트 번호를 쓰시오.",
+        "subject": "정보처리 산업기사",
+        "question": "컴퓨터 또는 컴퓨터와 인터넷 사이에서 파일을 주고받을 수 있도록 하는 원격 파일 전송 프로토콜인 FTP(File Transfer Protocol)의 기본 포트 번호를 쓰시오. ",
         "correct_answer": "21",
         "desc": "FTP (File Transfer Protocol)의 기본 포트 번호는 21번입니다. 이 포트는 FTP 서버와 클라이언트 간에 제어 연결을 설정하는 데 사용됩니다. "
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "영문으로 된 도메인 이름을 IP 주소로 번역하는 인터넷 서비스로, 도메인 이름과 IP 주소를 매핑하는 거대한 분산형 데이터베이스 시스템이다. 통신하고자 하는 상대 호스트의 IP 주소를 모르더라도, 상대적으로 기억하기 쉬운 도메인 이름을 조회하면 시스템이 도메인 네임을 IP주소로 바꾸어 주는 역할을 수행한다.",
         "correct_answer": "DNS",
         "desc": " DNS는 영문으로 된 도메인 이름을 IP 주소로 번역하는 서비스이며, 도메인 이름과 IP 주소를 매핑하는 거대한 분산형 데이터베이스 시스템입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "두 개의 인접한 개방 시스템들 간에 신뢰성 있고 효율적인 정보 전송을 할 수 있도록데이터 링크 시스템 간 연결 설정과 유지 및 종료를 담당 하는 계층으로, 프레임의 시작과 끝을 구분하기 위한 프레임의 동기화 기능과 오류의 검출과 회복을 위한 오류 제어 기능을 제공한다.",
         "correct_answer": "데이터 링크",
-        "desc": "프로그램 카운터는 컴퓨터에의하여 다음에 실행될 명령어의 주소가 저장되어있는 기억장소입니다."
+        "desc": "데이터 링크 계층은 OSI(Open Systems Interconnection) 모델이나 TCP/IP 모델에서 두 개의 인접한 개방 시스템 간에 효율적이고 신뢰성 있는 데이터 전송을 담당하는 계층입니다."
     },
     {
-        "subject": "정보처리 기능사",
-        "question": "CPU 에서 명령이 실행되는 순서를 제어하거나 특정 프로그램에 관련된 컴퓨터 시스템의 상태를 나타내고 유지하기 위한 제어 워드로서, 실행중인 CPU의 상황을 나타내는 것은?",
-        "incorrect_answers": [
-            "MBR",
-            "MAR",
-            "PC"
-        ],
-        "correct_answer": "PSW",
-        "desc": "CPU 에서 명령이 실행되는 순서를 제어하거나 특정 프로그램에 관련된 컴퓨터 시스템의 상태를 나타내고 유지하기 위한 제어 워드로서, 실행중인 CPU의 상황을 나타내는 것은 PSW입니다."
+        "subject": "정보처리 산업기사",
+        "question": "데이터베이스를 구축하고 릴레이션을 설계하는 과정에서 특정 릴레이션의 속성이 다중 값으로 구성되어 있어 이를 원자값으로 변환하는 과정을 수행하였다. 이와 같은 변환 과정을 가리키는 정규화를 쓰시오.",
+        "correct_answer": "제1 정규화",
+        "desc": "제1정규화는 각 릴레이션의 속성이 원자값(Atomic Value)으로만 구성되도록 하는 과정입니다. 즉, 각 속성이 더 이상 분해되지 않는 단일 값으로 표현되어야 합니다."
     },
     {
-        "subject": "정보처리 기능사",
-        "question": "명령어는 연산자 부분과 주소 부분으로 구성되는데 주소(Operand)부분의 구성 요소가 아닌 것은?",
-        "incorrect_answers": [
-            "데이터의 주소자체",
-            "명령어 순서",
-            "데이터가 있는 주소를 구하는데 필요한 정보"
-        ],
-        "correct_answer": "데이터 종류",
-        "desc": "명령어는 연산자 부분과 주소 부분으로 구성되는데 다양한 구성요소중 데이터 종류는 주소부분의 구성요소가 아닙니다."
+        "subject": "정보처리 산업기사",
+        "question": "제조사에서 네트워크 인터페이스 카드에 부여한 고유 식별자이다. 인터넷에 접속하기 위해서는 IP 주소를 (       )주소로 변환하는 과정이 필요하며, 이 과정을 ARP가 수행한다.",
+        "correct_answer": "MAC",
+        "desc": "인터넷에 접속하기 위해서는 IP 주소를 물리적인 MAC(Media Access Control) 주소로 변환하는 과정이 필요합니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는?",
         "incorrect_answers": [
             "6",
@@ -51,7 +41,7 @@
         "desc": "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "연산자의 기능과 거리가 먼 것은?",
         "incorrect_answers": [
             "제어 기능",
@@ -62,7 +52,7 @@
         "desc": "연산자의 기능과 거리가 먼 것은 주소지정 기능이라고 할수있습니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는?",
         "incorrect_answers": [
             "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname01.jpg?raw=true'>",
@@ -73,7 +63,7 @@
         "desc": "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "번지(Address)로 지정된 저장위치(Storage Location)의 내용이 실제의 번지가 되는 주소지정번지는?",
         "incorrect_answers": [
             "간접지정번지",
@@ -84,7 +74,7 @@
         "desc": "번지(Address)로 지정된 저장위치(Storage Location)의 내용이 실제의 번지가 되는 주소지정번지는 간접지정번지 입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "2진수 0.1101을 10진수로 변환하면?",
         "incorrect_answers": [
             "0.875",
@@ -95,7 +85,7 @@
         "desc": "진수 0.1101을 10진수로 변환하면 0.8125입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "0-주소 명령은 연산시 어떤 자료 구조를 이용하는가?",
         "incorrect_answers": [
             "TREE",
@@ -106,7 +96,7 @@
         "desc": "0-주소 명령은 연산시 STACK자료 구조를 이용합니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "이항(Binary) 연산에 해당하는 것은??",
         "incorrect_answers": [
             "COMPLEMENT",
@@ -117,7 +107,7 @@
         "desc": "이항 연산에 해당하는것은 AND 입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "채널(Channel)은 어느 곳에 위치하는가?",
         "incorrect_answers": [
             "주기억장치와 CPU의 중간에 위치한다.",
@@ -128,7 +118,7 @@
         "desc": "채널은 주기억장치와 입출력장치의 중간에 위치합니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "“NOR”회로에 대하여 바르게 설명된 것은?",
         "incorrect_answers": [
             "“OR”회로와 “NOT”회로의 분리회로",
@@ -139,7 +129,7 @@
         "desc": "“NOR”회로에 대하여 바르게 설명된 것은 “OR”회로와 “NOT”회로의 결합회로 입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "4매로 이루어진 디스크 팩에서 1면에 200개의 트랙을 사용할 수 있다고 할 때, 이 디스크팩의 사용 가능한 실린더는 모두 몇 개인가?",
         "incorrect_answers": [
             "100",
@@ -150,7 +140,7 @@
         "desc": "200개입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "논리적 연산의 종류에 해당되지 않는 것은?",
         "incorrect_answers": [
             "AND",
@@ -161,7 +151,7 @@
         "desc": "ADD는 논리적연산자의 해당되지않습니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "기억장치의 종류에 해당되지 않는 메모리(Memory)는?",
         "incorrect_answers": [
             "ROM",
@@ -172,7 +162,7 @@
         "desc": "기억장치의 종류에 해당되지 않는 메모리(Memory)는 REM 입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "다음 보기의 기호에 맞는 불(Boolean) 대수식은? <br> <img style='width:300px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname053.gif?raw=true'>",
         "incorrect_answers": [
             "<img style='width:100px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname31.gif?raw=true'>",
@@ -183,7 +173,7 @@
         "desc": "ㅎㅎ"
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "다음 중 플립플롭의 종류가 아닌 것은?",
         "incorrect_answers": [
             "R-S",
@@ -194,7 +184,7 @@
         "desc": "다음 중 플립플롭의 종류가 아닌 것은 R입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "8개의 bit로 표현 가능한 정보의 최대 가지수는?",
         "incorrect_answers": [
             "255",
@@ -205,7 +195,7 @@
         "desc": "8개의 bit로 표현 가능한 정보의 최대 가지수는 256입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "INSA(SNO, NAME) 테이블에서 SNO가 100인 튜플을 삭제하는 SQL 문은?",
         "incorrect_answers": [
             "REMOVE FROM INSA WHERE SNO = 100 ;",
@@ -216,7 +206,7 @@
         "desc": "INSA(SNO, NAME) 테이블에서 SNO가 100인 튜플을 삭제하는 SQL 문은 DELETE FROM INSA WHERE SNO = 100 ; 입니다.."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "아래 보기에서 설명하는 내용과 가장 가까운 데이터베이스는? <br> <img style='width:450px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname01444.gif?raw=true'>",
         "incorrect_answers": [
             "네트워크형 데이터베이스",
@@ -227,7 +217,7 @@
         "desc": "관계형 데이터베이스입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "SQL 문의 형식 중 옳지 않은 것은?",
         "incorrect_answers": [
             "UPDATE - SET - WHERE",
@@ -238,7 +228,7 @@
         "desc": "INSERT - SET - WHERE은 SQL문의 형식이 아닙니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "SQL에서 조건문을 기술할 수 있는 구문은?",
         "incorrect_answers": [
             "LIKE",
@@ -250,7 +240,7 @@
         "desc": "SQL에서 조건문을 기술할 수 있는 구문은 WHERE 입니다."
     },
     {
-        "subject": "정보처리 기능사",
+        "subject": "정보처리 산업기사",
         "question": "테이블 구조를 변경하는데 사용하는 SQL 명령은?",
         "incorrect_answers": [
             "CREATE TABLE",
