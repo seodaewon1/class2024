@@ -82,10 +82,9 @@
         "incorrect_answers": [
             "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname01.jpg?raw=true'>",
             "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname021.jpg?raw=true'>",
-            "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname012.jpg?raw=true'>",
             "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname014.jpg?raw=true'>"
         ],
-        "correct_answer": "3",
+        "correct_answer": "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname012.jpg?raw=true'>",
         "desc": "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
     },
     {

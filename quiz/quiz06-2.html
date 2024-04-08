@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 06</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+                <li class="active"><a href="quiz06 gpt.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        // 문제 정보
+        const quizInfo = [
+            {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제에 출력되는 값으로 옳은 것은?",
+                choices: ["100", "200", "300", "400"],
+                answer: "1",
+                desc: "let x = 100이므로 정답은 100",
+                code: `<pre><code class="hljs">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    console.log(x);
+ }</code></pre>`
+            }, {
+                date: "2017년 상시",
+                type: "정보처리기능사",
+                question: "다음 문제 정답은?",
+                choices: ["100",
+                    "200",
+                    "javascript",
+                    "100, 200, javasciprt"],
+                answer: "3",
+                desc: "객체 리터럴 방식으로 선언되었을 경우 `.`을 통하여 불러올 수 있다.",
+                code: `<pre><code class="hljs">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javasript"
+    }
+
+    console.log(obj.c);
+ }</code></pre>`
+            }
+            // 다른 문제들을 추가
+        ];
+
+        // 변수
+        let currentIndex = 0;  // 현재 문제에 대한 값
+
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+            <div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="code"><pre><code class="hljs">${quizInfo[index].code}</code></pre></div>
+                        <div class="choices">
+                            <label for="choices1">
+                                <input type="radio" id="choices1" name="choice" value="1">
+                                <span>${quizInfo[index].choices[0]}</span>
+                            </label>
+                            <!-- 다른 선택지들을 추가 -->
+                        </div>
+                        <div class="answer none">${quizInfo[index].answer}</div>
+                        <div class="desc none">${quizInfo[index].desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm none">정답 확인하기</button>
+                        <button class="next">다음 문제</button>
+                </div>
+            </div>
+            `;
+            quizWrap.innerHTML += quizWrapTag;
+
+            // 선택자
+            const quizConrim = quizWrap.querySelector(".confirm");
+            const quizNext = quizWrap.querySelector(".next");
+            const quizCode = quizWrap.querySelector(".code");
+
+            // 정답 버튼을 클릭
+            quizNext.addEventListener("click", () => {
+                const quizChecked = quizWrap.querySelector("input[name ='choice']:checked");
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;
+                    const quizAnswer = quizInfo[currentIndex].answer;
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
+
+                    // 다음 문제로 넘어감
+                    if (currentIndex < quizInfo.length - 1) {
+                        currentIndex++;
+                        updateQuiz(currentIndex);
+                    } else {
+                        // 마지막 문제일 경우 정답과 해설을 표시
+                        quizElement.classList.add("bad");       //X표시
+                        answerElement.classList.remove("none"); //정답 보기
+                        descElement.classList.remove("none");   //해설 보기
+                        quizNext.classList.add("none");
+                    }
+                } else {
+                    alert("답을 선택해주세요!");
+                }
+            });
+        };
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+    </script>
+</body>
+
+</html>
