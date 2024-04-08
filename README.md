@@ -1,8 +1,10 @@
 # 오늘의 수업   
-[EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)
+[EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)   
+
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
+[My Blog](https://seodaewon1.github.io/)
 [메인 페이지](https://seodaewon1.github.io/class2024/)     
 
 [MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)  
