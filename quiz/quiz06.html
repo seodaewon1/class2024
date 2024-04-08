@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 06</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/default.min.css">
-    <link rel="stylesheet" href="assets/css/prism.css">
 </head>
 
 <body>
@@ -31,6 +29,7 @@
 
     <main id="main">
         <div class="quiz__wrap"></div>
+        <div class="quiz__check">정답 확인</div>
     </main>
     <!-- //main -->
 
@@ -42,7 +41,7 @@
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-
+        const quizCheck = document.querySelector(".quiz__check")
         // 문제 정보
         let quizInfo = [];
 
@@ -94,30 +93,61 @@
                         <div class="question">${index + 1}. ${quiz.question}</div>
                         <div class="choices">
                             <label for="choices${index}-1">
-                                <input type="radio" id="choices${index}1" name="choice-${index}" value="1">
+                                <input type="radio" id="choices${index}-1" name="choice-${index}" value="${quiz.choices[0]}">
                                 <span>${quiz.choices[0]}</span>
                             </label>
                             <label for="choices${index}-2">
-                                <input type="radio" id="choices${index}2" name="choice-${index}" value="2">
+                                <input type="radio" id="choices${index}-2" name="choice-${index}" value="${quiz.choices[1]}">
                                 <span>${quiz.choices[1]}</span>
                             </label>
                             <label for="choices${index}-3">
-                                <input type="radio" id="choices${index}3" name="choice-${index}" value="3">
+                                <input type="radio" id="choices${index}-3" name="choice-${index}" value="${quiz.choices[2]}">
                                 <span>${quiz.choices[2]}</span>
                             </label>
                             <label for="choices${index}-4">
-                                <input type="radio" id="choices${index}4" name="choice-${index}" value="4">
+                                <input type="radio" id="choices${index}-4" name="choice-${index}" value="${quiz.choices[3]}">
                                 <span>${quiz.choices[3]}</span>
                             </label>
                         </div>
-                        <div class="answer">${quiz.answer}</div>
-                        <div class="desc">${quiz.desc}</div>
+                        <div class="answer none">${quiz.answer}</div>
+                        <div class="desc none">${quiz.desc}</div>
                     </div>
                 </div>
                 `)
             })
             quizWrap.innerHTML = quizArray.join("");
         }
+
+        // 정답 확인
+        quizCheck.addEventListener("click", () => {
+            const quizElements = document.querySelectorAll(".quiz");
+            let correctCount = 0;
+
+            quizElements.forEach((quizElement, index) => {
+                const quizChecked = quizElement.querySelector(`input[name="choice-${index}"]:checked`);      // 체크한 정답
+                const quizAnswer = quizElement.querySelector(".answer");
+                const quizDesc = quizElement.querySelector(".desc");
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;           // 사용자 정답
+                    const correctAnswer = quizAnswer.textContent;   // 정답지 정답
+
+                    if (userAnswer === correctAnswer) {
+                        quizElement.classList.add("good");
+                        quizDesc.classList.remove("none");
+                        correctCount++;
+                    } else {
+                        quizElement.classList.add("bad");
+                        quizAnswer.classList.remove("none");
+                        quizDesc.classList.remove("none");
+                    }
+                }
+            });
+            // 모든 문제를 확인한 후 점수 계산 및 표시
+            const totalScore = ((correctCount / quizElements.length) * 100).toFixed(2);
+            alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수 : ${correctCount}/${quizElements.length}`)
+        })
+
 
         //페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {

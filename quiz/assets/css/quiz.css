@@ -126,6 +126,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     background-image: url(../img/bg01.jpg);
     width: 100%;
@@ -223,7 +224,7 @@ body::after {
 
 .quiz__main .choices label input:checked+span {
     border: #c5a0a0;
-    color: #db6b6b;
+    color: #0f0f0f;
     box-shadow: 1px 1px 5px #ebd9d9;
     background-color: #fdd1d1;
 }
@@ -242,7 +243,7 @@ body::after {
 
 .quiz__main .choices label span:hover {
     border-color: #ec9090;
-    color: #e79090;
+    color: #f33a3a;
     box-shadow: 1px 1px 5px rgba(221, 45, 45, 0.451)
 }
 
@@ -315,6 +316,7 @@ body::after {
     color: #c5a0a0;
     cursor: pointer;
 }
+
 .quiz__footer .next {
     background-color: #ec7676;
     color: #fff;
@@ -335,10 +337,11 @@ body::after {
 }
 
 /* good, dad */
-.quiz__wrap .quiz.good{
+.quiz__wrap .quiz.good {
     position: relative;
 }
-.quiz__wrap .quiz.good::before{
+
+.quiz__wrap .quiz.good::before {
     content: '';
     width: 130px;
     height: 130px;
@@ -350,10 +353,12 @@ body::after {
     z-index: 100;
 
 }
-.quiz__wrap .quiz.bad{
+
+.quiz__wrap .quiz.bad {
     position: relative;
 }
-.quiz__wrap .quiz.bad::before{
+
+.quiz__wrap .quiz.bad::before {
     content: '';
     width: 150px;
     height: 10px;
@@ -362,10 +367,11 @@ body::after {
     left: 0;
     top: 80px;
     border-radius: 30px;
-    transform:rotate(45deg);
+    transform: rotate(45deg);
     z-index: 100;
 }
-.quiz__wrap .quiz.bad::after{
+
+.quiz__wrap .quiz.bad::after {
     content: '';
     width: 150px;
     height: 10px;
@@ -374,6 +380,28 @@ body::after {
     left: 0;
     top: 80px;
     border-radius: 30px;
-    transform:rotate(-45deg);
+    transform: rotate(-45deg);
     z-index: 100;
+}
+
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    line-height: 94px;
+    text-align: center;
+    background-color: #9b9a98;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #616161;
+    transition: all 0.3s;
+}
+
+.quiz__check:hover {
+    border: 3px dashed #ff7e7e;
+    background-color: #fdcfcf;
+    color: #000000;
 }
