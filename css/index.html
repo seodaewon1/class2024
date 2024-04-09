@@ -141,7 +141,27 @@
             animation: jelly-movement 10s infinite linear;
         }
 
-        .jelly-hair{}
+        .jelly-hair{
+            width: 100px;
+            height: 75px;
+            background: linear-gradient(to bottom, #ef891a 0%, #ef8914 2%, #2bf28a);
+            position: absolute;
+            left: 30%;
+            top: -10px;
+            z-index: -2;
+            border-radius: 25px;
+            animation: hair-movement 10s infinite linear;
+        }
+        @keyframes hair-movement {
+            0%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
+            20%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
+            25%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
+            30%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 75deg);}
+            70%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 75deg);}
+            75%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
+            80%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
+            100%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
+        }
 
         .jelly-body{
             width: 100%;
@@ -150,6 +170,9 @@
             border-top-left-radius: 70px;
             border-top-right-radius: 70px;
             animation: body-movement 10s infinite linear;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
         }
         @keyframes body-movement {
             0%{
@@ -162,22 +185,22 @@
             }
             25%{
                 border-top-left-radius: 80px;
-            border-top-right-radius: 80px;
+                border-top-right-radius: 80px;
             }
             30%{ border-top-left-radius: 90px;
-            border-top-right-radius: 70px;}
+                border-top-right-radius: 70px;}
             70%{
                 border-top-left-radius: 90px;
-            border-top-right-radius: 70px;
+                border-top-right-radius: 70px;
             }
             75%{ border-top-left-radius: 80px;
-            border-top-right-radius: 80px;}
+                border-top-right-radius: 80px;}
             80%{
                 border-top-left-radius: 70px;
-            border-top-right-radius: 90px;
+                border-top-right-radius: 90px;
             }
             100%{ border-top-left-radius: 70px;
-            border-top-right-radius: 90px;}
+                border-top-right-radius: 90px;}
         }
 
         @keyframes jelly-movement {
@@ -201,7 +224,7 @@
             85% { top: 50%}
             90% {top: 55%}  
             95% {top: 50%}
-            100% {left: 50%;}
+            100% {top:55%; left: 50%;}
         }
 
         div[class^="bubble-"]::after {
@@ -228,6 +251,143 @@
                 height: 75px;
                 transform: translateY(-1200%);
             }
+            
+        }
+        .jelly-inner{
+            width: 50%;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            animation: move 10s infinite linear;
+        }
+        @keyframes move{
+            0%{left: 60%;}
+            20%{left: 60%;}
+            25%{left: 50%;}
+            30%{left: 40%;}
+            70%{left: 40%;}
+            75%{left: 50%;}
+            80%{left: 60%;}
+            100%{left: 60%;}
+        }
+        .jelly-eye{
+            position: absolute;
+            top: -40px;
+        }
+        .jelly-eye::before{
+            content: '';
+            position: absolute;
+            left: 60px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .jelly-eye::after{
+            content: '';
+            position: absolute;
+            left: -60px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .jelly-mouth{
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            background-color: #f5cbcb;
+            border-radius: 30px;
+            transform: translateX(-50%);
+        }
+        .jelly-mouth::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 60%;
+            height: 1px;
+            background-color: #ff9393;
+            transform: translateX(-50%);
+        }
+        .jelly-hand{
+            position: absolute;
+            top: 65px;
+        }
+        .jelly-hand::before{
+            content: '';
+            width: 45px;
+            height: 50px;
+            box-shadow: 0 5px 6px #3b949b;
+            position: absolute;
+            left: 105px;
+            border-radius: 0 0 50% 50%;
+        }
+        .jelly-hand::after{
+            content: '';
+            width: 45px;
+            height: 50px;
+            box-shadow: 0 5px 6px #3b949b;
+            position: absolute;
+            left: -150px;
+            border-radius: 0 0 50% 50%;
+        }
+        .jelly-tentacle1{
+            width: 50px;
+            height: 50px;
+            background-color: #ebf28a;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            left: 0;
+            box-shadow: 0 2px #008d98;
+            animation: tentacle 1s infinite ease-in -0.5s;
+        }
+        .jelly-tentacle2{
+            width: 50px;
+            height: 50px;
+            background-color: #ebf28a;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            left: 20%;
+            box-shadow: 0 2px #008d98;
+            animation: tentacle 1s infinite ease-in -0.1s;
+        }
+        .jelly-tentacle3{
+            width: 50px;
+            height: 50px;
+            background-color: #ebf28a;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            left: 40%;
+            box-shadow: 0 2px #008d98;
+            animation: tentacle 1s infinite ease-in -0.3s;
+        }
+        .jelly-tentacle4{
+            width: 50px;
+            height: 50px;
+            background-color: #ebf28a;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            left: 60%;
+            box-shadow: 0 2px #008d98;
+            animation: tentacle 1s infinite ease-in -0.8s;
+        }
+        .jelly-tentacle5{
+            width: 50px;
+            height: 50px;
+            background-color: #ebf28a;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            left: 80%;
+            box-shadow: 0 2px #008d98;
+            animation: tentacle 1s infinite ease-in -0.5s;
+        }
+        @keyframes tentacle{
+            0%{bottom: 15px}
+            50%{bottom: 35px}
+            100%{bottom: 15px}
+
         }
     </style>
 </head>
