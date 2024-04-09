@@ -55,15 +55,9 @@
                             desc: item.desc,
                             answer: item.correct_answer
                         }
-                        const choices = [...item.incorrect_answers, item.correct_answer]
-                        for (let i = choices.length - 1; i > 0; i--) {
-                            const j = Math.floor(Math.random() * (i + 1));
-                            [choices[i], choices[j]] = [choices[j], choices[i]];
-                        }
-                        formattedQuiz.choices = choices;
                         return formattedQuiz;
                     });
-                    updateQuiz(0); // 수정된 부분: 페이지 로드 후 첫 번째 문제를 보여줌
+                    updateQuiz(0); // 페이지 로드 후 첫 번째 문제를 보여줌
                 })
         }
 
@@ -91,7 +85,7 @@
             const quizNext = quizWrap.querySelector(".next")
 
             quizConrim.addEventListener("click", () => {
-                const userAnswer = quizWrap.querySelector("input[type='text']").value; // 수정된 부분: 입력 필드의 값 가져오도록 수정
+                const userAnswer = quizWrap.querySelector("input[type='text']").value; // 입력 필드의 값 가져오도록 수정
                 const quizAnswer = quizInfo[currentIndex].answer;
                 if (userAnswer === quizAnswer) {
                     quizWrap.querySelector(".quiz").classList.add("good");
@@ -113,9 +107,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            fetchQuiz(); // 수정된 부분: 페이지가 로드되면 퀴즈 정보를 가져옴
+            fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
         });
     </script>
 </body>
-
-</html>
