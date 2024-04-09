@@ -272,35 +272,39 @@
             80%{left: 60%;}
             100%{left: 60%;}
         }
-        .jelly-eye{
-            position: absolute;
-            top: -40px;
-            width: 75px;
-            border: 5px solid #000;
-            left: -5px;
-        }
-        .jelly-eye::before{
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: -20px;
-            width: 50px;
-            height: 50px;
-            background-color: #000000;
-            border-bottom-right-radius: 30%;
-            border-bottom-left-radius: 30%;
-        }
-        .jelly-eye::after{
-            content: '';
-            position: absolute;
-            left: -50px;
-            top: -20px;
-            width: 50px;
-            height: 50px;
-            background-color: #000000;
-            border-bottom-right-radius: 30%;
-            border-bottom-left-radius: 30%;
-        }
+        .jelly-eye {
+    position: absolute;
+    top: -40px;
+    width: 70px;
+    border: 7px solid #000;
+    left: -30px;
+}
+
+/* 코 사이의 선 */
+.jelly-eye::before {
+    content: '';
+    position: absolute;
+    left: 15px; /* 왼쪽 눈 위치 + 눈의 절반 */
+    top: -12px; /* 눈 위로 올라가는 선의 상단 위치 조정 */
+    width: 100px; /* 선의 가로 길이 */
+    height: 0; /* 선의 세로 길이 */
+    border-top: 2px solid #000; /* 선의 스타일 및 색상 설정 */
+    transform: rotate(-20deg); /* 선을 기울이기 위한 변형 */
+    z-index: -1; /* 선이 눈보다 뒤에 있도록 설정 */
+}
+
+.jelly-eye::after {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+}
+
         .jelly-mouth{
             position: absolute;
             width: 30px;
@@ -344,7 +348,7 @@
         .jelly-tentacle1{
             width: 50px;
             height: 50px;
-            background-color: #280ebd;
+            background-color: #ebf28a;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 0;
