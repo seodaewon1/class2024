@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 05</title>
+    <title>퀴즈 00</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
@@ -42,58 +42,30 @@
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
 
+        let quizInfo=[];
         // 문제 정보
-        const quizInfo = [
-            {
-                date: "2017년 상시",
-                type: "정보처리기능사",
-                question: "피변조파로부터 원래의 신호파를 만드는 것을 무엇이라고 하는가",
-                choices: ["발진", "정류", "증폭", "복조"],
-                answer: "4",
-                desc: "피변조파는 변조된 신호를 의미합니다. 변조된 신호를 원래의 신호로 만드는 것을 복조라고 합니다."
-            },
-            {
-                date: "2017년 상시",
-                type: "정보처리기능사",
-                question: "레지스터(Register)내로 새로운 자료(Data)를 읽어들이면 어떤 변화가 발생하는가?",
-                choices: ["현존하는 내용에 아무런 영향도 없다.",
-                    "그 레지스터가 누산기일 때만 새 자료가 읽어진다.",
-                    "그 레지스터가 누산기이거나 명령 레지스터일 때만 자료를 읽어 들일 수 있다.",
-                    "레지스터의 먼저 내용이 지워진다."],
-                answer: "4",
-                desc: "레지시트터는 하나의 정보만 기억할수 있으므로 이전에 기억된 내용은 사라지고 새로입력된 정보만 기억되게 됩니다."
-            },
-            {
-                date: "2017년 상시",
-                type: "정보처리기능사",
-                question: "101101의 2의 보수는 얼마인가?",
-                choices: ["010011", "110111", "110001", "111000"],
-                answer: "1",
-                desc: "1의 보수를 취한뒤 1을 더해주거나, 오른쪽끝에서부터 1이 나올때 까지는 똑같이 적고 나머지는 반대값(1의보수)을 적어주면 됩니다. 1의 보수 : 0->1, 1->0으로 바꾸시면 그것이 1의 보수입니다."
-            },
-            {
-                date: "2017년 상시",
-                type: "정보처리기능사",
-                question: "이항(Binary) 연산에 해당하는 것은?",
-                choices: ["보수 연산", "쉬프트 연산", "논리곱(AND) 연산", "로테이트 연산"],
-                answer: "3",
-                desc: "단항연산자 종류 : move, shift, rotate, not(complement) 입니다.이항 연산자란 항이 2개 인것을 말합니다."
-            },
-            {
-                date: "2017년 상시",
-                type: "정보처리기능사",
-                question: "RS Flip-Flop에서 CP=1이고 S=0, R=0 이면 출력 Q의 상태는?",
-                choices: [
-                    "0으로 RESET 된다.",
-                    "1로 SET된다.",
-                    "부정이 된다.",
-                    "불변 상태이다."
-                ],
-                answer: "4",
-                desc: "S(set)=0이고 R(reset)=0 이므로 셋팅과 리셋 모두 하지 말라는 뜻입니다. 그러므로 아무것도 변하는게 없으므로 불변상태 입니다."
-            },
-        ]
+        const fetchQuiz = async () => {
+            await fetch("https://seodaewon1.github.io/class2024/json/gineungsaJC2005_02.json")
+                .then(res => res.json())
+                .then(items => {
+                    // console.log(items)
+                    quizInfo = items.map(item => {
+                        const formattedQuiz = {
+                            date: "2005년 2회",
+                            type: item.subject,
+                            question: item.question,
+                            desc: item.desc,
+                            answer: item.correct_answer
+                        }
+                        // 결과값 출력
+                        return formattedQuiz;
+                    });
+                    // console.log(quizInfo);
 
+                    // 문제 출력
+                    updateQuiz();
+                })
+        }
         // 변수
         let currentIndex = 0;  // 현재 문제에 대한 값
         console.log(currentIndex)
@@ -106,7 +78,7 @@
                         <div class="question">${index + 1}. ${quizInfo[index].question}</div>
                         <div class="input">
                         <input type="text" placeholder="정답을 입력해주세요!">
-                        </div>
+                    </div>
                     <div class="quiz__footer">
                         <button class="confirm">정답 확인하기</button>
                         <button class="next none">다음 문제</button>

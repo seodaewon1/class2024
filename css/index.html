@@ -19,13 +19,189 @@
         }
 
         div[class^="bubble-"] {
-            width: 60px;
-            height: 60px;
+            width: 1px;
+            height: 1px;
             background-color: rgba(1, 141, 210, 0.3);
             border-radius: 50%;
             position: absolute;
             bottom: 6px;
-            left: 6px;
+            animation-name: bubble-move;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        .bubble-1 {
+            left: 10%;
+            animation-delay: 1500ms;
+        }
+
+        .bubble-2 {
+            left: 15%;
+            animation-delay: 2900ms;
+        }
+
+        .bubble-3 {
+            left: 60%;
+            animation-delay: 3500ms;
+        }
+
+        .bubble-4 {
+            left: 56%;
+            animation-delay: 4000ms;
+        }
+
+        .bubble-5 {
+            left: 30%;
+            animation-delay: 1600ms;
+        }
+
+        .bubble-6 {
+            left: 45%;
+            animation-delay: 3700ms;
+        }
+
+        .bubble-7 {
+            left: 73%;
+            animation-delay: 2200ms;
+        }
+
+        .bubble-8 {
+            left: 22%;
+            animation-delay: 3100ms;
+        }
+
+        .bubble-9 {
+            left: 13%;
+            animation-delay: 2400ms;
+        }
+
+        .bubble-10 {
+            left: 80%;
+            animation-delay: 2000ms;
+        }
+
+        .bubble-11 {
+            left: 75%;
+            animation-delay: 1100ms;
+        }
+
+        .bubble-12 {
+            left: 65%;
+            animation-delay: 1500ms;
+        }
+
+        .bubble-13 {
+            left: 73%;
+            animation-delay: 5000ms;
+        }
+
+        .bubble-14 {
+            left: 83%;
+            animation-delay: 1200ms;
+        }
+
+        .bubble-15 {
+            left: 34%;
+            animation-delay: 2300ms;
+        }
+
+        .bubble-16 {
+            left: 46%;
+            animation-delay: 2500ms;
+        }
+
+        .bubble-17 {
+            left: 85%;
+            animation-delay: 3600ms;
+        }
+
+        .bubble-18 {
+            left: 46%;
+            animation-delay: 1800ms;
+        }
+
+        .bubble-19 {
+            left: 13%;
+            animation-delay: 1000ms;
+        }
+
+        .bubble-20 {
+            left: 89%;
+            animation-delay: 3700ms;
+        }
+
+        .jelly-wrapper {
+            width: 256px;
+            height: 310px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            animation: jelly-movement 10s infinite linear;
+        }
+
+        .jelly-hair{}
+
+        .jelly-body{
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(to bottom, #009dd2,#ebf28a);
+            border-top-left-radius: 70px;
+            border-top-right-radius: 70px;
+            animation: body-movement 10s infinite linear;
+        }
+        @keyframes body-movement {
+            0%{
+                border-top-left-radius: 70px;
+                border-top-right-radius: 90px;
+            }
+            20%{
+                border-top-left-radius: 70px;
+                border-top-right-radius: 90px;
+            }
+            25%{
+                border-top-left-radius: 80px;
+            border-top-right-radius: 80px;
+            }
+            30%{ border-top-left-radius: 90px;
+            border-top-right-radius: 70px;}
+            70%{
+                border-top-left-radius: 90px;
+            border-top-right-radius: 70px;
+            }
+            75%{ border-top-left-radius: 80px;
+            border-top-right-radius: 80px;}
+            80%{
+                border-top-left-radius: 70px;
+            border-top-right-radius: 90px;
+            }
+            100%{ border-top-left-radius: 70px;
+            border-top-right-radius: 90px;}
+        }
+
+        @keyframes jelly-movement {
+            0% {top: 55%;left: 50%;}
+            5% {top: 50%}
+            10% {top: 55%}
+            15% {top: 50%}
+            20% {top: 55%}
+            25% {top: 50%; left: calc(100% - 150px);}
+            30% {top: 55%}
+            35% {top: 50%}
+            40% {top: 55%}
+            45% {top: 50%}
+            50% {top: 55%; left: 50%;}
+            55% {top: 50%}
+            60% {top: 55%}
+            65% {top: 50%}
+            70% {top: 55%}
+            75% {top: 50%; left: 150px;}
+            80% {top: 55%}
+            85% { top: 50%}
+            90% {top: 55%}  
+            95% {top: 50%}
+            100% {left: 50%;}
         }
 
         div[class^="bubble-"]::after {
@@ -39,13 +215,27 @@
             border-top: 1px solid rgba(255, 255, 255, 1);
             border-radius: 50%;
         }
+
+        @keyframes bubble-move {
+            0% {
+                width: 1px;
+                height: 1px;
+                transform: translateY(0);
+            }
+
+            100% {
+                width: 75px;
+                height: 75px;
+                transform: translateY(-1200%);
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="bubble-1"></div>
-        <!-- <div class="bubble-2"></div>
+        <div class="bubble-2"></div>
         <div class="bubble-3"></div>
         <div class="bubble-4"></div>
         <div class="bubble-5"></div>
@@ -54,6 +244,21 @@
         <div class="bubble-8"></div>
         <div class="bubble-9"></div>
         <div class="bubble-10"></div>
+        <div class="jelly-wrapper">
+            <div class="jelly-hair"></div>
+            <div class="jelly-body">
+                <div class="jelly-inner">
+                    <div class="jelly-eye"></div>
+                    <div class="jelly-mouth"></div>
+                    <div class="jelly-hand"></div>
+                </div>
+            </div>
+            <div class="jelly-tentacle1"></div>
+            <div class="jelly-tentacle2"></div>
+            <div class="jelly-tentacle3"></div>
+            <div class="jelly-tentacle4"></div>
+            <div class="jelly-tentacle5"></div>
+        </div>
         <div class="bubble-11"></div>
         <div class="bubble-12"></div>
         <div class="bubble-13"></div>
@@ -63,7 +268,7 @@
         <div class="bubble-17"></div>
         <div class="bubble-18"></div>
         <div class="bubble-19"></div>
-        <div class="bubble-20"></div> -->
+        <div class="bubble-20"></div>
     </div>
 </body>
 
