@@ -152,24 +152,22 @@
             animation: hair-movement 10s infinite linear;
         }
         @keyframes hair-movement {
-            0%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
-            20%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
-            25%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
-            30%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 75deg);}
-            70%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 75deg);}
-            75%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
-            80%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
-            100%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
+            0%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 90deg);}
+            20%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 90deg);}
+            25%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 90deg);}
+            30%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 90deg);}
+            70%{transform: rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 90deg);}
+            90%{transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 90deg);}
+            80%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 90deg);}
+            100%{transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 90deg);}
         }
 
         .jelly-body{
             width: 100%;
             height: 250px;
-            background: linear-gradient(to bottom, #fff,#280ebd 90%);
-            border-top-left-radius: 30%;
-            border-top-right-radius: 30%;
-            border-bottom-left-radius: 10%;
-            border-bottom-right-radius: 10%;
+            background: linear-gradient(to bottom, #fff,#280ebd);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
             animation: body-movement 10s infinite linear;
             position: relative;
             z-index: 1;
@@ -325,43 +323,111 @@
         }
         .jelly-hand::before{
             content: '';
-            width: 45px;
+            width: 60px;
             height: 50px;
-            box-shadow: 0 5px 6px #3b949b;
+            box-shadow: 0px 5px 6px #000000;
             position: absolute;
             left: 105px;
             border-radius: 0 0 50% 50%;
         }
         .jelly-hand::after{
             content: '';
-            width: 45px;
+            width: 60px;
             height: 50px;
-            box-shadow: 0 5px 6px #3b949b;
+            box-shadow: 0 5px 6px #000000;
             position: absolute;
             left: -150px;
+            border-radius: 0 0 70% 70%;
+        }
+        .jelly-hand1{
+            position: absolute;
+            top: 65px;
+        }
+        .jelly-hand1::before{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0px 5px 6px #000000;
+            position: absolute;
+            left: -10px;
             border-radius: 0 0 50% 50%;
         }
+        .jelly-hand1::after{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0 5px 6px #000000;
+            position: absolute;
+            left: -50px;
+            border-radius: 0 0 50% 50%;
+        }  
+        .jelly-hand2{
+            position: absolute;
+            top: 90px;
+        }
+        .jelly-hand2::before{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0px 5px 6px #000000;
+            position: absolute;
+            left: -10px;
+            border-radius: 0 0 50% 50%;
+        }
+        .jelly-hand2::after{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0 5px 6px #000000;
+            position: absolute;
+            left: -50px;
+            border-radius: 0 0 50% 50%;
+        }   
+        .jelly-hand3{
+            position: absolute;
+            top: 110px;
+        }
+        .jelly-hand3::before{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0px 5px 6px #000000;
+            position: absolute;
+            left: -10px;
+            border-radius: 0 0 50% 50%;
+        }
+        .jelly-hand3::after{
+            content: '';
+            width: 35px;
+            height: 20px;
+            box-shadow: 0 5px 6px #000000;
+            position: absolute;
+            left: -50px;
+            border-radius: 0 0 50% 50%;
+        }
+
         .jelly-tentacle1{
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 100px;
             background-color: #280ebd;
             border-radius: 0 0 50% 50%;
             position: absolute;
-            left: 0;
+            left: 140px;
             box-shadow: 0 2px #008d98;
             animation: tentacle 1s infinite ease-in -0.5s;
         }
         .jelly-tentacle2{
-            width: 50px;
-            height: 50px;
-            background-color: #ebf28a;
+            width: 60px;
+            height: 100px;
+            background-color: #280ebd;
             border-radius: 0 0 50% 50%;
             position: absolute;
-            left: 20%;
+            left: 60px;
             box-shadow: 0 2px #008d98;
             animation: tentacle 1s infinite ease-in -0.1s;
         }
-        .jelly-tentacle3{
+        
+        /* .jelly-tentacle3{
             width: 50px;
             height: 50px;
             background-color: #ebf28a;
@@ -390,7 +456,7 @@
             left: 80%;
             box-shadow: 0 2px #008d98;
             animation: tentacle 1s infinite ease-in -0.5s;
-        }
+        } */
         @keyframes tentacle{
             0%{bottom: 15px}
             50%{bottom: 35px}
@@ -419,6 +485,9 @@
                     <div class="jelly-eye"></div>
                     <div class="jelly-mouth"></div>
                     <div class="jelly-hand"></div>
+                    <div class="jelly-hand1"></div>
+                    <div class="jelly-hand2"></div>
+                    <div class="jelly-hand3"></div>
                 </div>
             </div>
             <div class="jelly-tentacle1"></div>
