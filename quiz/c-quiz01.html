@@ -30,6 +30,9 @@
     <main id="main">
         <div class="quiz__wrap"></div>
         <div class="quiz__check">정답 확인</div>
+        <div class="quiz__input">
+            <input type="text" placeholder="정답을 입력해주세요!">
+        </div>
     </main>
     <!-- //main -->
 
@@ -60,7 +63,7 @@
                             answer: item.correct_answer
                         }
                         // 보기 가져오기
-                        const choices = [...item.incorrect_answers, item.correct_answer]
+                        const choices = [item.correct_answer]
 
                         // 보기 랜덤 섞기
                         for (let i = choices.length - 1; i > 0; i--) {
@@ -90,25 +93,8 @@
                 <div class = "quiz">
                     <div class="quiz__header">${quiz.date} ${quiz.type}</div>
                     <div class="quiz__main">
+                        <div class="quiz__input">${quiz.input}</div>
                         <div class="question">${index + 1}. ${quiz.question}</div>
-                        <div class="choices">
-                            <label for="choices${index}-1">
-                                <input type="radio" id="choices${index}-1" name="choice-${index}" value="${quiz.choices[0]}">
-                                <span>${quiz.choices[0]}</span>
-                            </label>
-                            <label for="choices${index}-2">
-                                <input type="radio" id="choices${index}-2" name="choice-${index}" value="${quiz.choices[1]}">
-                                <span>${quiz.choices[1]}</span>
-                            </label>
-                            <label for="choices${index}-3">
-                                <input type="radio" id="choices${index}-3" name="choice-${index}" value="${quiz.choices[2]}">
-                                <span>${quiz.choices[2]}</span>
-                            </label>
-                            <label for="choices${index}-4">
-                                <input type="radio" id="choices${index}-4" name="choice-${index}" value="${quiz.choices[3]}">
-                                <span>${quiz.choices[3]}</span>
-                            </label>
-                        </div>
                         <div class="answer none">${quiz.answer}</div>
                         <div class="desc none">${quiz.desc}</div>
                     </div>
@@ -127,9 +113,10 @@
                 const quizChecked = quizElement.querySelector(`input[name="choice-${index}"]:checked`);      // 체크한 정답
                 const quizAnswer = quizElement.querySelector(".answer");
                 const quizDesc = quizElement.querySelector(".desc");
+                const quizInPut = quizElement.querySelector(".input")
 
-                if (quizChecked) {
-                    const userAnswer = quizChecked.value;           // 사용자 정답
+                if (quizinput) {
+                    const userAnswer = quizInput.value;           // 사용자 정답
                     const correctAnswer = quizAnswer.textContent;   // 정답지 정답
 
                     if (userAnswer === correctAnswer) {
