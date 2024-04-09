@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 00</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="c-quiz01.html">0</a></li>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+                <li><a href="quiz06-1.html">6-1</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보
+        const fetchQuiz = async () => {
+            await fetch("https://seodaewon1.github.io/class2024/json/gineungsaJC2005_02.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map(item => {
+                        const formattedQuiz = {
+                            date: "2005년 2회",
+                            type: item.subject,
+                            question: item.question,
+                            desc: item.desc,
+                            answer: item.correct_answer
+                        }
+                        return formattedQuiz;
+                    });
+                    updateQuiz(0); // 페이지 로드 후 첫 번째 문제를 보여줌
+                })
+        }
+
+        let currentIndex = 0;
+        
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+            <div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="input">
+                            <input type="text" placeholder="정답을 입력해주세요!">
+                        </div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                </div>
+            </div>
+            `
+            quizWrap.innerHTML = quizWrapTag;
+
+            const quizConrim = quizWrap.querySelector(".confirm")
+            const quizNext = quizWrap.querySelector(".next")
+
+            quizConrim.addEventListener("click", () => {
+                const userAnswer = quizWrap.querySelector("input[type='text']").value; // 입력 필드의 값 가져오도록 수정
+                const quizAnswer = quizInfo[currentIndex].answer;
+                if (userAnswer === quizAnswer) {
+                    quizWrap.querySelector(".quiz").classList.add("good");
+                } else {
+                    quizWrap.querySelector(".quiz").classList.add("bad");
+                }
+                quizConrim.classList.add("none");
+                quizNext.classList.remove("none");
+            });
+
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;
+                    updateQuiz(currentIndex);
+                } else {
+                    alert("퀴즈가 종료되었습니다.")
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
+        });
+    </script>
+</body>

@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>퀴즈 06</title>
+=======
+    <title>퀴즈 00</title>
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
@@ -15,14 +19,23 @@
         </h1>
         <nav>
             <ul>
+<<<<<<< HEAD
+=======
+                <li class="active"><a href="c-quiz01.html">0</a></li>
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
                 <li><a href="quiz01.html">1</a></li>
                 <li><a href="quiz02.html">2</a></li>
                 <li><a href="quiz03.html">3</a></li>
                 <li><a href="quiz04.html">4</a></li>
                 <li><a href="quiz05.html">5</a></li>
+<<<<<<< HEAD
                 <li class="active"><a href="quiz06.html">6</a></li>
                 <li><a href="quiz07.html">7</a></li>
                 <li><a href="c-quiz01.html">1</a></li>
+=======
+                <li><a href="quiz06.html">6</a></li>
+                <li><a href="quiz06-1.html">6-1</a></li>
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
             </ul>
         </nav>
     </header>
@@ -30,7 +43,10 @@
 
     <main id="main">
         <div class="quiz__wrap"></div>
+<<<<<<< HEAD
         <div class="quiz__check">정답 확인</div>
+=======
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
     </main>
     <!-- //main -->
 
@@ -38,6 +54,7 @@
         <a href="mailto:eodnjs1019@naver.com">eodnjs1019@naver.com</a>
     </footer>
     <!-- //footer -->
+<<<<<<< HEAD
     <script src="assets/js/highlight.min.js"></script>
     <script>
         // 선택자
@@ -49,6 +66,17 @@
         // 문제 가져오기
         const fetchQuiz = () => {
             fetch("https://seodaewon1.github.io/class2024/json/1samupgisa.json")
+=======
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        let quizInfo=[];
+        // 문제 정보
+        const fetchQuiz = async () => {
+            await fetch("https://seodaewon1.github.io/class2024/json/gineungsaJC2005_02.json")
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
                 .then(res => res.json())
                 .then(items => {
                     // console.log(items)
@@ -60,6 +88,7 @@
                             desc: item.desc,
                             answer: item.correct_answer
                         }
+<<<<<<< HEAD
                         // 보기 가져오기
                         const choices = [ item.correct_answer]
 
@@ -72,6 +101,8 @@
                         // 보기 추가하기
                         formattedQuiz.choices = choices;
 
+=======
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
                         // 결과값 출력
                         return formattedQuiz;
                     });
@@ -81,6 +112,7 @@
                     updateQuiz();
                 })
         }
+<<<<<<< HEAD
 
         // 문제 출력
         const updateQuiz = () => {
@@ -156,6 +188,77 @@
             fetchQuiz();
         });
 
+=======
+        // 변수
+        let currentIndex = 0;  // 현재 문제에 대한 값
+        console.log(currentIndex)
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+            <div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                </div>
+            </div>
+            `
+            quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자
+            const quizConrim = quizWrap.querySelector(".confirm")
+            const quizNext = quizWrap.querySelector(".next")
+
+            // 정답 버튼을 클릭 alert(currentIndex)
+            quizConrim.addEventListener("click", () => {
+                // 사용자가 클릭한 정답 확인
+                const quizChecked = quizWrap.querySelector("input[name ='choice']:checked");
+                const quizAnswer = quizInfo[currentIndex].answer;
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;               // 사용자가 클릭한 value 값
+                    const quizAnswer = quizInfo[currentIndex].answer;   // 정답지의 정답
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
+
+                    //사용자 정답과 정답지 정답을 비교
+                    if (userAnswer === quizAnswer) {
+                        // alert("정답입니다.");
+                        quizElement.classList.add("good");
+                    } else {
+                        // alert("오답입니다.");
+                        quizElement.classList.add("bad");
+                        answerElement.classList.remove("none");
+                    }
+                    quizConrim.classList.add("none");
+                    descElement.classList.remove("none");
+                    quizNext.classList.remove("none");
+                } else {
+                    alert("답을 선택해주세요!");
+                }
+            });
+
+            // 다음 문제 버튼 클릭하면 alert
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;             // 문제 번호 증가
+                    updateQuiz(currentIndex);   // 퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.")
+                }
+            });
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+>>>>>>> 11662bfb402a0d7e3e9e5cb75ead6d1dd49b7130
     </script>
 </body>
 
