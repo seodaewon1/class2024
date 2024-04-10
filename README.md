@@ -1,6 +1,8 @@
 # 오늘의 수업   
 [EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)   
 
+[퀴즈게임08](https://seodaewon1.github.io/class2024/quiz/c-quiz01.html)
+
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
