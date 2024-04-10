@@ -376,9 +376,9 @@ body::after {
 
 .quiz__wrap .quiz.good::before {
     content: '';
-    width: 130px;
-    height: 130px;
-    border: 10px solid red;
+    width: 110px;
+    height: 110px;
+    border: 10px solid #fff;
     border-radius: 50%;
     position: absolute;
     left: 20px;
@@ -395,7 +395,7 @@ body::after {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: red;
+    background-color: #fff;
     position: absolute;
     left: 0;
     top: 80px;
@@ -408,7 +408,7 @@ body::after {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: red;
+    background-color: #fff;
     position: absolute;
     left: 0;
     top: 80px;
