@@ -1,5 +1,7 @@
 # 오늘의 수업   
 [EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)   
+[mouse](https://seodaewon1.github.io/class2024/effect/mouse.html)   
+[CSS](https://seodaewon1.github.io/class2024/css/index.html)   
 
 [퀴즈게임08](https://seodaewon1.github.io/class2024/quiz/c-quiz01.html)
 
