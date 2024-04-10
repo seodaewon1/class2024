@@ -15,14 +15,14 @@
         </h1>
         <nav>
             <ul>
-                <li class="active"><a href="c-quiz01.html">0</a></li>
                 <li><a href="quiz01.html">1</a></li>
                 <li><a href="quiz02.html">2</a></li>
                 <li><a href="quiz03.html">3</a></li>
                 <li><a href="quiz04.html">4</a></li>
                 <li><a href="quiz05.html">5</a></li>
                 <li><a href="quiz06.html">6</a></li>
-                <li><a href="quiz06-1.html">6-1</a></li>
+                <li><a href="quiz07.html">7</a></li>
+                <li class="active"><a href="c-quiz01.html">8</a></li>
             </ul>
         </nav>
     </header>
@@ -62,21 +62,28 @@
         }
 
         let currentIndex = 0;
-        
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let totalScore = 0;
+
+
         const updateQuiz = (index) => {
             let quizWrapTag = `
             <div class="quiz">
-                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type} - 문제 ${index + 1}/${quizInfo.length}</div>
                     <div class="quiz__main">
                         <div class="question">${index + 1}. ${quizInfo[index].question}</div>
                         <div class="input">
                             <input type="text" placeholder="정답을 입력해주세요!">
                         </div>
                     </div>
+                    <div class="answer none">${quizInfo[index].answer}</div>
+                    <div class="desc none">${quizInfo[index].desc}</div>
                     <div class="quiz__footer">
                         <button class="confirm">정답 확인하기</button>
                         <button class="next none">다음 문제</button>
-                </div>
+                    </div>
+                    
             </div>
             `
             quizWrap.innerHTML = quizWrapTag;
@@ -85,15 +92,28 @@
             const quizNext = quizWrap.querySelector(".next")
 
             quizConrim.addEventListener("click", () => {
-                const userAnswer = quizWrap.querySelector("input[type='text']").value; // 입력 필드의 값 가져오도록 수정
-                const quizAnswer = quizInfo[currentIndex].answer;
-                if (userAnswer === quizAnswer) {
-                    quizWrap.querySelector(".quiz").classList.add("good");
+                const quizInput = quizWrap.querySelector("input[type='text'");
+
+                if (quizInput) {
+                    const userAnswer = quizInput.value;               // 사용자가 클릭한 value 값
+                    const quizAnswer = quizInfo[currentIndex].answer;   // 정답지의 정답
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
+
+                    if (userAnswer === quizAnswer) {
+                        quizElement.classList.add("good");
+                        correctCount++;
+                    } else {
+                        quizElement.classList.add("bad");
+                        incorrectCount++;
+                    }
+                    quizConrim.classList.add("none");
+                    quizNext.classList.remove("none");
+                    descElement.classList.remove("none");
                 } else {
-                    quizWrap.querySelector(".quiz").classList.add("bad");
+                    alert("답을 입력해주세요!");
                 }
-                quizConrim.classList.add("none");
-                quizNext.classList.remove("none");
             });
 
             quizNext.addEventListener("click", () => {
@@ -101,11 +121,10 @@
                     currentIndex++;
                     updateQuiz(currentIndex);
                 } else {
-                    alert("퀴즈가 종료되었습니다.")
+                    alert(`퀴즈가 종료되었습니다.\n맞은 개수: ${correctCount}\n틀린 개수: ${incorrectCount}\n총 점수: ${totalScore}`);
                 }
             });
         }
-
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
         });

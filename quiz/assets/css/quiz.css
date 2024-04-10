@@ -277,6 +277,19 @@ body::after {
     line-height: 1.5;
     margin-bottom: 10px;
 }
+.answer{
+    border: 1px solid #e2b2b2;
+    padding: 20px;
+    background-color: #fdd1d1;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.answer::before {
+    content: '😍 정답 : ';
+}
 
 .quiz__main .answer::before {
     content: '😍 정답 : ';
@@ -293,6 +306,19 @@ body::after {
 }
 
 .quiz__main .desc::before {
+    content: '😎 설명 : ';
+}
+.desc {
+    border: 1px solid #f5d0d0;
+    padding: 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.desc::before {
     content: '😎 설명 : ';
 }
 
