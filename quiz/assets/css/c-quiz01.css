@@ -128,7 +128,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
-    background-image: url(../img/bg01.jpg);
+    background-image: url(../img/Frame\ 4.png);
     width: 100%;
     min-height: 100vh;
 }
@@ -171,22 +171,24 @@ body::after {
 }
 
 .quiz__wrap .quiz {
-    width: 500px;
-    background-color: #fff;
+    width: 1000px;
+    background-color: #000000;
     padding: 40px 30px;
     border-radius: 10px;
     margin: 10px;
+    margin-top: 150px;
 }
 
 .quiz__header {
-    color: #696969;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .quiz__main .question {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.4;
+    color: #fff;
 }
 
 .quiz__main .question em {
@@ -279,12 +281,12 @@ body::after {
 }
 
 .answer {
-    border: 1px solid #e2b2b2;
+    border: 1px solid #ffffff;
     padding: 20px;
-    background-color: #fdd1d1;
+    background-color: #666;
     border-radius: 3px;
     font-size: 16px;
-    color: #666;
+    color: #000000;
     line-height: 1.5;
     margin-bottom: 10px;
 }
@@ -312,11 +314,12 @@ body::after {
 }
 
 .desc {
-    border: 1px solid #f5d0d0;
+    border: 1px solid #ffffff;
+    background-color: #666;
     padding: 20px;
     border-radius: 3px;
     font-size: 16px;
-    color: #666;
+    color: #000;
     line-height: 1.5;
     margin-bottom: 10px;
 }
@@ -328,8 +331,8 @@ body::after {
 .quiz__footer {}
 
 .quiz__footer .confirm {
-    background-color: #f39c9c;
-    color: #fff;
+    background-color: #666;
+    color: #ffffff;
     width: 100%;
     padding: 20px;
     border: 0;
@@ -340,15 +343,15 @@ body::after {
 }
 
 .quiz__footer .confirm:hover {
-    background-color: transparent;
-    border: 1px dashed #e2b2b2;
-    color: #c5a0a0;
+    background-color: #fff;
+    border: 1px dashed #666;
+    color: #000000;
     cursor: pointer;
 }
 
 .quiz__footer .next {
-    background-color: #ec7676;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     width: 100%;
     padding: 20px;
     border: 0;
@@ -360,8 +363,9 @@ body::after {
 
 .quiz__footer .next:hover {
     background-color: transparent;
-    border: 1px dashed #ec7676;
-    color: #c47f7f;
+    background-color: #666;
+    border: 1px dashed rgb(255, 255, 255);
+    color: #fff;
     cursor: pointer;
 }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 00</title>
-    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/c-quiz01.css">
 </head>
 
 <body>
@@ -107,6 +107,7 @@
                         totalScore++;
                     } else {
                         quizElement.classList.add("bad");
+                        answerElement.classList.remove("none")
                         incorrectCount++;
                     }
                     quizConrim.classList.add("none");
