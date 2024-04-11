@@ -198,16 +198,16 @@
     {
         "num": "29",
         "type": "정보처리기사",
-        "question": "CASE가 갖고 있는 주요 기능이 아닌 것은?",
-        "correct_answer": "언어 번역",
-        "desc": "언어 번역은 CASE의 주요 기능이 아니며, 보통 프로그래밍 언어의 컴파일러나 인터프리터가 담당하는 역할입니다."
+        "question": "",
+        "correct_answer": "",
+        "desc": ""
     },
     {
         "num": "30",
         "type": "정보처리기사",
-        "question": "XP(eXtreme Programming)의 5가지 가치로 거리가 먼 것은?",
-        "correct_answer": "정형 분석",
-        "desc": "XP은 의사소통, 간결함, 피드백, 용기, 존중의 가치를 중시합니다. 정형 분석은 XP의 5가지 가치와 거리가 있습니다."
+        "question": "",
+        "correct_answer": "",
+        "desc": ""
     },
     {
         "num": "31",
@@ -219,9 +219,9 @@
     {
         "num": "32",
         "type": "정보처리기사",
-        "question": "HIPO(Hierarchy Input Process Output)에 대한 설명으로 거리가 먼 것은?",
-        "correct_answer": "상향식 소프트웨어 개발을 위한 문서화 도구이다.",
-        "desc": "HIPO는 문서화 도구이지만, 특히 상향식 소프트웨어 개발에 한정되지 않습니다."
+        "question": "",
+        "correct_answer": "",
+        "desc": ""
     },
     {
         "num": "33",
@@ -233,16 +233,16 @@
     {
         "num": "34",
         "type": "정보처리기사",
-        "question": "럼바우(Rumbaugh)의 객체지향 분석 절차를 가장 바르게 나열한 것은?",
-        "correct_answer": "객체 모형 → 동적 모형 → 기능 모형",
-        "desc": "럼바우의 방법론은 객체 모형에서 시작하여 동적 모형을 거쳐 기능 모형으로 이어지는 순서를 따릅니다."
+        "question": "",
+        "correct_answer": "",
+        "desc": ""
     },
     {
         "num": "35",
         "type": "정보처리기사",
-        "question": "데이터 흐름도(DFD)의 구성요소에 포함되지 않는 것은?",
-        "correct_answer": "data dictionary",
-        "desc": "데이터 사전(data dictionary)은 DFD의 구성요소가 아니라 DFD에서 사용하는 데이터에 대한 정의를 담고 있는 목록입니다."
+        "question": "",
+        "correct_answer": "",
+        "desc": ""
     },
     {
         "num": "36",
