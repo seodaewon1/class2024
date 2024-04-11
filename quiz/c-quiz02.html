@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-퀴즈 01</title>
-    <link rel="stylesheet" href="assets/css/c-quiz01.css">
+    <link rel="stylesheet" href="assets/css/c-quiz02.css">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
         </h1>
         <nav>
             <ul>
-                <li class="active"><a href="c-quiz01.html">1</a></li>
-                <li><a href="c-quiz02.html">2</a></li>
+                <li><a href="c-quiz01.html">1</a></li>
+                <li class="active"><a href="c-quiz02.html">2</a></li>
             </ul>
         </nav>
     </header>
@@ -38,15 +38,15 @@
 
         // 문제 정보
         const fetchQuiz = async () => {
-            await fetch("https://seodaewon1.github.io/class2024/json/sanupgisa.json")
+            await fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
                 .then(res => res.json())
                 .then(items => {
                     quizInfo = items.map(item => {
                         const formattedQuiz = {
                             date: "2022년 2회",
-                            type: item.subject,
+                            type: item.time,
                             question: item.question,
-                            desc: item.desc,
+                            desc: item.question_desc,
                             answer: item.correct_answer
                         }
                         return formattedQuiz;
@@ -67,12 +67,12 @@
                 <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type} - 문제 ${index + 1}/${quizInfo.length}</div>
                     <div class="quiz__main">
                         <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="desc">${quizInfo[index].desc}</div>
                         <div class="input">
                             <input type="text" placeholder="정답을 입력해주세요!">
                         </div>
                     </div>
                     <div class="answer none">${quizInfo[index].answer}</div>
-                    <div class="desc none">${quizInfo[index].desc}</div>
                     <div class="quiz__footer">
                         <button class="confirm">정답 확인하기</button>
                         <button class="next none">다음 문제</button>

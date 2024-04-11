@@ -1,0 +1,420 @@
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 300;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
+    font-display: swap;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "nanumSquareNeo";
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* common */
+.none {
+    display: none;
+}
+
+/* header */
+#header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h1 a {
+    display: inline-block;
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
+}
+
+#header nav {
+    padding-right: 20px;
+}
+
+#header nav li {
+    display: inline-block;
+}
+
+#header nav li a {
+    padding: 10px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    text-align: center;
+    box-shadow: 1px 1px 0px #fff;
+    line-height: 1;
+    color: #fff;
+}
+
+#header nav li.active a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* body */
+body {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    background-image: url(../img/Frame\ 4.png);
+    width: 100%;
+    min-height: 100vh;
+}
+
+body::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* footer */
+#footer {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#footer a {
+    display: inline-block;
+    color: #fff;
+    padding: 40px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+/* quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quiz__wrap .quiz {
+    width: 1000px;
+    background-color: #000000;
+    padding: 40px 30px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 150px;
+}
+
+.quiz__header {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.quiz__main .question {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.quiz__main .question em {
+    font-size: 24px;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+.quiz__main .question span {
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.quiz__main .choices {
+    margin-bottom: 20px;
+}
+
+.quiz__main .choices label {
+    display: block;
+    width: 100%;
+}
+
+.quiz__main .choices label input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.quiz__main .choices label input:checked+span::before {
+    box-shadow: inset 0 0 0 9px #ec9090;
+}
+
+.quiz__main .choices label input:checked+span {
+    border: #c5a0a0;
+    color: #0f0f0f;
+    box-shadow: 1px 1px 5px #ebd9d9;
+    background-color: #fdd1d1;
+}
+
+.quiz__main .choices label span {
+    border: 1px solid #d6d6d6;
+    padding: 17px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quiz__main .choices label span:hover {
+    border-color: #ec9090;
+    color: #f33a3a;
+    box-shadow: 1px 1px 5px rgba(221, 45, 45, 0.451)
+}
+
+.quiz__main .choices label span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 4px #e79090;
+    margin-right: 13px;
+}
+
+
+
+.quiz__main .input input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #c5a0a0;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.quiz__main .answer {
+    border: 1px solid #e2b2b2;
+    padding: 20px;
+    background-color: #fdd1d1;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.answer {
+    border: 1px solid #ffffff;
+    padding: 20px;
+    background-color: #666;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.answer::before {
+    content: '😍 정답 : ';
+}
+
+.quiz__main .answer::before {
+    content: '😍 정답 : ';
+}
+
+.quiz__main .desc {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.quiz__footer {}
+
+.quiz__footer .confirm {
+    background-color: #666;
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.quiz__footer .confirm:hover {
+    background-color: #fff;
+    border: 1px dashed #666;
+    color: #000000;
+    cursor: pointer;
+}
+
+.quiz__footer .next {
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.quiz__footer .next:hover {
+    background-color: transparent;
+    background-color: #666;
+    border: 1px dashed rgb(255, 255, 255);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* good, dad */
+.quiz__wrap .quiz.good {
+    position: relative;
+}
+
+.quiz__wrap .quiz.good::before {
+    content: '';
+    width: 110px;
+    height: 110px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+
+}
+
+.quiz__wrap .quiz.bad {
+    position: relative;
+}
+
+.quiz__wrap .quiz.bad::before {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+
+.quiz__wrap .quiz.bad::after {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    line-height: 94px;
+    text-align: center;
+    background-color: #9b9a98;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #616161;
+    transition: all 0.3s;
+}
+
+.quiz__check:hover {
+    border: 3px dashed #ff7e7e;
+    background-color: #fdcfcf;
+    color: #000000;
+}
