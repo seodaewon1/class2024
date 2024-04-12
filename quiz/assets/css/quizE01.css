@@ -208,8 +208,8 @@ a {
 .quiz__play::before {
     content: '기능사';
     position: absolute;
-    left: -105px;
-    top: 50px;
+    left: -100px;
+    top: 40px;
     font-family: "bitbit";
     color: #e4d03c;
     font-size: 60px;
@@ -221,8 +221,8 @@ a {
 .quiz__play::after {
     content: '퀴즈';
     position: absolute;
-    right: -82px;
-    bottom: 32px;
+    right: -75px;
+    bottom: 20px;
     font-family: "bitbit";
     color: #35db93;
     font-size: 60px;
@@ -234,7 +234,7 @@ a {
 .quiz__play .number {
     position: absolute;
     right: -10px;
-    top: -72px;
+    top: -75px;
     background-color: #3a2475;
     color: #fff;
     text-align: center;
