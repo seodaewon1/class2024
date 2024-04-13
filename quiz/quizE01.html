@@ -89,7 +89,6 @@
         `;
             }
 
-
             quizStartbtn.addEventListener("click", () => {
 
                 quizStart.classList.add("none")
@@ -129,9 +128,9 @@
                     updateQuiz(currentIndex);
                 } else {
                     if (totalScore >= 90) {
-                        resultMessage.textContent = "합격입니다!";
+                        alert("합격입니다!");
                     } else {
-                        resultMessage.textContent = "탈락입니다.";
+                        alert("탈락입니다.");
                     }
                 }
             });
@@ -139,10 +138,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
         });
-
-
-
-
     </script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script type="module">

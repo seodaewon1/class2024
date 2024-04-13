@@ -273,11 +273,11 @@ a {
     content: '';
     width: 110px;
     height: 110px;
-    border: 10px solid #2a0052;
+    border: 10px solid #ff0000;
     border-radius: 50%;
     position: absolute;
     left: 20px;
-    top: 20px;
+    top: 10px;
     z-index: 100;
 
 }
@@ -290,7 +290,7 @@ a {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: #2a0052;
+    background-color: #ff0000;
     position: absolute;
     left: 0;
     top: 70px;
@@ -303,7 +303,7 @@ a {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: #2a0052;
+    background-color: #ff0000;
     position: absolute;
     left: 0;
     top: 70px;
