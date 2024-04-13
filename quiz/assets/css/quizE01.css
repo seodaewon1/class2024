@@ -258,6 +258,53 @@ a {
     font-weight: bold;
 }
 
+.quiz__wrap .quiz.good {
+    position: relative;
+}
+
+.quiz__wrap .quiz.good::before {
+    content: '';
+    width: 110px;
+    height: 110px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+
+}
+
+.quiz__wrap .quiz.bad {
+    position: relative;
+}
+
+.quiz__wrap .quiz.bad::before {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+
+.quiz__wrap .quiz.bad::after {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
 .quiz__play .answer {
     margin-top: 30px;
 
@@ -292,6 +339,24 @@ a {
     background-color: #3926a8;
     color: #fff;
     border: 4px solid #fff;
+    cursor: pointer;
+}
+
+.quiz__play .next {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.quiz__play .next button {
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: "GmarketSans";
+    border-radius: 50px;
+    border: 0;
+    background-color: #3926a8;
+    color: #fff;
+    border: 4px solid #fff;
+    cursor: pointer;
 }
 
 /* 미디어쿼리 */

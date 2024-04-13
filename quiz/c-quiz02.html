@@ -82,10 +82,10 @@
             `
             quizWrap.innerHTML = quizWrapTag;
 
-            const quizConrim = quizWrap.querySelector(".confirm")
+            const quizConfirm = quizWrap.querySelector(".confirm")
             const quizNext = quizWrap.querySelector(".next")
 
-            quizConrim.addEventListener("click", () => {
+            quizConfirm.addEventListener("click", () => {
                 const quizInput = quizWrap.querySelector("input[type='text'");
 
                 if (quizInput) {
@@ -104,7 +104,7 @@
                         answerElement.classList.remove("none")
                         incorrectCount++;
                     }
-                    quizConrim.classList.add("none");
+                    quizConfirm.classList.add("none");
                     quizNext.classList.remove("none");
                     descElement.classList.remove("none");
                 } else {
