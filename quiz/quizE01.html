@@ -11,7 +11,7 @@
 
 <body>
     <div id="quiz__wrap">
-        <div class="quiz__start none">
+        <div class="quiz__start">
             <div class="title">
                 <span>2023.01.20.FRI</span>
             </div>
@@ -29,20 +29,7 @@
         </div>
         <!-- //quiz__start -->
 
-        <div class="quiz__play">
-            <span class="number">1/100</span>
-            <div class="question">웹과 비동기적 데이터 교환 및 조작을 위해 사용되며,
-                XMLHttpRequest 객체를 이용하여 웹 페이지의 일부만을 수정할 수 있는 것은 무엇인가?
-            </div>
-            <div class="input">
-                <input type="text" placeholder="정답을 입력하세요!">
-            </div>
-            <div class="confirm">
-                <button>확인하기</button>
-            </div>
-            <div class="next">
-                <button>다음문제</button>
-            </div>
+        <div class="quiz__play none">
         </div>
         <div class="quiz__finish"></div>
         <div class="quiz__bg">
@@ -56,25 +43,102 @@
             await fetch("https://seodaewon1.github.io/class2024/quiz/assets/json/Gineungsa.json")
                 .then(res => res.json())
                 .then(items => {
-                    console.log(items)
+                    // console.log(items)
                     quizInfo = items.map(item => {
                         const formattedQuiz = {
-                            date: item.time,
+                            type: item.time,
                             question: item.question,
                             question_desc: item.question_desc,
                             answer: item.correct_answer
                         }
                         return formattedQuiz;
                     });
-                    // updateQuiz(0); 
+                    // console.log(quizInfo)
+                    updateQuiz(0);
                 })
 
         }
-        document.addEventListener("DOMContentLoaded", () => {
-            fetchQuiz();
-        });
-    </script>
+        let currentIndex = 0;  // 현재 문제에 대한 값
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let totalScore = 0;
 
+        console.log(currentIndex)
+        // 문제 출력
+        const updateQuiz = (index) => {
+            const quizPlay = document.querySelector(".quiz__play");
+            const quizStart = document.querySelector(".quiz__start")
+            const quizStartbtn = document.querySelector(".quiz__start .btn button")
+            const quizElement = document.querySelector(".quiz");
+
+            if (quizInfo[index]) {
+                quizPlay.innerHTML = `
+            <span class="number">${index + 1}/${quizInfo.length}</span>
+            <div class="question">${quizInfo[index].question}</div>
+            <div class="question_desc">${quizInfo[index].question_desc}</div>
+            <div class="input">
+                <input type="text" placeholder="정답을 입력하세요!">
+            </div>
+            <div class="answer none">${quizInfo[index].answer}</div>
+            <div class="confirm">
+                <button>확인하기</button>
+            </div>
+            <div class="next none">
+                <button>다음문제</button>
+            </div>
+        `;
+            }
+
+
+            quizStartbtn.addEventListener("click", () => {
+
+                quizStart.classList.add("none")
+                quizPlay.classList.remove("none")
+            })
+
+            const quizConrim = document.querySelector(".confirm");
+            const quizNext = document.querySelector(".next");
+
+            quizConrim.addEventListener("click", () => {
+                const quizInput = document.querySelector("input[type='text']")
+
+                if (quizInput) {
+                    const userAnswer = quizInput.value;
+                    const quizAnswer = quizInfo[currentIndex].answer;
+                    const answerElement = document.querySelector(".answer");
+
+                    if (userAnswer === quizAnswer) {
+                        quizPlay.classList.add("good");
+                        correctCount++;
+                        totalScore++;
+                    } else {
+                        quizPlay.classList.add("bad");
+                        answerElement.classList.remove("none");
+                    }
+                    quizConrim.classList.add("none");
+                    quizNext.classList.remove("none");
+                } else {
+                    alert("정답을 입력하세요!")
+                }
+            })
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;
+                    updateQuiz(currentIndex);
+                } else {
+                    alert(`퀴즈가 종료되었습니다.\n맞은 개수: ${correctCount}\n틀린 개수: ${incorrectCount}\n총 점수: ${totalScore}`);
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
+        });
+
+
+
+
+    </script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script type="module">
         import { SVG } from "https://cdn.skypack.dev/@svgdotjs/svg.js@3.1.1";
