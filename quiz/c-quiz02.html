@@ -38,7 +38,7 @@
 
         // 문제 정보
         const fetchQuiz = async () => {
-            await fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
+            await fetch("https://seodaewon1.github.io/class2024/quiz/assets/json/Gineungsa.json")
                 .then(res => res.json())
                 .then(items => {
                     quizInfo = items.map(item => {
@@ -77,7 +77,6 @@
                         <button class="confirm">정답 확인하기</button>
                         <button class="next none">다음 문제</button>
                     </div>
-                    
             </div>
             `
             quizWrap.innerHTML = quizWrapTag;

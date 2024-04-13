@@ -30,11 +30,11 @@
         <!-- //quiz__start -->
 
         <div class="quiz__play">
-            <!-- <span class="number">1/100</span>
+            <span class="number">1/100</span>
             <div class="question">웹과 비동기적 데이터 교환 및 조작을 위해 사용되며,
                 XMLHttpRequest 객체를 이용하여 웹 페이지의 일부만을 수정할 수 있는 것은 무엇인가?
             </div>
-            <div class="answer">
+            <div class="input">
                 <input type="text" placeholder="정답을 입력하세요!">
             </div>
             <div class="confirm">
@@ -42,7 +42,7 @@
             </div>
             <div class="next">
                 <button>다음문제</button>
-            </div> -->
+            </div>
         </div>
         <div class="quiz__finish"></div>
         <div class="quiz__bg">
@@ -56,6 +56,7 @@
             await fetch("https://seodaewon1.github.io/class2024/quiz/assets/json/Gineungsa.json")
                 .then(res => res.json())
                 .then(items => {
+                    console.log(items)
                     quizInfo = items.map(item => {
                         const formattedQuiz = {
                             date: item.time,
@@ -65,37 +66,12 @@
                         }
                         return formattedQuiz;
                     });
-                    updateQuiz(0); // 페이지 로드 후 첫 번째 문제를 보여줌
+                    // updateQuiz(0); 
                 })
+
         }
-        const updateQuiz = (index) => {
-            let quizWrapTag = `
-            <div class="quiz">
-                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type} - 문제 ${index + 1}/${quizInfo.length}</div>
-                    <div class="quiz__main">
-                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
-                        <div class="question_desc">${quizInfo[index].question_desc}</div>
-                        <div class="input">
-                            <input type="text" placeholder="정답을 입력해주세요!">
-                        </div>
-                    </div>
-                    <div class="answer none">${quizInfo[index].answer}</div>
-                    
-                    <div class="quiz__footer">
-                        <button class="confirm">확인하기</button>
-                        <button class="next none">다음 문제</button>
-                    </div>
-            </div>
-            `
-            quizWrap.innerHTML = quizWrapTag;
-        }
-
-
-
-
-
         document.addEventListener("DOMContentLoaded", () => {
-            fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
+            fetchQuiz();
         });
     </script>
 
