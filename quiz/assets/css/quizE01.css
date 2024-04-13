@@ -273,7 +273,7 @@ a {
     content: '';
     width: 110px;
     height: 110px;
-    border: 10px solid #fff;
+    border: 10px solid #2a0052;
     border-radius: 50%;
     position: absolute;
     left: 20px;
@@ -290,10 +290,10 @@ a {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: #9b30ff;
+    background-color: #2a0052;
     position: absolute;
     left: 0;
-    top: 80px;
+    top: 70px;
     border-radius: 30px;
     transform: rotate(45deg);
     z-index: 100;
@@ -303,10 +303,10 @@ a {
     content: '';
     width: 150px;
     height: 10px;
-    background-color: #9b30ff;
+    background-color: #2a0052;
     position: absolute;
     left: 0;
-    top: 80px;
+    top: 70px;
     border-radius: 30px;
     transform: rotate(-45deg);
     z-index: 100;
@@ -323,7 +323,7 @@ a {
     border-radius: 20px;
     border: 0;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     background-color: #fff;
     color: #000000a1;
 }
@@ -334,8 +334,7 @@ a {
     border-radius: 20px;
     border: 0;
     text-align: center;
-    /* 텍스트를 가운데 정렬합니다 */
-    font-size: 50px;
+    font-size: 40px;
     background-color: #fff;
     color: rgba(0, 0, 0, 0.631);
     margin-top: 10px;

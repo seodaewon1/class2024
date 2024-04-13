@@ -128,11 +128,14 @@
                     currentIndex++;
                     updateQuiz(currentIndex);
                 } else {
-                    alert(`퀴즈가 종료되었습니다.\n맞은 개수: ${correctCount}\n틀린 개수: ${incorrectCount}\n총 점수: ${totalScore}`);
+                    if (totalScore >= 90) {
+                        resultMessage.textContent = "합격입니다!";
+                    } else {
+                        resultMessage.textContent = "탈락입니다.";
+                    }
                 }
             });
         }
-
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz(); // 페이지가 로드되면 퀴즈 정보를 가져옴
         });
