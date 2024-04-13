@@ -11,7 +11,7 @@
 
 <body>
     <div id="quiz__wrap">
-        <div class="quiz__start">
+        <div class="quiz__start none">
             <div class="title">
                 <span>2023.01.20.FRI</span>
             </div>
@@ -29,9 +29,10 @@
         </div>
         <!-- //quiz__start -->
 
-        <div class="quiz__play none">
-            <span class="number"></span>
-            <div class="question">
+        <div class="quiz__play">
+            <!-- <span class="number">1/100</span>
+            <div class="question">웹과 비동기적 데이터 교환 및 조작을 위해 사용되며,
+                XMLHttpRequest 객체를 이용하여 웹 페이지의 일부만을 수정할 수 있는 것은 무엇인가?
             </div>
             <div class="answer">
                 <input type="text" placeholder="정답을 입력하세요!">
@@ -41,7 +42,7 @@
             </div>
             <div class="next">
                 <button>다음문제</button>
-            </div>
+            </div> -->
         </div>
         <div class="quiz__finish"></div>
         <div class="quiz__bg">
@@ -67,52 +68,30 @@
                     updateQuiz(0); // 페이지 로드 후 첫 번째 문제를 보여줌
                 })
         }
-
         const updateQuiz = (index) => {
             let quizWrapTag = `
-        <div class="quiz">
-            <div class="quiz__header">${quizInfo[index].date} - 문제 ${index + 1}/${quizInfo.length}</div>
-                <div class="quiz__main">
-                    <div class="question">${index + 1}. ${quizInfo[index].question}</div>
-                    <div class="question_desc">${quizInfo[index].question_desc}</div>
-                </div>
-                <div class="answer">${quizInfo[index].answer}</div>
-        </div>
-        `;
+            <div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type} - 문제 ${index + 1}/${quizInfo.length}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                        <div class="question_desc">${quizInfo[index].question_desc}</div>
+                        <div class="input">
+                            <input type="text" placeholder="정답을 입력해주세요!">
+                        </div>
+                    </div>
+                    <div class="answer none">${quizInfo[index].answer}</div>
+                    
+                    <div class="quiz__footer">
+                        <button class="confirm">확인하기</button>
+                        <button class="next none">다음 문제</button>
+                    </div>
+            </div>
+            `
             quizWrap.innerHTML = quizWrapTag;
-        };
-
-        const quizStartbtn = document.querySelector(".quiz__start .btn button");
-        const quizPlay = document.querySelector(".quiz__play");
-        const quizStart = document.querySelector(".quiz__start");
+        }
 
 
-        quizStartbtn.addEventListener("click", () => {
-            quizStart.classList.add("none");
-            quizPlay.classList.remove("none");
-        });
 
-        const quizConfirm = quizWrap.querySelector(".confirm");
-        const quizNext = quizWrap.querySelector(".next");
-
-        quizConfirm.addEventListener("click", () => {
-            const quizInput = quizWrap.querySelector(".input")
-
-            if (quizInput) {
-                const userAnswer = quizInput.value;
-                const quizAnswer = quizInfo[currentIndex].answer;
-                const quizElement = quizWrap.querySelector(".quiz");
-                const answerElement = quizWrap.querySelector(".answer .input");
-
-                if (userAnswer === quizAnswer) {
-                    quizElement.classList.add("good");
-                } else {
-                    quizElement.classList.add("bad");
-                }
-                quizConfirm.classList.add("none");
-                quizNext.classList.remove("none");
-            }
-        })
 
 
         document.addEventListener("DOMContentLoaded", () => {
