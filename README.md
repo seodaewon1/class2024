@@ -1,9 +1,5 @@
 # 오늘의 수업   
-[EFFECT](https://seodaewon1.github.io/class2024/effect/index.html)   
-[mouse](https://seodaewon1.github.io/class2024/effect/mouse.html)   
-[CSS](https://seodaewon1.github.io/class2024/css/index.html)   
-
-[퀴즈문제02](https://seodaewon1.github.io/class2024/quiz/c-quiz02.html)
+[퀴즈문제E01](https://seodaewon1.github.io/class2024/quiz/quizE01.html)
 
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
@@ -11,8 +7,6 @@
 [My Blog](https://seodaewon1.github.io/)
 
 [메인 페이지](https://seodaewon1.github.io/class2024/)     
-
-[MySQL](https://seodaewon1.github.io/class2024/mysql/index.html)  
 
 ## 퀴즈게임   
 [퀴즈게임](https://seodaewon1.github.io/class2024/quiz/index.html)   
