@@ -114,6 +114,7 @@
                     } else {
                         quizPlay.classList.add("bad");
                         answerElement.classList.remove("none");
+                        incorrectCount++;
                     }
                     quizConrim.classList.add("none");
                     quizNext.classList.remove("none");
@@ -123,6 +124,7 @@
             })
             quizNext.addEventListener("click", () => {
                 if (currentIndex < quizInfo.length - 1) {
+                    quizPlay.classList.remove("good", "bad");
                     currentIndex++;
                     updateQuiz(currentIndex);
                 } else {
