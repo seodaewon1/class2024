@@ -37,7 +37,7 @@
         </div>
     </div>
     <script>
-        const quizWrap = document.querySelector(".quiz__wrap")
+        const quizWrap = document.querySelector("#quiz__wrap")
 
         const fetchQuiz = async () => {
             await fetch("https://seodaewon1.github.io/class2024/quiz/assets/json/Gineungsa.json")
@@ -66,7 +66,7 @@
         console.log(currentIndex)
         // 문제 출력
         const updateQuiz = (index) => {
-            const quizPlay = document.querySelector(".quiz__play");
+            const quizPlay = quizWrap.querySelector(".quiz__play");
             const quizStart = document.querySelector(".quiz__start")
             const quizStartbtn = document.querySelector(".quiz__start .btn button")
             const quizElement = document.querySelector(".quiz");
@@ -123,7 +123,7 @@
             })
             quizNext.addEventListener("click", () => {
                 if (currentIndex < quizInfo.length - 1) {
-                    quizPlay.classList.remove("good", "bad");
+                    // quizPlay.classList.remove("good", "bad");
                     currentIndex++;
                     updateQuiz(currentIndex);
                 } else {
