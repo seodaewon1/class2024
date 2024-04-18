@@ -146,15 +146,13 @@
             // 모든 콘텐츠를 안보이게 설정 --> 첫번째 콘텐츠만 보이게 처리
             tabCont.hide().eq(0).show();
 
-            tabBtn.click(function (e) {
+            tabBtn.click(function (e) {         // 클릭했을 때 active 추가 제거
                 e.preventDefault();
                 const index = $(this).index();   // 내가 클릭한 번호를 저장
                 $(this).addClass("active").siblings().removeClass("active");
 
                 tabCont.eq(index).show().siblings().hide();
             })
-
-
 
             $(".nav>ul>li").mouseenter(function () {
                 $(this).find(">ul").stop().slideDown();
