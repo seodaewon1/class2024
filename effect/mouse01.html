@@ -142,17 +142,26 @@
         }
 
         .cursor.span4 {
-            background-color: #f2ff3b;
-            border: 20px solid #ffffff;
-            transform: scaleY(1.2);
+            background-color: #ebf7474d;
+            border: 1px solid #d0eaff;
+            border-radius: 50%;
+            animation: rotateBox 5s infinite linear;
+            transform-style: preserve-3d;
         }
 
-        .cursor.span4::before {
-            background-color: #ffffff;
-        }
-
+        .cursor.span4::before,
         .cursor.span4::after {
-            background-color: #ffffff;
+            background-color: #fff;
+        }
+
+        @keyframes rotateBox {
+            from {
+                transform: rotateY(0) scale(2)
+            }
+
+            to {
+                transform: rotateY(720deg) scale(1)
+            }
         }
     </style>
 </head>
