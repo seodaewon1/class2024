@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webd/site/siteC/css/style.css">
+    <title>C-3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #wrap {
+            width: 1000px;
+            display: flex;
+        }
+
+        #aside {
+            width: 20%;
+            height: 650px;
+        }
+
+        #aside .logo {
+            width: 100%;
+            height: 20%;
+            background-color: #ffdfb5;
+        }
+
+        #aside .logo ul li {
+            text-align: center;
+        }
+
+        #aside .logo ul li a {
+            font-size: 30px;
+            padding: 40px 40px;
+            display: inline-block;
+        }
+
+        #aside .nav {
+            width: 100%;
+            height: 80%;
+            background-color: #ffcd8d;
+            position: relative;
+        }
+
+        #aside .nav>ul {
+            justify-content: center;
+            text-align: center;
+        }
+
+        #aside .nav>ul>li>a {
+            padding: 10px 40px;
+            width: 80%;
+            background-color: #ca7e1a;
+            display: inline-block;
+        }
+
+        #aside .nav>ul>li>a:hover {
+            background-color: #a86610;
+        }
+
+        #aside .nav>ul>li>ul {
+            position: relative;
+        }
+
+        #aside .nav>ul>li>ul>li {
+            text-align: center;
+        }
+
+        #aside .nav>ul>li>ul>li>a {
+            width: 80%;
+            padding: 10px;
+            display: inline-block;
+            background-color: #da7d04;
+            box-sizing: border-box;
+            position: absolute;
+        }
+
+        #aside .nav>ul>li>ul>li>a:hover {
+            background-color: #975601;
+        }
+
+        #main {
+            width: 80%;
+            height: 650px;
+        }
+
+
+        #main .slider {
+            width: 100%;
+            height: 350px;
+            background-color: #fff2e2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main .slider .slider_wrap {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+        }
+
+        #main .slider .slider_wrap {}
+
+        #main .contents {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+
+        #main .contents .notice {
+            width: 33.33%;
+            height: 100%;
+            background-color: #ffa83d;
+        }
+
+        #main .contents .gallery {
+            width: 33.33%;
+            height: 100%;
+            background-color: #ffbe6e;
+        }
+
+        #main .contents .banner {
+            width: 33.33%;
+            height: 100%;
+            background-color: #ffd5a2;
+        }
+
+        #main .footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+
+        #main .footer .footer1 {
+            width: 20%;
+            height: 100%;
+            background-color: #db7c07;
+        }
+
+        #main .footer .footer2 {
+            width: 80%;
+            height: 100%;
+        }
+
+        #main .footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 50%;
+            background-color: #af6203;
+        }
+
+        #main .footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 50%;
+            background-color: #884d04;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            height: 650px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="aside" class="container">
+            <div class="logo">
+                <ul>
+                    <li><a href="#">NAMDO</a></li>
+                </ul>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">MENU-1</a>
+                        <ul>
+                            <li><a href="#">SubMenu-1</a></li>
+                            <li><a href="#">SubMenu-2</a></li>
+                            <li><a href="#">SubMenu-3</a></li>
+                            <li><a href="#">SubMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-2</a>
+                        <ul>
+                            <li><a href="#">SubMenu-1</a></li>
+                            <li><a href="#">SubMenu-2</a></li>
+                            <li><a href="#">SubMenu-3</a></li>
+                            <li><a href="#">SubMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-3</a>
+                        <ul>
+                            <li><a href="#">SubMenu-1</a></li>
+                            <li><a href="#">SubMenu-2</a></li>
+                            <li><a href="#">SubMenu-3</a></li>
+                            <li><a href="#">SubMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-4</a>
+                        <ul>
+                            <li><a href="#">SubMenu-1</a></li>
+                            <li><a href="#">SubMenu-2</a></li>
+                            <li><a href="#">SubMenu-3</a></li>
+                            <li><a href="#">SubMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main id="main">
+            <div class="slider" class="container">
+                <div class="slider_wrap">
+                    <div class="slide 1">
+                        <img src="/webd/site/siteC/img/Frame 19.jpg" alt="이미지1">
+                    </div>
+                    <div class="slide 2">
+                        <img src="/webd/site/siteC/img/Frame 20.jpg" alt="이미지2">
+                    </div>
+                    <div class="slide 3">
+                        <img src="/webd/site/siteC/img/Frame 21.jpg" alt="이미지3">
+                    </div>
+                </div>
+            </div>
+            <div class="contents">
+                <div class="notice">
+
+                </div>
+                <div class="gallery">
+
+                </div>
+                <div class="banner">
+
+                </div>
+            </div>
+            <div class="footer" class="container">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    let currentIndex = 0;
+    $(".slider_wrap").append($(".slide").first().clone(true));
+
+    setInterval(function () {
+        currentIndex++;
+        $(".slider_wrap").animate({ marginLeft: -currentIndex * 800 + "px" }, 600);
+        if (currentIndex == 3) {
+            setTimeout(() => {
+                $(".slider_wrap").animate({ marginLeft: 0 }, 0);
+
+                currentIndex = 0;
+            }, 700);
+        }
+    }, 3000)
+</script>
+
+</html>
