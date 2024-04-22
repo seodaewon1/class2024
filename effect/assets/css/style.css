@@ -42,7 +42,7 @@ body {
     border-bottom: 1px solid #B7DD9B;
 }
 
-.header__inner h1 {
+.header__inner h1 a {
     font-family: "Montserrat";
     color: #B8DE9C;
     font-weight: 500;
@@ -51,9 +51,13 @@ body {
     line-height: 1;
 }
 
+
 .header__inner h1 em {
+    font-family: "Montserrat";
     font-weight: 800;
+    color: #B8DE9C;
     font-size: normal;
+    font-size: 18px;
 }
 
 .footer {
