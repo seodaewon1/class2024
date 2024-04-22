@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse Effect02</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mouse.css">
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=Rubik+Mono+One&display=swap"
         rel="stylesheet">
     <link
@@ -26,12 +26,12 @@
             /* font-family: "Rubik Mono One", monospace; */
             font-family: "Orbitron", sans-serif;
             color: #BAE29B;
-            padding: 10vw;
-            font-size: 18vmax;
+            /* padding: 10vw; */
+            font-size: 17vmax;
             text-align: center;
             font-weight: 700;
-            margin-left: -10vw;
-            letter-spacing: -1vw;
+            margin-left: -4vw;
+            letter-spacing: -3vw;
         }
 
 
@@ -105,7 +105,7 @@
     <div id="wrap">
         <header id="header">
             <div class="header__inner">
-                <h1><a href="index.html">Mouse Effect</a><em>02</em></em></h1>
+                <h1><a href="index.html">Mouse Effect</a> <em>02</em></em></h1>
             </div>
         </header>
         <!-- //header -->
@@ -113,7 +113,18 @@
         <main id="main">
             <div class="cursor"></div>
             <div class="main__inner">
-                <p>Javascript</p>
+                <p>
+                    <span1>J</span1>
+                    <span2>a</span2>
+                    <span3>v</span3>
+                    <span4>a</span4>
+                    <span5>S</span5>
+                    <span6>c</span6>
+                    <span7>r</span7>
+                    <span8>i</span8>
+                    <span9>p</span9>
+                    <span10>t</span10>
+                </p>
             </div>
             <div class="main__info">
                 <ul>
@@ -136,6 +147,12 @@
                         <li><a href="mouse04.html">04</a></li>
                     </ul>
                 </nav>
+                <div class="link">
+                    <ul>
+                        <li><a href="parallax01.html">parallax</a></li>
+                    </ul>
+                </div>
+
             </div>
         </footer>
         <!-- //footer -->
@@ -155,7 +172,45 @@
             gsap.to(".cursor", { duration: 0.5, left: e.clientX - 50, top: e.clientY - 50 })
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        let text1 = document.querySelector(".main__inner span1");
+        let text5 = document.querySelector(".main__inner span5");
 
+        function onMouseOver() {
+            gsap.to(text1, {
+                duration: 1,
+                color: "red"
+            });
+        }
+
+        function onMouseOut() {
+            gsap.to(text1, {
+                duration: 1,
+                color: "#BAE29B"
+            });
+        }
+
+        function onMouseOver1() {
+            gsap.to(text5, {
+                duration: 1,
+                fontSize: "22vmax"
+            });
+        }
+
+        function onMouseOut1() {
+            gsap.to(text5, {
+                duration: 1,
+                fontSize: "18vmax"
+            });
+        }
+
+        text1.addEventListener("mouseover", onMouseOver);
+        text1.addEventListener("mouseout", onMouseOut);
+        text5.addEventListener("mouseover", onMouseOver1);
+        text5.addEventListener("mouseout", onMouseOut1);
+    </script>
 </body>
 
 </html>
