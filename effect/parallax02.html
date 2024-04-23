@@ -96,6 +96,25 @@
             height: 100px;
             border-radius: 50%;
         }
+
+        #section09 .text {
+            font-family: "Bebas Neue", sans-serif;
+            text-transform: uppercase;
+            font-size: 5vw;
+            font-weight: 800;
+            line-height: 1;
+            color: #fff;
+            margin: 5px;
+            z-index: 10;
+        }
+
+        #section09 .img {
+            position: absolute;
+        }
+
+        #section09 .t5 {
+            z-index: 100;
+        }
     </style>
 </head>
 
@@ -190,6 +209,15 @@
                 <section id="section09">
                     <span class="num">09</span>
                     <div class="img"></div>
+                    <div class="text t1">s</div>
+                    <div class="text t2">e</div>
+                    <div class="text t3">c</div>
+                    <div class="text t4">t</div>
+                    <div class="text t5">i</div>
+                    <div class="text t6">o</div>
+                    <div class="text t7">n</div>
+                    <div class="text t8">0</div>
+                    <div class="text t9">9</div>
                 </section>
                 <!-- //section09 -->
             </div>
@@ -332,13 +360,13 @@
         // 07 : 텍스트 제자리 애니메이션
         const ani7 = gsap.timeline();
 
-        ani7.from("#section07 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t2", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t3", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t4", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t5", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t6", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-            .from("#section07 .t7", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t1", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t2", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t3", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t4", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t5", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t6", { autoAlpha: 0, duration: 1, y: 50 })
+            .from("#section07 .t7", { autoAlpha: 0, duration: 1, y: 50 })
 
         ScrollTrigger.create({
             animation: ani7,
@@ -369,6 +397,42 @@
             anticipatePin: 1,
             markers: true
         })
+
+
+        // const ani9 = gsap.timeline()
+        // ani9.from("#section09 .img", {
+        //     autoAlpha: 0,
+        //     scale: 1,
+        //     width: "100vw",
+        //     height: "100vh",
+        //     duration: 20
+        // })
+
+        const ani9 = gsap.timeline()
+        ani9.from("#section09 .img", { autoAlpha: 0, duration: 10, y: 50, rotation: -180 })
+            .from("#section09 .t1", { autoAlpha: 0, duration: 5, xPercent: 500 }, "+=1")
+            .from("#section09 .t2", { autoAlpha: 0, duration: 5, xPercent: -500 }, "+=1")
+            .from("#section09 .t3", { autoAlpha: 0, duration: 5, xPercent: 500 }, "+=1")
+            .from("#section09 .t4", { autoAlpha: 0, duration: 5, xPercent: -500 }, "+=1")
+            .from("#section09 .t5", { autoAlpha: 0, duration: 5, xPercent: 500 }, "+=1")
+            .from("#section09 .t6", { autoAlpha: 0, duration: 5, xPercent: -500 }, "+=1")
+            .from("#section09 .t7", { autoAlpha: 0, duration: 5, xPercent: 500 }, "+=1")
+            .from("#section09 .t8", { autoAlpha: 0, duration: 5, xPercent: -500 }, "+=1")
+            .from("#section09 .t9", { autoAlpha: 0, duration: 5, xPercent: 500 }, "+=1")
+        ani9.to("#section09 .t5", { scale: 150, duration: 30, rotation: 180, color: "#BFCABD" }, "+=3")
+
+
+        ScrollTrigger.create({
+            animation: ani9,
+            trigger: "#section09",
+            start: "top top",
+            end: "+=8000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+
     </script>
 </body>
 
