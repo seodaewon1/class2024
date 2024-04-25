@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 D-2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo"><a href="#">서울 구석구석</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">지금의 서울</a>
+                        <ul>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">축제&행사</a></li>
+                            <li><a href="#">전시</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">추천</a>
+                        <ul>
+                            <li><a href="#">에디터 추천</a></li>
+                            <li><a href="#">테마코스</a></li>
+                            <li><a href="#">도보해설관광</a></li>
+                            <li><a href="#">한류관광</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">여행지</a>
+                        <ul>
+                            <li><a href="#">명소</a></li>
+                            <li><a href="#">엔터테인먼트</a></li>
+                            <li><a href="#">음식</a></li>
+                            <li><a href="#">게스트하우스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">여행정보</a>
+                        <ul>
+                            <li><a href="#">가이드북&지도</a></li>
+                            <li><a href="#">시티투어버스</a></li>
+                            <li><a href="#">날씨</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <section class="cont1">
+                <div class="sliders">
+                    <div class="slider-wrap">
+                        <div class="slider s1">
+                            <h2>미술관 개관</h2>
+                            <p>미술관 개관을 시작합니다.</p>
+                        </div>
+                        <div class="slider s2">
+                            <h2>서울박물관 공사</h2>
+                            <p>공사를 시작합니다.</p>
+                        </div>
+                        <div class="slider s3">
+                            <h2>서울역 2번 출구</h2>
+                            <p>잠자기 편합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div>
+                        <h3>63빌딩</h3>
+                        <p>행사에 초대합니다.</p>
+                        <a href="#">클릭하기</a>
+                    </div>
+                </div>
+            </section>
+            <section class="cont2">
+                <div class="notice">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="#">문화행사 공지</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울박물관 공사</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울역 축제</a><span>2024.04.25</span></li>
+                        <li><a href="#">미술관 개관</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울역 2번 출구</a><span>2024.04.25</span></li>
+                    </ul>
+                </div>
+
+                <div class="gallery">
+                    <h3>서울 구석 갤러리</h3>
+                    <ul>
+                        <li><a href="#">
+                                <img src="img/gallery1.jpg" alt="서울 박물관">
+                                <span>서울 박물관</span>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                                <img src="img/gallery2.jpg" alt="서울 박물관">
+                                <span>서울 박물관</span>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                                <img src="img/gallery3.jpg" alt="서울 박물관">
+                                <span>서울 박물관</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    </div>
+    </section>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="title">
+            <div class="logo"><a href="#">서울 구석구석</a></div>
+        </div>
+        <div class="copy">
+            <a href="#"> Here's an English version of a copyright notice for you: "© 2024 Example Company. All rights
+                reserved." This
+                statement is concise and clearly asserts the rights reserved by the owner, making it easy to apply to
+                any
+                content. You can adjust it according to your specific needs or context!</a>
+        </div>
+        <div class="family">
+            <select>
+                <option value="1">서울시</option>
+                <option value="2">강남구</option>
+                <option value="3">압구정동</option>
+            </select>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <div class="modal">
+        <h4>서울 경마장 공사중</h4>
+        <p>
+            안녕하세요, 경마장 운영팀입니다. 바빠서 운영 안합니다.
+            티켓은 환불은 안되니 알아서 하십쇼
+        </p>
+        <a href="#" class="popup-close">닫기</a>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 모달
+            $(".notice ul li:nth-child(1)").click(function () {
+                $(".modal").show();
+            })
+            $(".modal a").click(function () {
+                $(".modal").hide();
+            })
+
+
+            $(".nav>ul>li").mouseover(function () {
+                $(this).find(">ul").stop().slideDown();
+            })
+            $(".nav>ul>li").mouseout(function () {
+                $(this).find(">ul").stop().slideUp();
+            })
+
+            let curretIndex = 0;
+            $(".slider-wrap").append($(".slider").first().clone(true));
+
+            setInterval(() => {
+                curretIndex++;
+                $(".slider-wrap").animate({ marginTop: -400 * curretIndex + "px" }, 600)
+                if (curretIndex == 3) {
+                    setTimeout(() => {
+                        $(".slider-wrap").animate({ marginTop: 0 }, 0);
+                        curretIndex = 0;
+                    }, 700)
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>
