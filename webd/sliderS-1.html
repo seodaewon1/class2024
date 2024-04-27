@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #ffe4e4;
+            position: relative;
+            z-index: 10;
+        }
+
+        #header::after {
+            content: "";
+            width: 100%;
+            top: 100px;
+            height: 0px;
+            left: 0;
+            position: absolute;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        #header.on::after {
+            height: 165px;
+        }
+
+
+        .container {
+            display: flex;
+        }
+
+        .logo {
+            width: 20%;
+            height: 100%;
+            background-color: #ffc7c7;
+        }
+
+        .nav {
+            width: 80%;
+            height: 100%;
+            background-color: #ff9f9f;
+            z-index: 1000;
+        }
+
+        #slider {
+            width: 100%;
+            height: 300px;
+        }
+
+        #contents {
+            width: 100%;
+            height: 200px;
+        }
+
+        .content1 {
+            width: 33.33%;
+            height: 100%;
+            background-color: #ca9a9a;
+        }
+
+        .content2 {
+            width: 33.33%;
+            height: 100%;
+            background-color: #d17979;
+        }
+
+        .content3 {
+            width: 33.33%;
+            height: 100%;
+            background-color: #c05757;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #fda5a5;
+        }
+
+        .footer1 {
+            width: 80%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .footer1-1 {
+            width: 100%;
+            height: 50%;
+            background-color: #692525;
+        }
+
+        .footer1-2 {
+            width: 100%;
+            height: 50%;
+            background-color: #690b0b;
+        }
+
+        .footer2 {
+            width: 20%;
+            height: 100%;
+            background-color: #b83030;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: #c25252;
+        }
+
+        /* sliderWrap */
+        .sliderWrap {
+            position: relative;
+
+        }
+
+        .sliderWrap .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .sliderWrap .slider span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #000;
+
+        }
+
+        .sliderWrap .slider:nth-child(1) {
+            display: block;
+        }
+
+        .nav>ul {
+            display: flex;
+            justify-content: right;
+            margin-top: 59px;
+        }
+
+
+        .nav>ul>li>a {
+            padding: 10px 50px;
+            background-color: #ccc;
+            display: inline-block;
+        }
+
+        .nav>ul>li>a:hover {
+            background-color: #ddd;
+        }
+
+        .nav>ul>li>ul {
+            display: none;
+            text-align: center;
+        }
+
+        .nav>ul>li>ul>li>a {
+            width: 100%;
+            padding: 10px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .nav>ul>li>ul>li>a:hover {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">1차 메뉴</a>
+                            <ul>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">1차 메뉴</a>
+                            <ul>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">1차 메뉴</a>
+                            <ul>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">1차 메뉴</a>
+                            <ul>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                                <li><a href="#">2차 메뉴</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article id="slider">
+            <div class="container">
+                <div class="sliderWrap">
+                    <div class="slider s1">
+                        <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider01.jpg" alt="이미지1">
+                        <span>이미지1</span>
+                    </div>
+                    <div class="slider s2">
+                        <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider02.jpg" alt="이미지2">
+                        <span>이미지2</span>
+                    </div>
+                    <div class="slider s3">
+                        <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider03.jpg" alt="이미지3">
+                        <span>이미지3</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <main id="contents">
+            <div class="container">
+                <div class="content1"></div>
+                <div class="content2"></div>
+                <div class="content3"></div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer1">
+                    <div class="footer1-1"></div>
+                    <div class="footer1-2"></div>
+                </div>
+                <div class="footer2"></div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % 3;
+
+                $(".slider").eq(currentIndex).fadeOut(1000);
+                $(".slider").eq(nextIndex).fadeIn(1000);
+
+                currentIndex = nextIndex;
+            }, 3000)
+        })
+
+
+        // $(function () {
+        //     let currentIndex = 0; // 현재 이미지
+
+        //     setInterval(() => {
+        //         let nextIndex = (currentIndex + 1) % 3; // 1 2 0 1 2 0
+        //         $(".slider").eq(currentIndex).fadeOut(1000); // 첫번째 이미지 사라짐
+        //         $(".slider").eq(nextIndex).fadeIn(1000); // 두번째 이미지 나타남
+
+        //         currentIndex = nextIndex;
+        //     }, 3000)
+        // });
+
+        $(function () {
+            $(".nav>ul>li").mouseover(function () {
+                $(".nav>ul>li>ul").stop().fadeIn(900)
+                $("#header").addClass("on");
+            })
+            $(".nav>ul>li").mouseout(function () {
+                $(".nav>ul>li>ul").stop().fadeOut(100)
+                $("#header").removeClass("on");
+            })
+        })
+    </script>
+    <script>
+        // window.onload = function () {
+        //     let currentIndex = 0; // 현재 이미지
+        //     const slider = document.querySelectorAll(".slider");  // 모든 이미지 변수 저장
+        //     slider.forEach(img => img.style.opacity = "0"); // 모든 이미지를 투명하게
+        //     slider[0].style.opacity = "1";
+
+        //     setInterval(() => {
+        //         let nextIndex = (currentIndex + 1) % slider.length; // 1 2 0
+
+        //         slider[currentIndex].style.opacity = "0" // 첫번째 이미지 사라짐
+        //         slider[nextIndex].style.opacity = "1" // 두번째 이미지 나타남
+        //         slider.forEach(img => img.style.transition = "all 1s")
+
+        //         currentIndex = nextIndex;
+        //     }, 3000)
+        // }
+    </script>
+</body>
+
+</html>

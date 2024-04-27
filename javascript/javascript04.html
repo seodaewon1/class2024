@@ -503,6 +503,27 @@
                 console.log(i);
             }
         }
+
+        { }
+        for (let i = 5; i <= 5; i++) {
+            for (let j = 1; j < 10; j++) {
+                console.log(i, j);
+            }
+        }
+        {
+            function func() {
+                let i = 10, j = 10, k = 30;
+                i /= j;
+                j -= i;
+                k %= j;
+
+                console.log(i);
+                console.log(j);
+                console.log(k);
+            }
+            func();
+        }
+
     </script>
 </body>
 

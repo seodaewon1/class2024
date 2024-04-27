@@ -1,12 +1,11 @@
 # 오늘의 수업   
-[퀴즈문제E01](https://seodaewon1.github.io/class2024/quiz/quizE01.html)
 
 # GIT HUB   
 [Git Hub](https://github.com/seodaewon1/seodaewon1)   
 
 [My Blog](https://seodaewon1.github.io/)
 
-[메인 페이지](https://seodaewon1.github.io/class2024/)     
+[Main](https://seodaewon1.github.io/class2024/)     
 
 ## 퀴즈게임   
 [퀴즈게임](https://seodaewon1.github.io/class2024/quiz/index.html)   
@@ -35,6 +34,12 @@
 - 메서드(join(), push(), innerHTML())   
   
 [퀴즈05](https://seodaewon1.github.io/class2024/quiz/quiz05.html)   
+
+## EFFECT
+[effect](https://seodaewon1.github.io/class2024/effect/index.html)   
+
+## CSS
+[css](https://seodaewon1.github.io/class2024/css/index.html)   
 
 ### vscode 확장 프로그램   
 Live Server : 웹페이지 미리보기   

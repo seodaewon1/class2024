@@ -156,8 +156,9 @@ li {
     margin: 0 auto;
     width: 96%;
 }
+
 @media (max-width: 800px) {
-    .container{
+    .container {
         width: 90%;
     }
 }
@@ -196,7 +197,8 @@ li {
 #header nav ul li {
     margin: 2px;
 }
-#header nav ul li.active a{
+
+#header nav ul li.active a {
     background-color: #2f2d68;
     color: #fff;
 }
@@ -214,6 +216,13 @@ li {
 .main__menu {
     padding: 40px 0;
     border-bottom: 1px dashed #dcdcdc;
+}
+
+.main__menu h2 {
+    font-size: 20px;
+    font-family: "GmarketSans";
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .main__menu ul li a {
