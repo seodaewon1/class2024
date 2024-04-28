@@ -6,8 +6,8 @@ head = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 res = req.get("https://www.music-flo.com/browse", headers=head)
 soup = bs(res.text, "lxml")
 
-ranking = soup.select("tbody > .num ")
-title = soup.select("tbody .tit__inner .tit__text")
+ranking = soup.select("chart_lst tbody .num ")
+title = soup.select("tbody .info .info_wrap p.tit")
 artist = soup.select("tbody .artist .artist_link > artist__link last")
 
 
