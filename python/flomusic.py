@@ -8,7 +8,7 @@ soup = bs(res.text, "lxml")
 
 ranking = soup.select("chart_lst tbody .num ")
 title = soup.select("tbody .info .info_wrap p.tit")
-artist = soup.select("tbody .artist .artist_link > artist__link last")
+artist = soup.select("tbody .artist .artist__link last")
 
 
 rankingList = []
