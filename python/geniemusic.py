@@ -1,33 +1,54 @@
-import requests as req
-from bs4 import BeautifulSoup as bs
-import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+import datetime
+import json
 
-head = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
-res = req.get("https://www.genie.co.kr/chart/top200", headers=head)
-soup = bs(res.text, "lxml")
+def get_chart_data(url):
+    # 사용자 에이전트 설정
+    headers = {'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+    
+    # 웹 페이지로부터 데이터 요청 및 수신
+    res = requests.get(url, headers=headers)
+    soup = BeautifulSoup(res.text, "lxml")
 
-ranking = soup.select("tbody tr.list td.number")
-title = soup.select("tbody .info a.title.ellipsis")
-artist = soup.select("tbody .info a.artist.ellipsis")
+    # 데이터 선택
+    chart_data = []
+    rows = soup.select("tbody > tr.list")
 
+    for row in rows:
+        rank = row.select_one("td.number").contents[0].strip()
+        image_url = row.select_one("td a.cover img").get('src').replace('//', 'https://')
+        title = row.select_one("td.info a.title.ellipsis").text.strip()
+        artist = row.select_one("td.info a.artist.ellipsis").text.strip()
+        album = row.select_one("td.info a.albumtitle.ellipsis").text.strip()
 
-rankingList = []
-titleList = []
-artistList = []
+        chart_data.append({
+            "rank": rank,
+            "title": title,
+            "artist": artist,
+            "imageUrl": image_url,
+            "album": album
+        })
 
-print(len(ranking))
-print(len(artist))
-print(len(title))
+    return chart_data
 
-rankingList = [r.text.strip() for r in ranking]
-titleList = [t.text.strip() for t in title]
-artistList = [a.text.strip() for a in artist]
+# 현재 날짜를 문자열로 저장
+current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
-chart_df = pd.DataFrame({
-    'Ranking': rankingList,
-    'Title': titleList,
-    'Artist': artistList
-})
+# 두 페이지의 URL
+urls = [
+    "https://www.genie.co.kr/chart/top200?ditc=D&ymd=20240428&hh=19&rtm=Y&pg=1",
+    "https://www.genie.co.kr/chart/top200?ditc=D&ymd=20240428&hh=19&rtm=Y&pg=2"
+]
 
-# JSON 파일로 저장 
-chart_df.to_json("geniemusic.json", force_ascii=False, orient="records")
+# 모든 페이지에서 차트 데이터 가져오기
+all_chart_data = []
+for url in urls:
+    chart_data = get_chart_data(url)
+    all_chart_data.extend(chart_data)
+
+# JSON 파일로 저장
+file_name = f"chart_genie100_{current_date}.json"
+
+with open(file_name, 'w', encoding='utf-8') as file:
+    json.dump(all_chart_data, file, ensure_ascii=False, indent=4)
