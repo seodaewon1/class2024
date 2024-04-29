@@ -6,8 +6,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+from datetime import datetime
 import time
 import json
+
+current_date = datetime.now().strftime("%Y-%m-%d")
+filename = f"cgv_chart_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -40,14 +44,15 @@ soup = BeautifulSoup(html_source_updated, 'html.parser')
 
 # 데이터 추출
 music_data = []
-tracks = soup.select(".wrap-movie-chart .sect-movie-chart li")
-for track in tracks:
+
+# 첫 번째 tracks
+tracks1 = soup.select(".wrap-movie-chart .sect-movie-chart li")
+for track in tracks1:
     rank = track.select_one(".rank").text.strip()
     title = track.select_one(".title").text.strip()
-    rate = track.select_one(".percent span").text.strip()
-    date = track.select_one(".txt-info").contents[0].strip()
+    rate = track.select_one(".percent span").text.strip()   
+    date = track.select_one(".txt-info").text.strip().split()[0]
     image_url = track.select_one(".thumb-image img").get('src')
-
 
     music_data.append({
         "rank": rank,
@@ -57,12 +62,27 @@ for track in tracks:
         "imageURL": image_url,
     })
 
-# music_data 리스트를 출력
+# 두 번째 tracks
+tracks2 = soup.select(".sect-movie-chart .list-more li")
+for track in tracks2:
+    title = track.select_one(".title").text.strip()
+    rate = track.select_one(".percent span").text.strip()   
+    date = track.select_one(".txt-info").text.strip().split()[0]
+    image_url = track.select_one(".thumb-image img").get('src')
+
+    music_data.append({  
+        "title": title,
+        "rate": rate,
+        "date": date,
+        "imageURL": image_url,
+    })
+
+# music_data 리스트를 한 번에 출력
 print(music_data)
 
-# # 데이터를 JSON 파일로 저장
-# with open(filename, 'w', encoding='utf-8') as f:
-#     json.dump(music_data, f, ensure_ascii=False, indent=4)
+# 데이터를 JSON 파일로 저장
+with open(filename, 'w', encoding='utf-8') as f:
+    json.dump(music_data, f, ensure_ascii=False, indent=4)
 
-# # 브라우저 종료
-# browser.quit()
+# 브라우저 종료
+browser.quit()
