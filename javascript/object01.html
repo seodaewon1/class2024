@@ -119,6 +119,59 @@
                 </div>
             </div>
             <!-- //sampe01 -->
+            <div id="sample02" class="sample">
+                <h3>02. includes()</h3>
+                <p class="notice">.includes("문자열")</p>
+
+                <ul>
+                    <li>includes() 메소드는 문자열에 특정 문자열 또는 문자가 포함되어 있는지를 확인하는 JavaScript의 메소드입니다.</li>
+                    <li>부분 문자열이 포함되어 있는 경우 true를 반환</li>
+                    <li>그렇지 않은 경우 false를 반환합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = 'Hello, world!';
+
+console.log(str.includes('world'));
+console.log(str.includes('foo'));
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            true<br>
+                            false<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe02 -->
+            <div id="sample03" class="sample">
+                <h3>03. indexOf()</h3>
+                <p class="notice">.indexOf("문자열")</p>
+
+                <ul>
+                    <li>indexOf() 메소드는 문자열에서 지정된 문자열 또는 문자의 첫 번째 발생 위치를 반환합니다. </li>
+                    <li>문자열에 지정된 문자열 또는 문자가 포함되어 있지 않으면 -1을 반환합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = 'Hello, world!';
+
+console.log(str.indexOf('world'));
+console.log(str.indexOf('foo'));
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            7<br>
+                            -1<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe03 -->
+
+
         </div>
         <!-- //main__sample -->
     </main>
