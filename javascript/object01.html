@@ -170,8 +170,176 @@ console.log(str.indexOf('foo'));
                 </div>
             </div>
             <!-- //sampe03 -->
+            <div id="sample04" class="sample">
+                <h3>04. match()</h3>
+                <p class="notice">.match()</p>
 
+                <ul>
+                    <li>정규 표현식과 문자열을 비교하여 일치하는 부분을 찾아내는 JavaScript의 문자열 메서드입니다. </li>
+                    <li>문자열에서 첫 번째로 일치하는 부분을 찾아내며, 일치하는 부분이 없으면 null을 반환합니다.</li>
+                    <li>(\w+)는 알파벳 문자나 숫자로 이루어진 하나 이상의 문자열을 의미합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "Hello, my name is John Doe.";
+const pattern = /name is (\w+)/;
 
+const result = str.match(pattern);
+
+console.log(result);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["name is John", "John"]<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe04 -->
+            <div id="sample05" class="sample">
+                <h3>05. replace()</h3>
+                <p class="notice">.replace()</p>
+                <ul>
+                    <li>문자열 내에서 특정 패턴을 찾아 지정된 다른 문자열로 대체하는 JavaScript의 문자열 메서드입니다. </li>
+                    <li>문자열에서 일치하는 모든 패턴을 변경할 수 있습니다.</li>
+                    <li>첫 번째로 일치하는 패턴을 대체합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "I like bananas. Do you like bananas?";
+const replacedStr = str.replace("bananas", "apples");
+
+console.log(replacedStr);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "I like apples. Do you like bananas?"<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe05 -->
+            <div id="sample06" class="sample">
+                <h3>06. search()</h3>
+                <p class="notice">.search()</p>
+                <ul>
+                    <li>문자열 내에서 특정 패턴이나 문자열을 찾아 해당 위치(인덱스)를 반환하는 JavaScript의 문자열 메서드입니다. </li>
+                    <li>첫 번째로 발견된 패턴의 인덱스만을 반환하며, 모든 발견된 패턴의 인덱스를 반환하지는 않습니다.</li>
+                    <li>찾고자 하는 패턴이 없으면 -1을 반환합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "Hello, world!";
+const position = str.search("world");
+
+console.log(position);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            7<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe06 -->
+            <div id="sample07" class="sample">
+                <h3>07. slice()</h3>
+                <p class="notice">.slice()</p>
+                <ul>
+                    <li>문자열이나 배열에서 지정한 위치의 부분을 추출하여 새로운 문자열이나 배열을 반환하는 JavaScript의 내장 함수입니다.</li>
+                    <li>메서드는 원본 문자열이나 배열을 변경하지 않고, 추출된 부분을 포함하는 새로운 문자열이나 배열을 반환합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "Hello, world!";
+const slicedStr = str.slice(7);
+
+console.log(slicedStr);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "world!"<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe07 -->
+            <div id="sample08" class="sample">
+                <h3>08. substring()</h3>
+                <p class="notice">.substring()</p>
+                <ul>
+                    <li>문자열에서 지정한 시작 위치부터 끝 위치까지의 부분 문자열을 추출하여 반환하는 JavaScript의 내장 함수입니다. </li>
+                    <li>시작 위치와 끝 위치를 지정하여 부분 문자열을 추출합니다.</li>
+                    <li>끝 위치를 지정하지 않으면 문자열의 끝까지를 추출합니다. 또한, 두 번째 매개변수로 지정한 끝 위치는 포함되지 않습니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "Hello, world!";
+const subStr = str.substring(7, 12);
+
+console.log(subStr);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "world"<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe08 -->
+            <div id="sample09" class="sample">
+                <h3>09. split()</h3>
+                <p class="notice">.split()</p>
+                <ul>
+                    <li>문자열을 지정된 구분자를 기준으로 나누어 배열로 반환하는 JavaScript의 내장 함수입니다.</li>
+                    <li>원본 문자열을 변경하지 않고, 구분자를 기준으로 문자열을 나눈 후 각 부분을 배열의 요소로 저장하여 반환합니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "apple, banana, orange";
+const fruits = str.split(", ");
+
+console.log(fruits);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["apple", "banana", "orange"]<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe09 -->
+            <div id="sample10" class="sample">
+                <h3>10. trim()</h3>
+                <p class="notice">.trim()</p>
+                <ul>
+                    <li>문자열의 양 끝에서 공백을 제거한 새로운 문자열을 반환하는 JavaScript의 내장 함수입니다.</li>
+                    <li>공백은 여러 가지 유형의 공백 문자(스페이스, 탭, 개행 등)을 포함합니다.</li>
+                    <li>중간에 있는 공백은 제거하지 않습니다. 만약 중간에 있는 공백도 제거하고 싶다면 다른 방법을 사용해야 합니다.</li>
+                    <li>원본 문자열을 변경하지 않고 새로운 문자열을 반환합니다. 따라서 trim() 메서드를 호출하더라도 원본 문자열은 변경되지 않습니다.</li>
+                </ul>
+                <pre class="javascript"><code>{
+const str = "   Hello, world!   ";
+const trimmedStr = str.trim();
+
+console.log(trimmedStr);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "Hello, world!"<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sampe10 -->
         </div>
         <!-- //main__sample -->
     </main>
