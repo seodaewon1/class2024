@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"Megabox/MegaboxChart_{current_date}.json"
+filename = f"MegaboxChart_{current_date}.json"
 
 
 # 웹드라이브 설치
@@ -50,7 +50,7 @@ music_data = []
 tracks = soup.select(".inner-wrap .movie-list .list li")
 for track in tracks:
     rank = track.select_one(".rank").text.strip()
-    title = track.select_one(".tit").text.strip()
+    title = track.select_one(".tit-area .tit").text.strip()
     rate = track.select_one(".rate").text.strip()
     date = track.select_one(".date").text.strip()
     image_url = track.select_one(".movie-list-info img").get('src')
