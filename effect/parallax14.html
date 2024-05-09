@@ -301,12 +301,12 @@
         //1번
         const ani1 = gsap.timeline();
 
-        ani1.to("#section2 .parallax__item__img", { rotation: 720, scale: 0, borderRadius: 200 })
-            .to("#section2 .parallax__item__img", { rotation: 0, scale: 1, borderRadius: 20 })
+        ani1.to("#section1 .parallax__item__img", { y: 500 })
+            .to("#section1 .parallax__item__img", { y: 0 })
 
         ScrollTrigger.create({
             animation: ani1,
-            trigger: "#section2",
+            trigger: "#section1",
             start: "top top",
             scrub: true,
             toggleActions: "play none reverse none",
@@ -330,17 +330,20 @@
 
         ani3.from("#section3 .parallax__item__img", {
             autoAlpha: 1,
-            scale: 5,
-            width: "100vw",
-            height: "100vh",
-
+            scale: 1,
         })
+            .from("#section3 .parallax__item__img", {
+                autoAlpha: 1,
+                scale: 3,
+            })
         ScrollTrigger.create({
             animation: ani3,
             trigger: "#section3",
-            start: "top top",
+            start: "top bottom",
+            end: "bottom",
             scrub: true,
-            toggleActions: "reverse none play none",
+            toggleActions: "play none reverse none",
+
         })
         // 4번
         gsap.to(".img4", {
@@ -352,11 +355,76 @@
                 containerAnimation: scrollTween,
                 start: "left center",
                 toggleActions: "play none reverse none",
-                markers: true,
-                id: "img4"
+                id: "img4",
             }
         })
+        // 5번
+        gsap.to(".img5", {
+            z: 500,
+            scale: 2,
+            duration: 2,
+            scrollTrigger: {
+                trigger: ".img5",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                id: "img5"
+            }
+        })
+        // 6번
+        gsap.to(".img6", {
+            opacity: 0,
+            scrollTrigger: {
+                scrub: true,
+                trigger: ".img6",
+                containerAnimation: scrollTween,
+                start: "left center",
+                end: "bottom",
+                toggleActions: "play none reverse none",
+                id: "img6",
+            }
+        })
+        // 7번
+        gsap.to(".img7", {
+            duration: 2, rotationY: 259, transformOrigin: "50% 50% -100px",
+            scrollTrigger: {
+                scrub: true,
+                trigger: ".img7",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play  reverse",
+                id: "img7",
+            }
+        })
+        // 8번
+        const ani8 = gsap.timeline();
 
+        ani8.to("#section8 .parallax__item__img", { rotationX: 720, })
+
+        ScrollTrigger.create({
+            animation: ani8,
+            trigger: "#section8",
+            start: "top center",
+            end: "bottom",
+            scrub: true,
+
+            toggleActions: "play none reverse none",
+        })
+        // 9번
+        const ani9 = gsap.timeline();
+
+        ani9.from("#section9 .parallax__item__img", { y: -500, rotation: 360 })
+            .from("#section9 .parallax__item__img", { y: 0, rotation: 0 })
+
+        ScrollTrigger.create({
+            animation: ani9,
+            trigger: "#section9",
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+            toggleActions: "play none reverse none",
+            markers: true,
+        })
     </script>
 </body>
 
