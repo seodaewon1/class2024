@@ -144,12 +144,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-            // $(".nav>ul>li").mouseover(function () {
-            //     $(".nav>ul>li>a").css("backgroundColor", "red")
-            // })
-            // $(".nav>ul>li").mouseover(function () {
-            //     $(this).find("a").css("backgroundColor", "red")
-            // })
             $(".nav>ul>li").mouseover(function () {
                 $(".nav>ul>li>ul").stop().fadeIn(500);
             })
@@ -157,34 +151,26 @@
                 $(".nav>ul>li>ul").stop().fadeOut(500);
             })
 
-        })
-        let currentIndex = 0;
 
-        $(".slider-Wrap").append(".slider").first().clone(true);
+            let currentIndex = 0;
+            $(".slider-Wrap").append($(".slider").first().clone(true));
 
-        setInterval(() => {
-            currentIndex++;
-            $(".slider-Wrap").animate({ marginLeft: -currentIndex * 100 + "%" }, 600)
+            setInterval(() => {
+                currentIndex++;
+                $(".slider-Wrap").animate({ marginLeft: -currentIndex * 100 + "%" }, 600)
 
-            if (currentIndex)
-        })
+                if (currentIndex == 3) {
+                    setTimeout(() => {
+                        $(".slider-Wrap").animate({ marginLeft: 0 }, 0);
+                        currentIndex = 0;
+                    }, 700)
+                }
+            }, 3000);
+        });
 
 
 
-        // let currentIndex = 0;
-        // $(".slider-Wrap").append(".slider".first().clone(true));
 
-        // setInterval(() => {
-        //     currentIndex++;
-        //     $(".slider-Wrap").animate({ marginLeft: -currentIndex * 100 + "%" }, 600)
-
-        //     if (currentIndex == 3) {
-        //         setTimeout(() => {
-        //             $(".slider-Wrap").animate({ marginLeft: 0 }, 0);
-        //             currentIndex = 0;
-        //         }, 700)
-        //     }
-        // }, 3000);
     </script>
 </body>
 
