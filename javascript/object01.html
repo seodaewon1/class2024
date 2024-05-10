@@ -95,25 +95,18 @@
                     <li>음수인 경우 문자열의 오른쪽에서부터 인덱스를 셉니다.</li>
                 </ul>
                 <pre class="javascript"><code>{
-"javascript reference".at()       //j
-"javascript reference".at(0)      //j
-"javascript reference".at(1)      //a
-"javascript reference".at(2)      //v
-"javascript reference".at(3)      //a
-"javascript reference".at(4)      //s
-"javascript reference".at(5)      //c
-"javascript reference".at(-1)     //e
-"javascript reference".at(-2)     //c
-"javascript reference".at(-3)     //n
-"javascript reference".at(-4)     //e
-"javascript reference".at(-5)     //r
-"javascript reference".at(100)    // undefined
+const str = "Hello, world!";
+
+console.log(str.at(0));   // "H"
+console.log(str.at(6));   // ","
+console.log(str.at(-1));  // "!"
+console.log(str.at(100));  // undefined
 }</code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            false<br>
+                            "H", ",", "!", ""undefined<br>
                         </div>
                     </details>
                 </div>
