@@ -16,6 +16,7 @@ filename = f"serieson_chart{current_date}.json"
 
 # 웹드라이브 설치
 options = ChromeOptions()
+options.add_argument("--window-size=1920,1080") 
 service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
@@ -29,20 +30,28 @@ WebDriverWait(browser, 20).until(
 
 # 천천히 스크롤 다운
 scroll_pause_time = 1  # 1초 대기
-pixels_to_scroll = 1000  # 한 번에 스크롤할 픽셀 수
+pixels_to_scroll_vertically = 1000  # 수직 스크롤할 픽셀 수
+pixels_to_scroll_horizontally = 300  # 수평 스크롤할 픽셀 수
 max_time_limit = 40  # 전체 작업 시간 제한 (40초)
 start_time = time.time()  # 작업 시작 시간
 
 def scroll_down():
     """현재 위치에서 지정된 픽셀 수만큼 아래로 스크롤"""
-    browser.execute_script(f"window.scrollBy(0, {pixels_to_scroll});")
+    browser.execute_script(f"window.scrollBy(0, {pixels_to_scroll_vertically});")
+
+def scroll_right():
+    """현재 위치에서 지정된 픽셀 수만큼 오른쪽으로 스크롤"""
+    browser.execute_script(f"window.scrollBy({pixels_to_scroll_horizontally}, 0);")
 
 while (time.time() - start_time) < max_time_limit:
     scroll_down()
+    scroll_right()
     time.sleep(scroll_pause_time)
-    # 스크롤 이동 후 새로운 높이를 계산
+    # 스크롤 이동 후 새로운 높이와 너비를 계산
     new_height = browser.execute_script("return document.body.scrollHeight")
-    if new_height == browser.execute_script("return window.pageYOffset + window.innerHeight"):
+    new_width = browser.execute_script("return document.body.scrollWidth")
+    if new_height == browser.execute_script("return window.pageYOffset + window.innerHeight") and \
+       new_width == browser.execute_script("return window.pageXOffset + window.innerWidth"):
         break  # 페이지 끝에 도달
 
 # 페이지 소스 가져오기
