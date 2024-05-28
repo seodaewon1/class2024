@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"sanup-safe_{current_date}.json"
+filename = f"hair-nail_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -20,7 +20,7 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EA%B8%B0%EC%82%AC')
+browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EB%AF%B8%EC%9A%A9%EC%82%AC+%28%ED%94%BC%EB%B6%80%29')
 
 # 페이지가 완전히 로드될 때까지 대기
 try:
@@ -46,7 +46,7 @@ tracks = soup.select("#Search3_Result .ss_book_box")
 
 for track in tracks:
     # 이미지 파일 추출
-    image_element = track.select_one(".flipcover_in img")
+    image_element = track.select_one(".flipcover_in img:nth-of-type(2)")
     image_url = image_element.get('src') if image_element else None
 
     # 책 제목 추출
