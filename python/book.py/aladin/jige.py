@@ -12,7 +12,7 @@ import json
 from urllib.parse import urlparse, parse_qs  # 필요한 모듈 임포트
 
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"Moviechart/MoviechartChart_{current_date}.json"
+filename = f"jige_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -21,11 +21,11 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # CGV 페이지 열기
-browser.get('https://www.moviechart.co.kr/rank/realtime/index/image')
+browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EC%A7%80%EA%B2%8C%EC%B0%A8%EC%9A%B4%EC%A0%84%EA%B8%B0%EB%8A%A5%EC%82%AC')
 
 # 페이지가 완전히 로드될 때까지 대기
 WebDriverWait(browser, 10).until(
-    EC.presence_of_element_located((By.CLASS_NAME, "movieBox"))
+    EC.presence_of_element_located((By.ID, "Search3_Result"))
 )
 
 # 업데이트된 페이지 소스를 변수에 저장
@@ -33,39 +33,32 @@ html_source_updated = browser.page_source
 soup = BeautifulSoup(html_source_updated, 'html.parser')
 
 # 데이터 추출
-music_data = []
+book_data = []
 
 # 첫 번째 tracks
-tracks = soup.select(".movieBox-list .movieBox-item")
+tracks = soup.select(".ss_book_list")
 
 for track in tracks:
-    rank = track.select_one(".rank.realtime_rank23").text.strip()
-    title = track.select_one(".movie-title h3 a").text.strip()
-    rate = track.select_one(".ticketing span").text.strip()
-    date = track.select_one(".movie-launch").text.strip()
-    image_url = track.select_one(".movieBox-item img").get('src')
+    title = track.select_one(".bo3").text.strip()
+    # rank = track.select_one(".rank.realtime_rank23").text.strip()
+    # rate = track.select_one(".ticketing span").text.strip()
+    # date = track.select_one(".movie-launch").text.strip()
+    # image_url = track.select_one(".movieBox-item img").get('src')
 
-    # URL에서 'source=' 다음의 실제 이미지 URL 추출
-    parsed_url = urlparse(image_url)
-    query_params = parse_qs(parsed_url.query)
-    source_url = query_params.get('source', [None])[0]
 
-    if source_url:
-        image_url = source_url  # 이미지 URL을 실제 URL로 대체
-
-    music_data.append({
-        "rank": rank,
+    book_data.append({
         "title": title,
-        "rate": rate,
-        "date": date,
-        "imageURL": image_url
+        # "rank": rank,
+        # "rate": rate,
+        # "date": date,
+        # "imageURL": image_url
     })
 
-print(music_data)
+print(book_data)
 
 # 데이터를 JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as f:
-    json.dump(music_data, f, ensure_ascii=False, indent=4)
+    json.dump(book_data, f, ensure_ascii=False, indent=4)
 
 # 브라우저 종료
 browser.quit()
