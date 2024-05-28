@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"aladin_books_{current_date}.json"
+filename = f"thunder_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -20,7 +20,7 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&KeyWord=%EC%A7%80%EA%B2%8C%EC%B0%A8%EC%9A%B4%EC%A0%84%EA%B8%B0%EB%8A%A5%EC%82%AC&KeyRecentPublish=0&OutStock=0&ViewType=Detail&SortOrder=11&CustReviewCount=0&CustReviewRank=0&KeyFullWord=%EC%A7%80%EA%B2%8C%EC%B0%A8%EC%9A%B4%EC%A0%84%EA%B8%B0%EB%8A%A5%EC%82%AC&KeyLastWord=%EC%A7%80%EA%B2%8C%EC%B0%A8%EC%9A%B4%EC%A0%84%EA%B8%B0%EB%8A%A5%EC%82%AC&CategorySearch=&chkKeyTitle=&chkKeyAuthor=&chkKeyPublisher=&chkKeyISBN=&chkKeyTag=&chkKeyTOC=&chkKeySubject=&ViewRowCount=50&SuggestKeyWord=&page=1')
+browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC')
 
 # 페이지가 완전히 로드될 때까지 대기
 try:
