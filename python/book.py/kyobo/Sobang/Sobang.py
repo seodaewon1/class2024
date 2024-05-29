@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"thunder_{current_date}.json"
+filename = f"Sobang_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -20,10 +20,10 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://search.kyobobook.co.kr/search?keyword=%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC&target=total&gbCode=TOT&len=30')
+browser.get('https://search.kyobobook.co.kr/search?keyword=%EC%86%8C%EB%B0%A9%EC%84%A4%EB%B9%84%EA%B8%B0%EC%82%AC%20(%EC%A0%84%EA%B8%B0%EB%B6%84%EC%95%BC)&target=total&gbCode=TOT&len=30')
 
 # 페이지가 완전히 로드될 때까지 대기
-WebDriverWait(browser, 10).until(
+WebDriverWait(browser, 20).until(
     EC.presence_of_element_located((By.CLASS_NAME, "result_area"))
 )
 
@@ -42,7 +42,7 @@ for track in tracks:
     if len(spans) >= 2:  # 두 번째 span 요소가 있는지 확인
         title = spans[1].text.strip()
         author = track.select_one(".auto_overflow_inner a.author.rep").text.strip()
-        price = track.select_one(".price span").text.strip()
+        price = track.select_one(".price>.val").text.strip()
         # 이미지 요소가 로드될 때까지 대기
         image_element = track.select_one(".img_box .prod_img_load")  # 이미지 요소 가져오기
         image_url = image_element.get('src') if image_element else None  # src에서 이미지 URL 가져오기

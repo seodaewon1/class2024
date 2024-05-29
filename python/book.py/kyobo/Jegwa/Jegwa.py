@@ -12,7 +12,7 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"hair-makeup_{current_date}.json"
+filename = f"Jegwa_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
@@ -20,12 +20,11 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://search.kyobobook.co.kr/search?keyword=%EB%AF%B8%EC%9A%A9%EC%82%AC%20(%EB%A9%94%EC%9D%B4%ED%81%AC%EC%97%85)&target=total&gbCode=TOT&len=30')
+browser.get('https://search.kyobobook.co.kr/search?keyword=%EC%A0%9C%EA%B3%BC%EA%B8%B0%EB%8A%A5%EC%82%AC&target=total&gbCode=TOT&len=30')
 
 # 페이지가 완전히 로드될 때까지 대기
 WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((By.CLASS_NAME, "result_area"))
-    
 )
 
 # 업데이트된 페이지 소스를 변수에 저장
