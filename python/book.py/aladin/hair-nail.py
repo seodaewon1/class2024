@@ -20,7 +20,7 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EB%AF%B8%EC%9A%A9%EC%82%AC+%28%ED%94%BC%EB%B6%80%29')
+browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EB%AF%B8%EC%9A%A9%EC%82%AC+%28%EB%84%A4%EC%9D%BC%29')
 
 # 페이지가 완전히 로드될 때까지 대기
 try:

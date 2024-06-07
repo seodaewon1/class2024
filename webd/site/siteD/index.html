@@ -155,12 +155,12 @@
             })
 
 
-            $(".nav>ul>li").mouseover(function () {
-                $(this).find(">ul").stop().slideDown();
-            })
-            $(".nav>ul>li").mouseout(function () {
-                $(this).find(">ul").stop().slideUp();
-            })
+            // $(".nav>ul>li").mouseover(function () {
+            //     $(this).find(">ul").stop().slideDown();
+            // })
+            // $(".nav>ul>li").mouseout(function () {
+            //     $(this).find(">ul").stop().slideUp();
+            // })
 
             let curretIndex = 0;
             $(".slider-wrap").append($(".slider").first().clone(true));
@@ -176,7 +176,18 @@
                 }
             }, 3000);
         });
+
+        $(".nav>ul>li").mouseover(function () {
+            $(this).find(">ul").stop().slideDown(900);
+        })
+        $(".nav>ul>li").mouseout(function () {
+            $(this).find(">ul").stop().slideUp(900);
+        })
+
+
     </script>
+
+
 </body>
 
 </html>

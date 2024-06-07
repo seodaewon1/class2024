@@ -171,17 +171,21 @@
         let currentIndex = 0;
         $(".sliderWrap").append($(".slider").first().clone(true));
 
-        setInterval(function () {
+        setInterval(() => {
             currentIndex++;
-            $(".sliderWrap").animate({ marginLeft: -1200 * currentIndex }, 600);
+            $(".sliderWrap").animate({ marginLeft: (-1200 * currentIndex + "px") }, 900)
 
             if (currentIndex == 3) {
-                setTimeout(function () {
-                    $(".sliderWrap").animate({ marginLeft: 0 }, 0);
+                setTimeout(() => {
+                    $(".sliderWrap").animate({ marginLeft: 0 }, 0)
                     currentIndex = 0;
-                }, 700);
+                }, 900)
             }
         }, 3000)
+
+
+
+
 
 
         $(".nav > ul > li").mouseover(function () {

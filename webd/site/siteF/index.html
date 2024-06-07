@@ -152,23 +152,29 @@
                 tabCont.eq(index).show().siblings().hide();
             })
 
-            $(".nav>ul>li").mouseenter(function () {
-                $(this).find(">ul").stop().slideDown();
+            $(".nav>ul>li").mouseover(function () {
+                $(this).find(">ul").stop().fadeIn(900)
             })
-            $(".nav>ul>li").mouseleave(function () {
-                $(this).find(">ul").stop().slideUp();
-            });
+            $(".nav>ul>li").mouseout(function () {
+                $(this).find(">ul").stop().fadeOut(900)
+            })
+
+            let currentIndex = 0
+            $(".slider").hide().first().show();
+
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % 3;
+
+                $(".slider").eq(currentIndex).fadeOut(900)
+                $(".slider").eq(nextIndex).fadeIn(900)
+
+                currentIndex = nextIndex;
+            }, 3000)
+
         });
 
-        let currentIndex = 0;
 
-        setInterval(() => {
-            let nextIndex = (currentIndex + 1) % 3;
-            $(".slider").eq(currentIndex).fadeOut(900);
-            $(".slider").eq(nextIndex).fadeIn(900);
 
-            currentIndex = nextIndex;
-        }, 3000)
     </script>
 
 </body>
