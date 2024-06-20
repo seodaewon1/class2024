@@ -34,25 +34,36 @@ soup = BeautifulSoup(html_source_updated, 'html.parser')
 # 데이터 추출
 book_data = []
 
-# 첫 번째 tracks
-tracks = soup.select(".prod_list .prod_item")
+# tracks 선택자 수정
+tracks = soup.select("li[data-goods-no]")
 
 for track in tracks:
-    spans = track.select(".auto_overflow_inner span")
-    if len(spans) >= 2:  # 두 번째 span 요소가 있는지 확인
-        title = spans[1].text.strip()
-        author = track.select_one(".auto_overflow_inner a.author.rep").text.strip()
-        price = track.select_one(".price span").text.strip()
-        # 이미지 요소가 로드될 때까지 대기
-        image_element = track.select_one(".img_box .prod_img_load")  # 이미지 요소 가져오기
-        image_url = image_element.get('src') if image_element else None  # src에서 이미지 URL 가져오기
+    title = track.select_one(".info_row.info_name .gd_name").text.strip()
+    author = track.select_one(".info_row.info_pubGrp .info_auth").text.strip()
+    price = track.select_one(".info_row.info_price .txt_num").text.strip()
     
-        book_data.append({
-            "title": title,
-            "imageURL": image_url,
-            "author": author,
-            "price" : price
-        })
+    # 이미지 요소 가져오기
+    image_element = track.select_one("img[src]")
+    if image_element:
+        image_url = image_element.get('src')
+        # 이미지 URL이 상대 경로일 경우 절대 경로로 변환
+        if not image_url.startswith('http'):
+            image_url = browser.execute_script("return arguments[0].src", image_element)
+    else:
+        image_url = None  # 이미지가 없는 경우 None 처리
+    
+    link_element = track.select_one(".gd_name")
+    href = link_element.get('href') if link_element else None
+
+    full_url = f"https://www.kyobobook.co.kr{href}" if href else None  # 전체 URL 생성
+
+    book_data.append({
+        "title": title,
+        "author": author,
+        "imageURL": image_url,
+        "price": price,
+        "url": full_url
+    })
 
 print(book_data)
 

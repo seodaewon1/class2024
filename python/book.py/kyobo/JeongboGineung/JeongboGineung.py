@@ -20,7 +20,7 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://search.kyobobook.co.kr/search?keyword=%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%8A%A5%EC%82%AC&target=total&gbCode=TOT&len=30')
+browser.get('https://search.kyobobook.co.kr/search?keyword=%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%8A%A5%EC%82%AC&target=total&gbCode=TOT&len=25')
 
 # 페이지가 완전히 로드될 때까지 대기
 WebDriverWait(browser, 10).until(
@@ -38,20 +38,24 @@ book_data = []
 tracks = soup.select(".prod_list .prod_item")
 
 for track in tracks:
-    spans = track.select(".auto_overflow_inner span")
+    spans = track.select(".prod_info span")
     if len(spans) >= 2:  # 두 번째 span 요소가 있는지 확인
         title = spans[1].text.strip()
-        author = track.select_one(".auto_overflow_inner a.author.rep").text.strip()
+        author = track.select_one(".prod_publish .text").text.strip()
         price = track.select_one(".price span").text.strip()
         # 이미지 요소가 로드될 때까지 대기
         image_element = track.select_one(".img_box .prod_img_load")  # 이미지 요소 가져오기
         image_url = image_element.get('src') if image_element else None  # src에서 이미지 URL 가져오기
+        
+        link_element = track.select_one(".auto_overflow_inner a")  # 링크 요소 가져오기
+        href = link_element.get('href') if link_element else None  # href 속성 가져오기
     
         book_data.append({
             "title": title,
             "imageURL": image_url,
             "author": author,
-            "price" : price
+            "price" : price,
+            "url" : href
         })
 
 print(book_data)

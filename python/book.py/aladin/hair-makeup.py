@@ -12,27 +12,38 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"hair-makeup_{current_date}.json"
+filename = f"Geonseol4_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
+options.add_argument("--start-maximized")
+options.add_argument("--headless")  # Headless 모드 추가
+options.add_argument("--no-sandbox")  # Sandbox 모드 비활성화
+options.add_argument("--disable-dev-shm-usage")  # /dev/shm 사용 비활성화
+options.add_argument("--disable-gpu")  # GPU 비활성화
+options.add_argument("--window-size=1920x1080")  # 윈도우 크기 설정
 service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
 # URL 열기
-browser.get('https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&SearchWord=%EB%AF%B8%EC%9A%A9%EC%82%AC+%28%EB%84%A4%EC%9D%BC%29')
+browser.get('https://www.yes24.com/Product/Search?domain=BOOK&query=%EA%B1%B4%EC%84%A4%EC%95%88%EC%A0%84%EA%B8%B0%EC%82%AC')
 
 # 페이지가 완전히 로드될 때까지 대기
-try:
-    WebDriverWait(browser, 20).until(
-        EC.presence_of_element_located((By.ID, "Search3_Result"))
-    )
-    # 추가 대기 시간
-    time.sleep(5)
-except Exception as e:
-    print("페이지 로드 시간 초과:", e)
-    browser.quit()
-    exit()
+WebDriverWait(browser, 20).until(
+    EC.presence_of_element_located((By.CLASS_NAME, "sGLi"))
+)
+
+# 모든 이미지를 로드하기 위해 페이지 끝까지 스크롤
+scroll_pause_time = 2
+last_height = browser.execute_script("return document.body.scrollHeight")
+
+while True:
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(scroll_pause_time)
+    new_height = browser.execute_script("return document.body.scrollHeight")
+    if new_height == last_height:
+        break
+    last_height = new_height
 
 # 업데이트된 페이지 소스를 변수에 저장
 html_source_updated = browser.page_source
@@ -42,25 +53,31 @@ soup = BeautifulSoup(html_source_updated, 'html.parser')
 book_data = []
 
 # 첫 번째 tracks
-tracks = soup.select("#Search3_Result .ss_book_box")
+tracks = soup.select("li[data-goods-no]")
 
 for track in tracks:
-    # 이미지 파일 추출
-    image_element = track.select_one(".flipcover_in img:nth-of-type(2)")
-    image_url = image_element.get('src') if image_element else None
+    title = track.select_one(".info_row.info_name .gd_name").text.strip()
+    author = track.select_one(".info_row.info_pubGrp .info_auth").text.strip()
+    price = track.select_one(".info_row.info_price .txt_num").text.strip()
+    
+    # 이미지 요소가 로드될 때까지 대기
+    image_element = track.select_one(".img_bdr img")  # 이미지 요소 가져오기
+    image_url = image_element.get('src') if image_element else None  # src에서 이미지 URL 가져오기
+    
+    # 이미지 URL이 .jpg로 끝나는 경우 제외
+    if image_url and '.jpg' in image_url:
+        image_url = None
 
-    # 책 제목 추출
-    title_element = track.select_one(".bo3")
-    title = title_element.text.strip() if title_element else 'No title'
-
-    # 가격 추출
-    price_element = track.select_one(".ss_p2")
-    price = price_element.get_text(strip=True).replace('\n', '') if price_element else 'No price'
+    link_element = track.select_one(".gd_name a")  # 링크 요소 가져오기
+    href = link_element.get('href') if link_element else None  # href 속성 가져오기
+    full_url = f"https://www.yes24.com{href}" if href else None  # 앞에 URL 추가
 
     book_data.append({
         "title": title,
+        "author": author,
         "imageURL": image_url,
-        "price": price
+        "price": price,
+        "url": full_url
     })
 
 print(book_data)
