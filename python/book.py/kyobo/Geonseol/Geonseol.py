@@ -12,19 +12,18 @@ import json
 
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"Geonseol_{current_date}.json"
+filename = f"Geonseol2_{current_date}.json"
 
 # 웹드라이버 설치
 options = ChromeOptions()
 service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 
-# URL 열기
-browser.get('https://search.kyobobook.co.kr/search?keyword=%EA%B1%B4%EC%84%A4%20%EC%95%88%EC%A0%84%20%EA%B8%B0%EC%82%AC&target=total&gbCode=TOT&len=30')
+browser.get('https://www.yes24.com/Product/Search?domain=BOOK&query=%EA%B1%B4%EC%84%A4%EC%95%88%EC%A0%84%EA%B8%B0%EC%82%AC')
 
 # 페이지가 완전히 로드될 때까지 대기
 WebDriverWait(browser, 10).until(
-    EC.presence_of_element_located((By.CLASS_NAME, "result_area"))
+    EC.presence_of_element_located((By.CLASS_NAME, "sGLi"))
 )
 
 # 업데이트된 페이지 소스를 변수에 저장
@@ -35,23 +34,27 @@ soup = BeautifulSoup(html_source_updated, 'html.parser')
 book_data = []
 
 # 첫 번째 tracks
-tracks = soup.select(".prod_list .prod_item")
+tracks = soup.select("li[data-goods-no]")
 
 for track in tracks:
-    spans = track.select(".auto_overflow_inner span")
-    if len(spans) >= 2:  # 두 번째 span 요소가 있는지 확인
-        title = spans[1].text.strip()
-        author = track.select_one(".auto_overflow_inner a.author.rep").text.strip()
-        price = track.select_one(".price span").text.strip()
+        title = track.select_one(".info_row.info_name .gd_name").text.strip()
+        author = track.select_one(".info_row.info_pubGrp .info_auth").text.strip()
+        price = track.select_one(".info_row.info_price .txt_num").text.strip()
         # 이미지 요소가 로드될 때까지 대기
-        image_element = track.select_one(".img_box .prod_img_load")  # 이미지 요소 가져오기
+        image_element = track.select_one(".img_bdr img")  # 이미지 요소 가져오기
         image_url = image_element.get('src') if image_element else None  # src에서 이미지 URL 가져오기
-    
+        
+
+        link_element = track.select_one(".gd_name")  # 링크 요소 가져오기
+        href = link_element.get('href') if link_element else None  # href 속성 가져오기
+        full_url = f"href" if href else None  # 앞에 URL 추가
+
         book_data.append({
             "title": title,
-            "imageURL": image_url,
             "author": author,
-            "price" : price
+            "imageURL": image_url,
+            "price" : price,
+            "url" : href
         })
 
 print(book_data)

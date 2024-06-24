@@ -41,7 +41,7 @@ for track in tracks:
     spans = track.select(".auto_overflow_inner span")
     if len(spans) >= 2:  # 두 번째 span 요소가 있는지 확인
         title = spans[1].text.strip()
-        author = track.select_one(".auto_overflow_inner a.author.rep").text.strip()
+        author = track.select_one(".auto_overflow_inner a.author").text.strip()
         price = track.select_one(".price span").text.strip()
         # 이미지 요소가 로드될 때까지 대기
         image_element = track.select_one(".img_box .prod_img_load")  # 이미지 요소 가져오기
