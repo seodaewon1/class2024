@@ -33,6 +33,7 @@ soup = BeautifulSoup(html_source_updated, 'html.parser')
 # 데이터 추출
 book_data = []
 
+<<<<<<< HEAD
 # 첫 번째 tracks
 tracks = soup.select("li[data-goods-no]")
 
@@ -56,6 +57,38 @@ for track in tracks:
             "price" : price,
             "url" : href
         })
+=======
+# tracks 선택자 수정
+tracks = soup.select("li[data-goods-no]")
+
+for track in tracks:
+    title = track.select_one(".info_row.info_name .gd_name").text.strip()
+    author = track.select_one(".info_row.info_pubGrp .info_auth").text.strip()
+    price = track.select_one(".info_row.info_price .txt_num").text.strip()
+    
+    # 이미지 요소 가져오기
+    image_element = track.select_one("img[src]")
+    if image_element:
+        image_url = image_element.get('src')
+        # 이미지 URL이 상대 경로일 경우 절대 경로로 변환
+        if not image_url.startswith('http'):
+            image_url = browser.execute_script("return arguments[0].src", image_element)
+    else:
+        image_url = None  # 이미지가 없는 경우 None 처리
+    
+    link_element = track.select_one(".gd_name")
+    href = link_element.get('href') if link_element else None
+
+    full_url = f"https://www.kyobobook.co.kr{href}" if href else None  # 전체 URL 생성
+
+    book_data.append({
+        "title": title,
+        "author": author,
+        "imageURL": image_url,
+        "price": price,
+        "url": full_url
+    })
+>>>>>>> bfef094b1472e5acc091af0c4bd60096eda5118e
 
 print(book_data)
 
